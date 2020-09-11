@@ -1,4 +1,4 @@
-USE [BD_extendida]
+USE [master]
 GO
 /* Insertar datos en la tabla de objetivos  */
 
