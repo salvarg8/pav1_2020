@@ -48,6 +48,17 @@
   <ItemGroup>
     <Compile Include="Datos\Dao\Implementacion\PerfillDaoSqlImp.cs" />
     <Compile Include="Datos\Dao\Interfaz\IDao.cs" />
+    <Compile Include="Datos\Helper\DBHelper.cs" />
+    <Compile Include="Negocio\Entidades\Objetivos.cs" />
+    <Compile Include="Negocio\Entidades\OpcionMenu.cs" />
+    <Compile Include="Negocio\Entidades\Perfil.cs" />
+    <Compile Include="Negocio\Servicios\PerfilService.cs" />
+    <Compile Include="Presentación\frmAbmcObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\frmAbmcObjetivos.Designer.cs">
+      <DependentUpon>frmAbmcObjetivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentación\frmAbmcObjetivos.resx">
+      <DependentUpon>frmAbmcObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,9 +114,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Datos\Helper\" />
-    <Folder Include="Negocio\Entidades\" />
-    <Folder Include="Negocio\Servicios\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
