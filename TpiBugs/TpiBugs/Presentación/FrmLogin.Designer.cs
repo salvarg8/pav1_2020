@@ -73,6 +73,7 @@
             // 
             this.txtContraseña.Location = new System.Drawing.Point(116, 66);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(160, 20);
             this.txtContraseña.TabIndex = 4;
             // 
@@ -84,6 +85,7 @@
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // FrmLogin
             // 

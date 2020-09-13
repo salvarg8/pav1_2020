@@ -15,7 +15,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
         //Vamos a reutilizar este método para crear cada objeto Per:
         public Perfil findById(int id)
         {
-            string sql = "SELECT * FROM Perfiles p WHERE borrado = 'N' AND p.id_perfil = " + id.ToString();
+            string sql = "SELECT * FROM Perfiles p WHERE borrado = '0' AND p.id_perfil = " + id.ToString();
             DataTable perfileDT = DBHelper.getDBHelper().ConsultaSQL(sql);
             DataTable opcionesMenuDT = null;
 
@@ -47,7 +47,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
 
         public List<Perfil> FindByNombre(string filter)
         {
-            string sql = "SELECT id_perfil FROM Perfiles WHERE borrado = 'N' AND n_perfil LIKE '%' + @param1 + '%'";
+            string sql = "SELECT id_perfil FROM Perfiles WHERE borrado = '0' AND n_perfil LIKE '%' + @param1 + '%'";
             DataTable data = DBHelper.getDBHelper().ConsultarSQLConParametros(sql, new Object[] { filter });
             List<Perfil> list = new List<Perfil>();
             foreach (DataRow row in data.Rows)
@@ -69,7 +69,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
         public bool delete(int id)
         {
             //IMPORTANTE: en vez de hacer un delete, hacemos UPDATE porque es BORRADO LÓGICO 
-            String sql = "UPDATE Perfiles SET borrado = 'S' WHERE id_perfil=" + id;
+            String sql = "UPDATE Perfiles SET borrado = '1' WHERE id_perfil=" + id;
             return DBHelper.getDBHelper().ejecutarSQL(sql) != 0;
 
         }
@@ -80,7 +80,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
             OpcionMenu oOpcionMenu = null;
             List<OpcionMenu> opcionesMenu = new List<OpcionMenu>();
 
-            oPerfil.Id = Convert.ToInt32(perfilRow["id_perfil"].ToString());
+            oPerfil.IdPerfil = Convert.ToInt32(perfilRow["id_perfil"].ToString());
             oPerfil.Nombre = perfilRow["n_perfil"].ToString();
 
             //agregamos este atributo tanto en la tabla como en la entidad
@@ -107,7 +107,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
         public bool add(Perfil obj)
         {
             string query = "DECLARE @idPerfil int;";
-            query += "Insert INTO Perfiles (n_perfil, borrado) VALUES ('" + obj.Nombre + "', 'N');";
+            query += "Insert INTO Perfiles (n_perfil, borrado) VALUES ('" + obj.Nombre + "', '0');";
             query += "SELECT @idPerfil = @@IDENTITY;";
             foreach (OpcionMenu om in obj.OpcionesMenu)
             {

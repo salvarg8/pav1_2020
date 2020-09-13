@@ -8,7 +8,7 @@ namespace TpiBugs.Negocio.Entidades
 {
     public class Perfil
     {
-        public int Id { get; set; }
+        public int IdPerfil { get; set; }
         public String Nombre { get; set; }
         public List<OpcionMenu> OpcionesMenu { get; set; }
 
@@ -18,10 +18,10 @@ namespace TpiBugs.Negocio.Entidades
         {
             OpcionesMenu = new List<OpcionMenu>();
         }
-
+       
         public Perfil(int id, String nombre, List<OpcionMenu> opcionesMenu)
         {
-            this.Id = id;
+            this.IdPerfil = id;
             this.Nombre = nombre;
             this.OpcionesMenu = opcionesMenu;
         }
