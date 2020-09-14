@@ -39,7 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(98, 48);
+            this.label1.Location = new System.Drawing.Point(33, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 3;
@@ -47,7 +47,7 @@
             // 
             // txtCorto
             // 
-            this.txtCorto.Location = new System.Drawing.Point(194, 45);
+            this.txtCorto.Location = new System.Drawing.Point(129, 24);
             this.txtCorto.MaxLength = 50;
             this.txtCorto.Name = "txtCorto";
             this.txtCorto.Size = new System.Drawing.Size(194, 20);
@@ -56,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(98, 92);
+            this.label2.Location = new System.Drawing.Point(33, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 5;
@@ -64,7 +64,7 @@
             // 
             // txtLargo
             // 
-            this.txtLargo.Location = new System.Drawing.Point(194, 89);
+            this.txtLargo.Location = new System.Drawing.Point(129, 68);
             this.txtLargo.MaxLength = 100;
             this.txtLargo.Name = "txtLargo";
             this.txtLargo.Size = new System.Drawing.Size(194, 20);
@@ -72,7 +72,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(281, 157);
+            this.btnAceptar.Location = new System.Drawing.Point(243, 105);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
@@ -82,7 +82,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(362, 157);
+            this.button1.Location = new System.Drawing.Point(324, 105);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 211);
+            this.ClientSize = new System.Drawing.Size(456, 150);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label2);

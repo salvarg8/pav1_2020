@@ -40,12 +40,18 @@ namespace TpiBugs.Datos.Dao.Implementacion
 
         internal bool Actualizar(Objetivos oObjetivoSeleccionado)
         {
-            String strSql = "UPDATE objetivos set nombre_corto = @param1 nombre_largo = @param2 where id_objetivo = @param3";
+            String strSql = "UPDATE objetivos set nombre_corto = @param1, nombre_largo = @param2 where id_objetivo = @param3";
             var parametros = new Dictionary<string, object>();
             parametros.Add("param1", oObjetivoSeleccionado.Nombre_corto);
             parametros.Add("param2", oObjetivoSeleccionado.Nombre_largo);
             parametros.Add("param3", oObjetivoSeleccionado.ID_objetivos);
             return (DataManager.GetInstance().EjecutarSQL(strSql, parametros) == 1);
+        }
+
+        public bool delete(int id)
+        {
+            String strSql = "UPDATE objetivos set borrado = 1 WHERE id_objetivo ="+id;
+            return DBHelper.getDBHelper().ejecutarSQL(strSql) != 0;
         }
 
         internal bool cargaObjetivo(string nombreCorto, string nombreLargo)
@@ -97,24 +103,5 @@ namespace TpiBugs.Datos.Dao.Implementacion
             return objetivos;
         }
 
-
-
-
-        
-
-            private Objetivos ObjectMapping(DataRow row)
-            {
-            Objetivos oObjetivos = new Objetivos
-            {
-                ID_objetivos = Convert.ToInt32(row["id_objetivo"].ToString()),
-                Nombre_corto = row["nombre_corto"].ToString(),
-                Nombre_largo = row["nombre_largo"].ToString(),
-
-                   
-                };
-                return oObjetivos;
-
-
-            }
     }
 }

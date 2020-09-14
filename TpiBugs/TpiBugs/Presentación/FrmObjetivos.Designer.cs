@@ -41,9 +41,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNomCorto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNomLargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_corto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +70,7 @@
             this.btnSalir.Size = new System.Drawing.Size(65, 60);
             this.btnSalir.TabIndex = 0;
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEditar
             // 
@@ -93,16 +94,24 @@
             this.btnEliminar.Size = new System.Drawing.Size(65, 60);
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dgvObjetivos
             // 
+            this.dgvObjetivos.AllowUserToAddRows = false;
+            this.dgvObjetivos.AllowUserToDeleteRows = false;
+            this.dgvObjetivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvObjetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvObjetivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.colNomCorto,
-            this.colNomLargo});
+            this.Id_Objetivos,
+            this.nom_corto,
+            this.nom_largo});
             this.dgvObjetivos.Location = new System.Drawing.Point(12, 159);
+            this.dgvObjetivos.MultiSelect = false;
             this.dgvObjetivos.Name = "dgvObjetivos";
+            this.dgvObjetivos.ReadOnly = true;
+            this.dgvObjetivos.RowHeadersVisible = false;
+            this.dgvObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObjetivos.Size = new System.Drawing.Size(520, 220);
             this.dgvObjetivos.TabIndex = 15;
             this.dgvObjetivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellClick);
@@ -179,20 +188,26 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Filtros";
             // 
-            // colID
+            // Id_Objetivos
             // 
-            this.colID.HeaderText = "ID";
-            this.colID.Name = "colID";
+            this.Id_Objetivos.FillWeight = 44.43543F;
+            this.Id_Objetivos.HeaderText = "ID";
+            this.Id_Objetivos.Name = "Id_Objetivos";
+            this.Id_Objetivos.ReadOnly = true;
             // 
-            // colNomCorto
+            // nom_corto
             // 
-            this.colNomCorto.HeaderText = "Nombre Corto";
-            this.colNomCorto.Name = "colNomCorto";
+            this.nom_corto.FillWeight = 76.14214F;
+            this.nom_corto.HeaderText = "Nombre Corto";
+            this.nom_corto.Name = "nom_corto";
+            this.nom_corto.ReadOnly = true;
             // 
-            // colNomLargo
+            // nom_largo
             // 
-            this.colNomLargo.HeaderText = "Nombre Largo";
-            this.colNomLargo.Name = "colNomLargo";
+            this.nom_largo.FillWeight = 179.4224F;
+            this.nom_largo.HeaderText = "Nombre Largo";
+            this.nom_largo.Name = "nom_largo";
+            this.nom_largo.ReadOnly = true;
             // 
             // FrmObjetivos
             // 
@@ -228,7 +243,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView dgvObjetivos;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.CheckBox chbBuscarTodos;
         private System.Windows.Forms.TextBox txtNombreLargo;
@@ -236,8 +250,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomCorto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNomLargo;
+        internal System.Windows.Forms.DataGridView dgvObjetivos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Objetivos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom_corto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom_largo;
     }
 }

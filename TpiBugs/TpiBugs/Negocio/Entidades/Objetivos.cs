@@ -14,37 +14,18 @@ namespace TpiBugs.Negocio.Entidades
         public int ID_objetivos { get; set; }
         public string Nombre_corto { get; set; }
         public string Nombre_largo { get; set; }
-        public bool Borrado { get; set; }
+        public int Borrado { get; set; }
 
-       private ObjetivosDao oObjetivosDao;
-        public Objetivos()
-                {
-                    oObjetivosDao = new ObjetivosDao();
-                }
-        public List<Objetivos> listObjetivos { get; set; }
-
-
-        //public Objetivos()
-        //{
-        //    listObjetivos = new List<Objetivos>();
-        //}
-
-
-        public Objetivos(int id, string nomCorto, string nomLargo)
+        public Objetivos(int iD_objetivos, string nombre_corto, string nombre_largo)
         {
-            this.ID_objetivos = id;
-            this.Nombre_corto = nomCorto;
-            this.Nombre_largo = nomLargo;
+           
+            ID_objetivos = iD_objetivos;
+            Nombre_corto = nombre_corto;
+            Nombre_largo = nombre_largo;
+            
+           
+            
         }
-
-        //internal bool actualizarObjetivo(Objetivos oObjetivoSeleccionado)
-        //{
-        //    return oObjetivosDao.Actualizar(oObjetivoSeleccionado);
-        //}
-
-        public override string ToString()
-        {
-            return Nombre_corto;
-        }
-    }
+    }   
+    
 }

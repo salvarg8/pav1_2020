@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using TpiBugs.Datos.Dao.Implementacion;
 using TpiBugs.Negocio.Entidades;
@@ -13,7 +15,7 @@ using TpiBugs.Negocio.Servicios;
 namespace TpiBugs.Presentación
 {
     public partial class FrmObjetivos : Form
-    {   
+    {
         private ObjetivosService servicio;
         public FrmObjetivos()
         {
@@ -23,6 +25,7 @@ namespace TpiBugs.Presentación
 
         private void btnBuscar_Click(System.Object sender, System.EventArgs e)
         {
+            dgvObjetivos.Rows.Clear();
             var filters = new Dictionary<string, object>();
             if (chbBuscarTodos.Checked)
             {
@@ -36,7 +39,7 @@ namespace TpiBugs.Presentación
             if (chbBuscarTodos.Checked == false && txtNombreLargo.Text != "")
             {
                 IList<Objetivos> lst = servicio.GetObjetivosNomLargo(txtNombreLargo.Text);
-                foreach(Objetivos obj in lst)
+                foreach (Objetivos obj in lst)
                 {
                     dgvObjetivos.Rows.Add(new object[] { obj.ID_objetivos, obj.Nombre_corto, obj.Nombre_largo });
                 }
@@ -51,8 +54,8 @@ namespace TpiBugs.Presentación
                 }
 
             }
-        }             
-                
+        }
+
 
 
         private void FrmObjetivos_FormClosed(object sender, FormClosedEventArgs e)
@@ -73,11 +76,11 @@ namespace TpiBugs.Presentación
         private void txtNombreCorto_TextChanged(object sender, EventArgs e)
         {
             if (txtNombreCorto.Text != "")
-            
+
                 txtNombreLargo.Enabled = false;
-            
+
             if (txtNombreCorto.Text == "")
-            
+
                 txtNombreLargo.Enabled = true;
         }
 
@@ -114,6 +117,7 @@ namespace TpiBugs.Presentación
         {
             btnEditar.Enabled = true;
             btnEliminar.Enabled = true;
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -123,13 +127,71 @@ namespace TpiBugs.Presentación
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(System.Object sender, System.EventArgs e)
         {
+            
+            int id = Convert.ToInt32(dgvObjetivos.CurrentRow.Cells["Id_Objetivos"].Value);
+            string nombre_corto = Convert.ToString(dgvObjetivos.CurrentRow.Cells["nom_corto"].Value);
+            string nombre_largo = Convert.ToString(dgvObjetivos.CurrentRow.Cells["nom_largo"].Value);
+            Objetivos objetivo = new Objetivos(id, nombre_corto, nombre_largo);
             frmAbmcObjetivos frm = new frmAbmcObjetivos();
-            var a = (Objetivos)dgvObjetivos.CurrentRow.DataBoundItem;
-            frm.IniciarFormulario(frmAbmcObjetivos.FormMode.actualizar, a);
+            frm.IniciarFormulario(frmAbmcObjetivos.FormMode.actualizar, objetivo);
             frm.ShowDialog();
-            btnBuscar_Click(sender, e);
+            
+
+
+
+
+            //var a = (Objetivos)dgvObjetivos.CurrentRow.DataBoundItem;
+            //frmAbmcObjetivos frm = new frmAbmcObjetivos();
+            //frm.IniciarFormulario(frmAbmcObjetivos.FormMode.actualizar, a);
+            //frm.ShowDialog();
+        }
+        private void InitializeDataGridView()
+        {
+            // Cree un DataGridView no vinculado declarando un recuento de columnas.
+            dgvObjetivos.ColumnCount = 3;
+            dgvObjetivos.ColumnHeadersVisible = true;
+
+            // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
+            dgvObjetivos.AutoGenerateColumns = false;
+
+            // Cambia el estilo de la cabecera de la grilla.
+            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+
+            columnHeaderStyle.BackColor = Color.Beige;
+            columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
+            dgvObjetivos.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+
+            // Cambia el tamaño de la altura de los encabezados de columna.
+            dgvObjetivos.AutoResizeColumnHeadersHeight();
+
+            // Cambia el tamaño de todas las alturas de fila para ajustar el contenido de todas las celdas que no sean de encabezado.
+            dgvObjetivos.AutoResizeRows(
+                DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvObjetivos.Rows.Count > 0)
+            {
+                if (MessageBox.Show("¿Seguro que desea Eliminar el Objetivo seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(dgvObjetivos.CurrentRow.Cells["Id_Objetivos"].Value);
+                    if (servicio.borrarObjetivo(id))
+                    {
+                        dgvObjetivos.Rows.RemoveAt(dgvObjetivos.CurrentRow.Index);
+                        MessageBox.Show("Objetivo Eliminado", "Aviso");
+                    }
+                }
+                else
+                    MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
+            }
         }
     }
 }

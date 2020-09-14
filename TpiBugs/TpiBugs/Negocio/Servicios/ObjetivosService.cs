@@ -11,40 +11,36 @@ namespace TpiBugs.Negocio.Servicios
 {
     public class ObjetivosService
     {
-        private ObjetivosDao dao;
         private ObjetivosDao oObjetivosDao;
-
         public ObjetivosService()
-        {
-            dao = new ObjetivosDao();
+        {   
+            oObjetivosDao = new ObjetivosDao();
         }
-
-
         public IList<Objetivos> GetObjetivos()
         {
-            return dao.GetAll();
-            
-
+            return oObjetivosDao.GetAll();
         }
-
         internal IList<Objetivos> GetObjetivosNomCorto(string nombreCorto)
         {
-            return dao.getPorNombreCorto(nombreCorto);
+            return oObjetivosDao.getPorNombreCorto(nombreCorto);
         }
-
         internal void cargaObjetivos(string nombreCorto, string nombreLargo)
         {
-            dao.cargaObjetivo(nombreCorto, nombreLargo);
+            oObjetivosDao.cargaObjetivo(nombreCorto, nombreLargo);
         }
-
         internal IList<Objetivos> GetObjetivosNomLargo(string nombreLargo)
         {
-            return dao.getPorNombreLargo(nombreLargo);
+            return oObjetivosDao.getPorNombreLargo(nombreLargo);
         }
 
         internal bool actualizarObjetivo(Objetivos oObjetivoSeleccionado)
         {
             return oObjetivosDao.Actualizar(oObjetivoSeleccionado); 
+        }
+
+        internal bool borrarObjetivo(int id)
+        {
+            return oObjetivosDao.delete(id);
         }
     }
 }
