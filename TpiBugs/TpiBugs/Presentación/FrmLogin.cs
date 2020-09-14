@@ -32,14 +32,14 @@ namespace TpiBugs
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if ((txtUsuario.Text == ""))
-            {
-                MessageBox.Show("Se debe ingresar un usuario.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            {   
+                msgError("Por favor ingresar un Usuario");
                 return;
             }
 
             if ((txtContraseña.Text == ""))
             {
-                MessageBox.Show("Se debe ingresar una contraseña.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                msgError("Por favor ingresar una Contraseña");
                 return;
             }
 
@@ -59,7 +59,7 @@ namespace TpiBugs
                 
                 txtContraseña.Text = "";
                 txtContraseña.Focus();
-                MessageBox.Show("Debe ingresar usuario y/o contraseña válidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msgError("Usuario y/o Contraseña Incorrecto");
             }
         }
         private void frmLogin_Load(object sender, EventArgs e)
@@ -69,10 +69,22 @@ namespace TpiBugs
         }
 
        
+        private void msgError(string mensaje)
+        {
+            lblError.Text = "      " + mensaje;
+            lblError.Visible = true;
+
+        }
+
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

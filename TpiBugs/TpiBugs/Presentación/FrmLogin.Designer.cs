@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -47,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label1.Location = new System.Drawing.Point(29, 59);
+            this.label1.Location = new System.Drawing.Point(11, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 18);
             this.label1.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label2.Location = new System.Drawing.Point(29, 93);
+            this.label2.Location = new System.Drawing.Point(11, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 18);
             this.label2.TabIndex = 2;
@@ -66,26 +67,26 @@
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtUsuario.Location = new System.Drawing.Point(129, 56);
+            this.txtUsuario.Location = new System.Drawing.Point(111, 56);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(231, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(259, 26);
             this.txtUsuario.TabIndex = 3;
             // 
             // txtContraseña
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtContraseña.Location = new System.Drawing.Point(129, 93);
+            this.txtContraseña.Location = new System.Drawing.Point(111, 93);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(231, 26);
+            this.txtContraseña.Size = new System.Drawing.Size(259, 26);
             this.txtContraseña.TabIndex = 4;
             // 
             // btnIngresar
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.btnIngresar.Location = new System.Drawing.Point(264, 137);
+            this.btnIngresar.Location = new System.Drawing.Point(98, 148);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(96, 27);
+            this.btnIngresar.Size = new System.Drawing.Size(175, 27);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -94,6 +95,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.lblError);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.btnIngresar);
             this.panel5.Controls.Add(this.txtContraseña);
@@ -105,12 +107,13 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(383, 188);
             this.panel5.TabIndex = 7;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(58, 15);
+            this.label3.Location = new System.Drawing.Point(69, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(246, 25);
             this.label3.TabIndex = 6;
@@ -136,6 +139,21 @@
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
+            this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Location = new System.Drawing.Point(39, 127);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(52, 14);
+            this.lblError.TabIndex = 7;
+            this.lblError.Text = "lblError";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Visible = false;
             // 
             // FrmLogin
             // 
@@ -166,6 +184,7 @@
         private System.Windows.Forms.Panel panelBarraTitulo;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblError;
     }
 }
 

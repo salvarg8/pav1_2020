@@ -103,6 +103,7 @@
             // 
             this.dgvObjetivos.AllowUserToAddRows = false;
             this.dgvObjetivos.AllowUserToDeleteRows = false;
+            this.dgvObjetivos.AllowUserToResizeRows = false;
             this.dgvObjetivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
