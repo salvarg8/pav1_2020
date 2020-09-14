@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCorto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtLargo = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -45,13 +45,13 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre Corto";
             // 
-            // textBox1
+            // txtCorto
             // 
-            this.textBox1.Location = new System.Drawing.Point(194, 45);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtCorto.Location = new System.Drawing.Point(194, 45);
+            this.txtCorto.MaxLength = 50;
+            this.txtCorto.Name = "txtCorto";
+            this.txtCorto.Size = new System.Drawing.Size(194, 20);
+            this.txtCorto.TabIndex = 2;
             // 
             // label2
             // 
@@ -62,13 +62,13 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Nombre Largo";
             // 
-            // textBox2
+            // txtLargo
             // 
-            this.textBox2.Location = new System.Drawing.Point(194, 89);
-            this.textBox2.MaxLength = 100;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtLargo.Location = new System.Drawing.Point(194, 89);
+            this.txtLargo.MaxLength = 100;
+            this.txtLargo.Name = "txtLargo";
+            this.txtLargo.Size = new System.Drawing.Size(194, 20);
+            this.txtLargo.TabIndex = 4;
             // 
             // btnAceptar
             // 
@@ -78,6 +78,7 @@
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // button1
             // 
@@ -96,9 +97,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtLargo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCorto);
             this.Name = "frmAbmcObjetivos";
             this.Text = "frmAbmcObjetivos";
             this.ResumeLayout(false);
@@ -109,9 +110,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCorto;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtLargo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button button1;
     }

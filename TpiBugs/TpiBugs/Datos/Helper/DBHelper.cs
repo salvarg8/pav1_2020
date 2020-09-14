@@ -15,7 +15,8 @@ namespace TpiBugs.Datos.Helper
 
         private DBHelper()
         {
-            string_conexion = "Data Source=localhost;Initial Catalog=DB_Bugs;Integrated Security=True";
+            string_conexion = "Data Source=localhost;Initial Catalog=BD_extendida;Integrated Security=True;";
+            //string_conexion = "Data Source=localhost;Initial Catalog=DB_extendida;Integrated Security=True";
         }
 
         public static DBHelper getDBHelper()

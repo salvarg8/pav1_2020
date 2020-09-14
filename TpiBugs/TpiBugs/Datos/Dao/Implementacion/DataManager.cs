@@ -12,7 +12,11 @@ public class DataManager : System.IDisposable
     public DataManager()
     {
         dbConnection = new SqlConnection();
-        var string_conexion = "Data Source=ACER1\\SQLEXPRESS;Initial Catalog=BD_extendida;Integrated Security=True;";
+        
+        //conexion bd salva
+        var string_conexion = "Data Source=localhost;Initial Catalog=BD_extendida;Integrated Security=True;";
+        //conexion bd leo
+        //var string_conexion = "Data Source=ACER1\\SQLEXPRESS;Initial Catalog=BD_extendida;Integrated Security=True;";
         dbConnection.ConnectionString = string_conexion;
     }
 

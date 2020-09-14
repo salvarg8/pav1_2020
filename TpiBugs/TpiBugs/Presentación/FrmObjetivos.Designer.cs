@@ -31,17 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmObjetivos));
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.dgvObjetivos = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.chbBuscarTodos = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombreLargo = new System.Windows.Forms.TextBox();
+            this.txtNombreCorto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNomCorto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNomLargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -54,6 +57,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(65, 60);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnSalir
             // 
@@ -67,35 +71,40 @@
             this.btnSalir.TabIndex = 0;
             this.btnSalir.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnEditar
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(93, 385);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 60);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.Location = new System.Drawing.Point(93, 385);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(65, 60);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnEliminar
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(174, 385);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 60);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Location = new System.Drawing.Point(174, 385);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(65, 60);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dgvObjetivos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 159);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(520, 220);
-            this.dataGridView1.TabIndex = 15;
+            this.dgvObjetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObjetivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colNomCorto,
+            this.colNomLargo});
+            this.dgvObjetivos.Location = new System.Drawing.Point(12, 159);
+            this.dgvObjetivos.Name = "dgvObjetivos";
+            this.dgvObjetivos.Size = new System.Drawing.Size(520, 220);
+            this.dgvObjetivos.TabIndex = 15;
+            this.dgvObjetivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellClick);
             // 
             // btnBuscar
             // 
@@ -119,22 +128,25 @@
             this.chbBuscarTodos.TabIndex = 13;
             this.chbBuscarTodos.Text = "Buscar Todos";
             this.chbBuscarTodos.UseVisualStyleBackColor = true;
+            this.chbBuscarTodos.CheckedChanged += new System.EventHandler(this.chbBuscarTodos_CheckedChanged);
             // 
-            // textBox2
+            // txtNombreLargo
             // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(174, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(233, 31);
-            this.textBox2.TabIndex = 12;
+            this.txtNombreLargo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreLargo.Location = new System.Drawing.Point(174, 93);
+            this.txtNombreLargo.Name = "txtNombreLargo";
+            this.txtNombreLargo.Size = new System.Drawing.Size(233, 31);
+            this.txtNombreLargo.TabIndex = 12;
+            this.txtNombreLargo.TextChanged += new System.EventHandler(this.txtNombreLargo_TextChanged);
             // 
-            // textBox1
+            // txtNombreCorto
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(174, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 31);
-            this.textBox1.TabIndex = 11;
+            this.txtNombreCorto.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCorto.Location = new System.Drawing.Point(174, 45);
+            this.txtNombreCorto.Name = "txtNombreCorto";
+            this.txtNombreCorto.Size = new System.Drawing.Size(233, 31);
+            this.txtNombreCorto.TabIndex = 11;
+            this.txtNombreCorto.TextChanged += new System.EventHandler(this.txtNombreCorto_TextChanged);
             // 
             // label3
             // 
@@ -166,27 +178,44 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Filtros";
             // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID";
+            this.colID.Name = "colID";
+            // 
+            // colNomCorto
+            // 
+            this.colNomCorto.HeaderText = "Nombre Corto";
+            this.colNomCorto.Name = "colNomCorto";
+            // 
+            // colNomLargo
+            // 
+            this.colNomLargo.HeaderText = "Nombre Largo";
+            this.colNomLargo.Name = "colNomLargo";
+            // 
             // FrmObjetivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(544, 457);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvObjetivos);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.chbBuscarTodos);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombreLargo);
+            this.Controls.Add(this.txtNombreCorto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnSalir);
             this.Name = "FrmObjetivos";
             this.Text = "FrmObjetivos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmObjetivos_FormClosed);
+            this.Load += new System.EventHandler(this.FrmObjetivos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,15 +225,18 @@
 
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridView dgvObjetivos;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.CheckBox chbBuscarTodos;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombreLargo;
+        private System.Windows.Forms.TextBox txtNombreCorto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNomCorto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNomLargo;
     }
 }

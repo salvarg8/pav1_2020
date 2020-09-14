@@ -28,21 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMostrar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblMostrar
-            // 
-            this.lblMostrar.AutoSize = true;
-            this.lblMostrar.Location = new System.Drawing.Point(12, 122);
-            this.lblMostrar.Name = "lblMostrar";
-            this.lblMostrar.Size = new System.Drawing.Size(0, 13);
-            this.lblMostrar.TabIndex = 0;
             // 
             // label1
             // 
@@ -68,6 +59,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(160, 20);
             this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtContraseña
             // 
@@ -97,7 +89,6 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblMostrar);
             this.Name = "FrmLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -106,8 +97,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblMostrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUsuario;

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Dao\Implementacion\DataManager.cs" />
+    <Compile Include="Datos\Dao\Implementacion\ObjetivosDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\UsuarioDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\PerfillDaoSqlImp.cs" />
     <Compile Include="Datos\Dao\Interfaz\IDao.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Negocio\Entidades\Objetivos.cs" />
     <Compile Include="Negocio\Entidades\OpcionMenu.cs" />
     <Compile Include="Negocio\Entidades\Perfil.cs" />
+    <Compile Include="Negocio\Servicios\ObjetivosService.cs" />
     <Compile Include="Negocio\Servicios\UsuarioService.cs" />
     <Compile Include="Negocio\Servicios\PerfilService.cs" />
     <Compile Include="Presentación\frmAbmcObjetivos.cs">

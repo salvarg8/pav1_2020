@@ -101,7 +101,7 @@ namespace TpiBugs
         private Usuario ObjectMapping(DataRow row)
         {
             Usuario oUsuario = new Usuario
-            {
+            {   
                 IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
                 NombreUsuario = row["usuario"].ToString(),
                 Email = row["email"].ToString(),

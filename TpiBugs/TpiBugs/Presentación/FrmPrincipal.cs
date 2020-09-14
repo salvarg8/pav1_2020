@@ -16,5 +16,17 @@ namespace TpiBugs.Presentación
         {
             InitializeComponent();
         }
+
+        private void btnObjetivos_Click(object sender, EventArgs e)
+        {
+            FrmObjetivos frm = new FrmObjetivos();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

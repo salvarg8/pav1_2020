@@ -13,7 +13,14 @@ namespace TpiBugs.Negocio.Entidades
         public string Nombre_largo { get; set; }
         public bool Borrado { get; set; }
 
-        public Objetivos() { }
+        public List<Objetivos> listObjetivos { get; set; }
+
+
+        public Objetivos()
+        {
+            listObjetivos = new List<Objetivos>();
+        }
+
 
         public Objetivos(int id, string nomCorto, string nomLargo)
         {
@@ -21,5 +28,7 @@ namespace TpiBugs.Negocio.Entidades
             this.Nombre_corto = nomCorto;
             this.Nombre_largo = nomLargo;
         }
+
+        
     }
 }
