@@ -21,9 +21,9 @@ namespace TpiBugs.Presentación
             InitializeComponent();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(System.Object sender, System.EventArgs e)
         {
-            dgvObjetivos.Rows.Clear();
+            var filters = new Dictionary<string, object>();
             if (chbBuscarTodos.Checked)
             {
                 IList<Objetivos> lst = servicio.GetObjetivos();
@@ -120,6 +120,16 @@ namespace TpiBugs.Presentación
         {
             frmAbmcObjetivos frm = new frmAbmcObjetivos();
             frm.ShowDialog();
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            frmAbmcObjetivos frm = new frmAbmcObjetivos();
+            var a = (Objetivos)dgvObjetivos.CurrentRow.DataBoundItem;
+            frm.IniciarFormulario(frmAbmcObjetivos.FormMode.actualizar, a);
+            frm.ShowDialog();
+            btnBuscar_Click(sender, e);
         }
     }
 }

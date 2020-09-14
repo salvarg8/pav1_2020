@@ -12,6 +12,7 @@ namespace TpiBugs.Negocio.Servicios
     public class ObjetivosService
     {
         private ObjetivosDao dao;
+        private ObjetivosDao oObjetivosDao;
 
         public ObjetivosService()
         {
@@ -31,9 +32,19 @@ namespace TpiBugs.Negocio.Servicios
             return dao.getPorNombreCorto(nombreCorto);
         }
 
+        internal void cargaObjetivos(string nombreCorto, string nombreLargo)
+        {
+            dao.cargaObjetivo(nombreCorto, nombreLargo);
+        }
+
         internal IList<Objetivos> GetObjetivosNomLargo(string nombreLargo)
         {
             return dao.getPorNombreLargo(nombreLargo);
+        }
+
+        internal bool actualizarObjetivo(Objetivos oObjetivoSeleccionado)
+        {
+            return oObjetivosDao.Actualizar(oObjetivoSeleccionado); 
         }
     }
 }

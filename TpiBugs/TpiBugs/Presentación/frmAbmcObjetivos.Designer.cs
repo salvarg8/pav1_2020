@@ -102,6 +102,7 @@
             this.Controls.Add(this.txtCorto);
             this.Name = "frmAbmcObjetivos";
             this.Text = "frmAbmcObjetivos";
+            this.Load += new System.EventHandler(this.frmAbmcObjetivos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
