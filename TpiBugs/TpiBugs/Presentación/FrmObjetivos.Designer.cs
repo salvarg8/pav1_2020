@@ -140,20 +140,20 @@
             this.chbBuscarTodos.UseVisualStyleBackColor = true;
             this.chbBuscarTodos.CheckedChanged += new System.EventHandler(this.chbBuscarTodos_CheckedChanged);
             // 
-            // txtNombreLargo
+            // txtLargo
             // 
             this.txtNombreLargo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreLargo.Location = new System.Drawing.Point(174, 93);
-            this.txtNombreLargo.Name = "txtNombreLargo";
+            this.txtNombreLargo.Name = "txtLargo";
             this.txtNombreLargo.Size = new System.Drawing.Size(233, 31);
             this.txtNombreLargo.TabIndex = 12;
             this.txtNombreLargo.TextChanged += new System.EventHandler(this.txtNombreLargo_TextChanged);
             // 
-            // txtNombreCorto
+            // txtCorto
             // 
             this.txtNombreCorto.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCorto.Location = new System.Drawing.Point(174, 45);
-            this.txtNombreCorto.Name = "txtNombreCorto";
+            this.txtNombreCorto.Name = "txtCorto";
             this.txtNombreCorto.Size = new System.Drawing.Size(233, 31);
             this.txtNombreCorto.TabIndex = 11;
             this.txtNombreCorto.TextChanged += new System.EventHandler(this.txtNombreCorto_TextChanged);

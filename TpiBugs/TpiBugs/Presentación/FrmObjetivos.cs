@@ -26,6 +26,7 @@ namespace TpiBugs.Presentación
         private void btnBuscar_Click(System.Object sender, System.EventArgs e)
         {
             dgvObjetivos.Rows.Clear();
+
             var filters = new Dictionary<string, object>();
             if (chbBuscarTodos.Checked)
             {
@@ -69,6 +70,7 @@ namespace TpiBugs.Presentación
 
         private void FrmObjetivos_Load(object sender, EventArgs e)
         {
+            
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
         }
@@ -124,6 +126,7 @@ namespace TpiBugs.Presentación
         {
             frmAbmcObjetivos frm = new frmAbmcObjetivos();
             frm.ShowDialog();
+            btnBuscar_Click(sender, e);
 
         }
 
@@ -137,39 +140,9 @@ namespace TpiBugs.Presentación
             frmAbmcObjetivos frm = new frmAbmcObjetivos();
             frm.IniciarFormulario(frmAbmcObjetivos.FormMode.actualizar, objetivo);
             frm.ShowDialog();
-            
-
-
-
-
-            //var a = (Objetivos)dgvObjetivos.CurrentRow.DataBoundItem;
-            //frmAbmcObjetivos frm = new frmAbmcObjetivos();
-            //frm.IniciarFormulario(frmAbmcObjetivos.FormMode.actualizar, a);
-            //frm.ShowDialog();
+            btnBuscar_Click(sender, e);
         }
-        private void InitializeDataGridView()
-        {
-            // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            dgvObjetivos.ColumnCount = 3;
-            dgvObjetivos.ColumnHeadersVisible = true;
 
-            // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
-            dgvObjetivos.AutoGenerateColumns = false;
-
-            // Cambia el estilo de la cabecera de la grilla.
-            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
-
-            columnHeaderStyle.BackColor = Color.Beige;
-            columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
-            dgvObjetivos.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-
-            // Cambia el tamaño de la altura de los encabezados de columna.
-            dgvObjetivos.AutoResizeColumnHeadersHeight();
-
-            // Cambia el tamaño de todas las alturas de fila para ajustar el contenido de todas las celdas que no sean de encabezado.
-            dgvObjetivos.AutoResizeRows(
-                DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -192,6 +165,7 @@ namespace TpiBugs.Presentación
                 else
                     MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
             }
+            btnBuscar_Click(sender, e);
         }
     }
 }
