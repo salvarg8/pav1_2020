@@ -57,6 +57,7 @@
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnAceptar);
             this.panel5.Controls.Add(this.txtLargo);

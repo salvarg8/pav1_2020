@@ -68,10 +68,7 @@ namespace TpiBugs
             this.CenterToParent();
         }
 
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {

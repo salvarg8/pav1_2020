@@ -35,9 +35,9 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -70,7 +70,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(231, 26);
             this.txtUsuario.TabIndex = 3;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtContraseña
             // 
@@ -94,6 +93,7 @@
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.btnIngresar);
             this.panel5.Controls.Add(this.txtContraseña);
@@ -105,6 +105,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(383, 188);
             this.panel5.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Georgia", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(58, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(246, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Bug Tracking System";
             // 
             // panelBarraTitulo
             // 
@@ -126,16 +136,6 @@
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(58, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(246, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Bug Tracking System";
             // 
             // FrmLogin
             // 

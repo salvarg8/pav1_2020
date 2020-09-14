@@ -13,7 +13,6 @@ using Microsoft.VisualBasic;
 using TpiBugs.Negocio.Entidades;
 using System.Data;
 using System.Data.SqlClient;
-
 namespace TpiBugs
 {
     public class UsuarioDao
@@ -37,6 +36,7 @@ namespace TpiBugs
             foreach (DataRow row in resultadoConsulta.Rows)
             {
                 listadoBugs.Add(ObjectMapping(row));
+
             }
 
             return listadoBugs;

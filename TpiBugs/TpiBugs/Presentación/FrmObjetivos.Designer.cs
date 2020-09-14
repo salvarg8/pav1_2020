@@ -34,6 +34,9 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvObjetivos = new System.Windows.Forms.DataGridView();
+            this.Id_Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_corto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.chbBuscarTodos = new System.Windows.Forms.CheckBox();
             this.txtNombreLargo = new System.Windows.Forms.TextBox();
@@ -41,14 +44,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Id_Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom_corto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom_largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
             // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
             this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -74,6 +75,7 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEditar.BackColor = System.Drawing.Color.Transparent;
             this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -86,6 +88,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -100,6 +103,9 @@
             // 
             this.dgvObjetivos.AllowUserToAddRows = false;
             this.dgvObjetivos.AllowUserToDeleteRows = false;
+            this.dgvObjetivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvObjetivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvObjetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvObjetivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -116,8 +122,30 @@
             this.dgvObjetivos.TabIndex = 15;
             this.dgvObjetivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellClick);
             // 
+            // Id_Objetivos
+            // 
+            this.Id_Objetivos.FillWeight = 44.43543F;
+            this.Id_Objetivos.HeaderText = "ID";
+            this.Id_Objetivos.Name = "Id_Objetivos";
+            this.Id_Objetivos.ReadOnly = true;
+            // 
+            // nom_corto
+            // 
+            this.nom_corto.FillWeight = 76.14214F;
+            this.nom_corto.HeaderText = "Nombre Corto";
+            this.nom_corto.Name = "nom_corto";
+            this.nom_corto.ReadOnly = true;
+            // 
+            // nom_largo
+            // 
+            this.nom_largo.FillWeight = 179.4224F;
+            this.nom_largo.HeaderText = "Nombre Largo";
+            this.nom_largo.Name = "nom_largo";
+            this.nom_largo.ReadOnly = true;
+            // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -140,20 +168,20 @@
             this.chbBuscarTodos.UseVisualStyleBackColor = true;
             this.chbBuscarTodos.CheckedChanged += new System.EventHandler(this.chbBuscarTodos_CheckedChanged);
             // 
-            // txtLargo
+            // txtNombreLargo
             // 
             this.txtNombreLargo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreLargo.Location = new System.Drawing.Point(174, 93);
-            this.txtNombreLargo.Name = "txtLargo";
+            this.txtNombreLargo.Name = "txtNombreLargo";
             this.txtNombreLargo.Size = new System.Drawing.Size(233, 31);
             this.txtNombreLargo.TabIndex = 12;
             this.txtNombreLargo.TextChanged += new System.EventHandler(this.txtNombreLargo_TextChanged);
             // 
-            // txtCorto
+            // txtNombreCorto
             // 
             this.txtNombreCorto.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCorto.Location = new System.Drawing.Point(174, 45);
-            this.txtNombreCorto.Name = "txtCorto";
+            this.txtNombreCorto.Name = "txtNombreCorto";
             this.txtNombreCorto.Size = new System.Drawing.Size(233, 31);
             this.txtNombreCorto.TabIndex = 11;
             this.txtNombreCorto.TextChanged += new System.EventHandler(this.txtNombreCorto_TextChanged);
@@ -187,27 +215,6 @@
             this.label1.Size = new System.Drawing.Size(53, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "Filtros";
-            // 
-            // Id_Objetivos
-            // 
-            this.Id_Objetivos.FillWeight = 44.43543F;
-            this.Id_Objetivos.HeaderText = "ID";
-            this.Id_Objetivos.Name = "Id_Objetivos";
-            this.Id_Objetivos.ReadOnly = true;
-            // 
-            // nom_corto
-            // 
-            this.nom_corto.FillWeight = 76.14214F;
-            this.nom_corto.HeaderText = "Nombre Corto";
-            this.nom_corto.Name = "nom_corto";
-            this.nom_corto.ReadOnly = true;
-            // 
-            // nom_largo
-            // 
-            this.nom_largo.FillWeight = 179.4224F;
-            this.nom_largo.HeaderText = "Nombre Largo";
-            this.nom_largo.Name = "nom_largo";
-            this.nom_largo.ReadOnly = true;
             // 
             // FrmObjetivos
             // 

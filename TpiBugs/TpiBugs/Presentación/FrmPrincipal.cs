@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TpiBugs.Negocio.Entidades;
 
 namespace TpiBugs.Presentación
 {
@@ -21,27 +21,16 @@ namespace TpiBugs.Presentación
             this.DoubleBuffered = true;
         }
 
-        private void btnObjetivos_Click(object sender, EventArgs e)
-        {
-            FrmObjetivos frm = new FrmObjetivos();
-            this.Hide();
-            frm.Show();
-        }
+        
 
         private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
         //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------
         private int tolerance = 12;
         private const int WM_NCHITTEST = 132;
@@ -127,16 +116,17 @@ namespace TpiBugs.Presentación
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        
-        
-        
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnObjetivos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FrmObjetivos>();
+
         }
 
-        
+     
 
+
+        
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
