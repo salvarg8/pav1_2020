@@ -15,8 +15,11 @@ namespace TpiBugs.Datos.Helper
 
         private DBHelper()
         {
+            //conexion DB leo
+            //string_conexion = "Data Source=ACER1\\SQLEXPRESS;Initial Catalog=BD_extendida;Integrated Security=True;";
+            
+            //conexion DB salva
             string_conexion = "Data Source=localhost;Initial Catalog=BD_extendida;Integrated Security=True;";
-            //string_conexion = "Data Source=localhost;Initial Catalog=DB_extendida;Integrated Security=True";
         }
 
         public static DBHelper getDBHelper()
