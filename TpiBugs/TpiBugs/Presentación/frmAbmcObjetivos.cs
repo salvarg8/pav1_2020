@@ -141,5 +141,11 @@ namespace TpiBugs.Presentación
         {
             this.Close();
         }
+        
+        private void panelBarraTitulo_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

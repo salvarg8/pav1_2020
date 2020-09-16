@@ -140,6 +140,7 @@
             this.panelBarraTitulo.Size = new System.Drawing.Size(477, 24);
             this.panelBarraTitulo.TabIndex = 0;
             this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo2_Paint);
+            this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             // 
             // btnCerrar
             // 
