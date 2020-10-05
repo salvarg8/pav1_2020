@@ -50,7 +50,10 @@ namespace TpiBugs
                 // Login OK
                 UsuarioLogueado = usr.NombreUsuario;
                 this.Hide();
+                var nombre = usr.NombreUsuario;
+
                 FrmPrincipal frm = new FrmPrincipal();
+                frm.IniciarFormulario(FrmPrincipal.FormMode.Logear, usr);
                 frm.Show();
                 
             }
@@ -68,7 +71,8 @@ namespace TpiBugs
             this.CenterToParent();
         }
 
-       
+        
+
         private void msgError(string mensaje)
         {
             lblError.Text = "      " + mensaje;

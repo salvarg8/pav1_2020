@@ -15,8 +15,16 @@ namespace TpiBugs.Negocio.Entidades
         public string Password { get; set; }
 
         public Perfil Perfil { get; set; }
+        
 
-
+        public Usuario(string nombre)
+        {
+            nombre = NombreUsuario;
+        }
+        public Usuario()
+        {
+            
+        }
 
 
         public override string ToString()

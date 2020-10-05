@@ -13,6 +13,7 @@ using Microsoft.VisualBasic;
 using TpiBugs.Negocio.Entidades;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace TpiBugs
 {
     public class UsuarioDao

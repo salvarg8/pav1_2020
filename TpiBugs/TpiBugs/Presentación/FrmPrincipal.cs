@@ -3,22 +3,29 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpiBugs.Negocio.Entidades;
+using TpiBugs.Negocio.Servicios;
 
 namespace TpiBugs.Presentación
 {
     public partial class FrmPrincipal : Form
     {
+        private FormMode formMode = FormMode.Logear;
+        private readonly UsuarioService oUsuarioService;
+        private Usuario oUsuarioLogeado;
         public FrmPrincipal()
         {
             InitializeComponent();
+            oUsuarioService = new UsuarioService();
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
+            
         }
 
         
@@ -155,9 +162,33 @@ namespace TpiBugs.Presentación
             }
         }
 
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            switch (formMode)
+            {
+                case FormMode.Logear:
+                    {
+                        lblUsuario.Text = oUsuarioLogeado.NombreUsuario;
+                        lblPerfil.Text = oUsuarioLogeado.Perfil.Nombre;
+                        lblUsuario.Visible = true;
+                        break;
+                    }
+            }
+        }  
+
+        public enum FormMode
+        {
+            Logear
+        }
 
 
-
+        internal void IniciarFormulario(FormMode Logear, Usuario usuario)
+        {
+            {
+                formMode = Logear;
+                oUsuarioLogeado = usuario;
+            }
+        }
 
 
 

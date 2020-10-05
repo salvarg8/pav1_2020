@@ -19,8 +19,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
 {
     public class ObjetivosDao
     {
-
-        
+                
         public IList<Objetivos> GetAll()
         {
             List<Objetivos> objetivos = new List<Objetivos>();
@@ -34,8 +33,6 @@ namespace TpiBugs.Datos.Dao.Implementacion
                 objetivos.Add(obj);
             }
             return objetivos;
-
-            
         }
 
         internal bool Actualizar(Objetivos oObjetivoSeleccionado)
