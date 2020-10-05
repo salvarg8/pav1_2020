@@ -20,6 +20,14 @@ namespace TpiBugs.Negocio.Servicios
         {
             return oObjetivosDao.GetAll();
         }
+        public IList<Objetivos> GetObjetivosConBorrado(string corto, string largo)
+        {
+            return oObjetivosDao.getObjConBorrado(corto,largo);
+        }
+        public IList<Objetivos> GetObjetivosSinBorrado(string corto, string largo)
+        {
+            return oObjetivosDao.getObjSinBorrado(corto, largo);
+        }
         internal IList<Objetivos> GetObjetivosNomCorto(string nombreCorto)
         {
             return oObjetivosDao.getPorNombreCorto(nombreCorto);

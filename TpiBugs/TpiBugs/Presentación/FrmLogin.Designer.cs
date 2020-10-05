@@ -35,10 +35,11 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.lblError = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -109,6 +110,21 @@
             this.panel5.TabIndex = 7;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
+            this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Location = new System.Drawing.Point(39, 127);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(52, 14);
+            this.lblError.TabIndex = 7;
+            this.lblError.Text = "lblError";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Visible = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -122,6 +138,7 @@
             // panelBarraTitulo
             // 
             this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
+            this.panelBarraTitulo.Controls.Add(this.label4);
             this.panelBarraTitulo.Controls.Add(this.btnCerrar);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
@@ -140,20 +157,17 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // lblError
+            // label4
             // 
-            this.lblError.AutoSize = true;
-            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
-            this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
-            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(39, 127);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(52, 14);
-            this.lblError.TabIndex = 7;
-            this.lblError.Text = "lblError";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(164, 18);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Bug Tracking System";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmLogin
             // 
@@ -169,6 +183,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelBarraTitulo.ResumeLayout(false);
+            this.panelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
@@ -185,6 +200,7 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label label4;
     }
 }
 

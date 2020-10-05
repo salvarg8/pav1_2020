@@ -35,9 +35,6 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvObjetivos = new System.Windows.Forms.DataGridView();
-            this.Id_Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom_corto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom_largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.chbBuscarTodos = new System.Windows.Forms.CheckBox();
             this.txtNombreLargo = new System.Windows.Forms.TextBox();
@@ -45,6 +42,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Id_Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_corto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,12 +110,13 @@
             this.dgvObjetivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Objetivos,
             this.nom_corto,
-            this.nom_largo});
+            this.nom_largo,
+            this.borrado});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(130)))), ((int)(((byte)(160)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvObjetivos.DefaultCellStyle = dataGridViewCellStyle2;
@@ -127,6 +129,78 @@
             this.dgvObjetivos.Size = new System.Drawing.Size(520, 220);
             this.dgvObjetivos.TabIndex = 15;
             this.dgvObjetivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellClick);
+            this.dgvObjetivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellContentClick);
+            this.dgvObjetivos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellDoubleClick);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(467, 93);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(65, 60);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // chbBuscarTodos
+            // 
+            this.chbBuscarTodos.AutoSize = true;
+            this.chbBuscarTodos.Font = new System.Drawing.Font("Verdana", 11F);
+            this.chbBuscarTodos.Location = new System.Drawing.Point(157, 131);
+            this.chbBuscarTodos.Name = "chbBuscarTodos";
+            this.chbBuscarTodos.Size = new System.Drawing.Size(185, 22);
+            this.chbBuscarTodos.TabIndex = 13;
+            this.chbBuscarTodos.Text = "Buscar Con Borrados";
+            this.chbBuscarTodos.UseVisualStyleBackColor = true;
+            // 
+            // txtNombreLargo
+            // 
+            this.txtNombreLargo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreLargo.Location = new System.Drawing.Point(133, 93);
+            this.txtNombreLargo.Name = "txtNombreLargo";
+            this.txtNombreLargo.Size = new System.Drawing.Size(233, 31);
+            this.txtNombreLargo.TabIndex = 12;
+            // 
+            // txtNombreCorto
+            // 
+            this.txtNombreCorto.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCorto.Location = new System.Drawing.Point(133, 45);
+            this.txtNombreCorto.Name = "txtNombreCorto";
+            this.txtNombreCorto.Size = new System.Drawing.Size(233, 31);
+            this.txtNombreCorto.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 11F);
+            this.label3.Location = new System.Drawing.Point(9, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 18);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Nombre Largo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 11F);
+            this.label2.Location = new System.Drawing.Point(9, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 18);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Nombre Corto";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 11F);
+            this.label1.Location = new System.Drawing.Point(9, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 18);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Filtros";
             // 
             // Id_Objetivos
             // 
@@ -150,78 +224,12 @@
             this.nom_largo.Name = "nom_largo";
             this.nom_largo.ReadOnly = true;
             // 
-            // btnBuscar
+            // borrado
             // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
-            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(467, 93);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(65, 60);
-            this.btnBuscar.TabIndex = 14;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // chbBuscarTodos
-            // 
-            this.chbBuscarTodos.AutoSize = true;
-            this.chbBuscarTodos.Font = new System.Drawing.Font("Verdana", 11F);
-            this.chbBuscarTodos.Location = new System.Drawing.Point(213, 131);
-            this.chbBuscarTodos.Name = "chbBuscarTodos";
-            this.chbBuscarTodos.Size = new System.Drawing.Size(126, 22);
-            this.chbBuscarTodos.TabIndex = 13;
-            this.chbBuscarTodos.Text = "Buscar Todos";
-            this.chbBuscarTodos.UseVisualStyleBackColor = true;
-            this.chbBuscarTodos.CheckedChanged += new System.EventHandler(this.chbBuscarTodos_CheckedChanged);
-            // 
-            // txtNombreLargo
-            // 
-            this.txtNombreLargo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreLargo.Location = new System.Drawing.Point(174, 93);
-            this.txtNombreLargo.Name = "txtNombreLargo";
-            this.txtNombreLargo.Size = new System.Drawing.Size(233, 31);
-            this.txtNombreLargo.TabIndex = 12;
-            this.txtNombreLargo.TextChanged += new System.EventHandler(this.txtNombreLargo_TextChanged);
-            // 
-            // txtNombreCorto
-            // 
-            this.txtNombreCorto.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCorto.Location = new System.Drawing.Point(174, 45);
-            this.txtNombreCorto.Name = "txtNombreCorto";
-            this.txtNombreCorto.Size = new System.Drawing.Size(233, 31);
-            this.txtNombreCorto.TabIndex = 11;
-            this.txtNombreCorto.TextChanged += new System.EventHandler(this.txtNombreCorto_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label3.Location = new System.Drawing.Point(50, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 18);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Nombre Largo";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label2.Location = new System.Drawing.Point(50, 52);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 18);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Nombre Corto";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label1.Location = new System.Drawing.Point(50, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 18);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Filtros";
+            this.borrado.HeaderText = "borrado";
+            this.borrado.Name = "borrado";
+            this.borrado.ReadOnly = true;
+            this.borrado.Visible = false;
             // 
             // FrmObjetivos
             // 
@@ -266,5 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Objetivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_corto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_largo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
     }
 }

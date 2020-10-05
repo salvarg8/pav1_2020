@@ -29,12 +29,13 @@ namespace TpiBugs.Datos.Dao.Implementacion
             foreach(DataRow row in t.Rows)
             {
                 int id = int.Parse(row["id_objetivo"].ToString());
-                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString());
+                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString(), bool.Parse(row["borrado"].ToString()));
                 objetivos.Add(obj);
             }
             return objetivos;
         }
 
+       
         internal bool Actualizar(Objetivos oObjetivoSeleccionado)
         {
             String strSql = "UPDATE objetivos set nombre_corto = @param1, nombre_largo = @param2 where id_objetivo = @param3";
@@ -59,7 +60,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
             foreach (DataRow row in t.Rows)
             {
                 int id = int.Parse(row["id_objetivo"].ToString());
-                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_Largo"].ToString());
+                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString(), bool.Parse(row["borrado"].ToString()));
                 objetivos.Add(obj);
             }
             int a = objetivos.Count + 1;
@@ -78,7 +79,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
             foreach (DataRow row in data.Rows)
             {
                 int id = int.Parse(row["id_objetivo"].ToString());
-                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString());
+                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString(), bool.Parse(row["borrado"].ToString()));
                 objetivos.Add(obj);
             }
             return objetivos;
@@ -94,11 +95,40 @@ namespace TpiBugs.Datos.Dao.Implementacion
             foreach (DataRow row in data.Rows)
             {
                 int id = int.Parse(row["id_objetivo"].ToString());
-                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString());
+                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString(), bool.Parse(row["borrado"].ToString()));
                 objetivos.Add(obj);
             }
             return objetivos;
         }
 
+        internal IList<Objetivos> getObjConBorrado(string nombreCorto, string nombreLargo)
+        {
+            List<Objetivos> objetivos = new List<Objetivos>();
+            String strSql = "SELECT * FROM dbo.Objetivos where nombre_corto like '%' + @param1 + '%' and nombre_largo like '%' + @param2 + '%'";
+            DataTable data = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new object[] { nombreCorto, nombreLargo });
+            foreach (DataRow row in data.Rows)
+            {
+                int id = int.Parse(row["id_objetivo"].ToString());
+                Boolean borrado = Boolean.Parse(row["borrado"].ToString());
+                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString(), borrado);
+                objetivos.Add(obj);
+            }
+            return objetivos;
+        }
+
+        internal IList<Objetivos> getObjSinBorrado(string nombreCorto, string nombreLargo)
+        {
+            List<Objetivos> objetivos = new List<Objetivos>();
+            String strSql = "SELECT * FROM dbo.Objetivos where nombre_corto like '%' + @param1 + '%' and nombre_largo like '%' + @param2 + '%' and borrado <> 1";
+            DataTable data = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new object[] { nombreCorto, nombreLargo });
+            foreach (DataRow row in data.Rows)
+            {
+                int id = int.Parse(row["id_objetivo"].ToString());
+                bool borrado = bool.Parse(row["borrado"].ToString());
+                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString(), borrado);
+                objetivos.Add(obj);
+            }
+            return objetivos;
+        }
     }
 }

@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -134,6 +135,7 @@
             // 
             this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
             this.panelBarraTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBarraTitulo.Controls.Add(this.label2);
             this.panelBarraTitulo.Controls.Add(this.btnCerrar);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
@@ -154,6 +156,18 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar2_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Bug Tracking System";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmAbmcObjetivos
             // 
             this.ClientSize = new System.Drawing.Size(477, 201);
@@ -166,6 +180,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelBarraTitulo.ResumeLayout(false);
+            this.panelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
 
@@ -184,5 +199,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox txtLargo;
         private System.Windows.Forms.TextBox txtCorto;
+        private System.Windows.Forms.Label label2;
     }
 }

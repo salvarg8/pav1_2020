@@ -34,18 +34,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnObjetivos = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblPerfil = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblPerfil = new System.Windows.Forms.Label();
             this.panelContendor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -114,13 +114,26 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 476);
             this.panelMenu.TabIndex = 7;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(0, 122);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 30);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Categorias";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // btnObjetivos
             // 
             this.btnObjetivos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnObjetivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObjetivos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObjetivos.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnObjetivos.Location = new System.Drawing.Point(0, 100);
+            this.btnObjetivos.Location = new System.Drawing.Point(0, 92);
             this.btnObjetivos.Name = "btnObjetivos";
             this.btnObjetivos.Size = new System.Drawing.Size(198, 30);
             this.btnObjetivos.TabIndex = 7;
@@ -136,15 +149,26 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(198, 100);
+            this.panel4.Size = new System.Drawing.Size(198, 92);
             this.panel4.TabIndex = 6;
+            // 
+            // lblPerfil
+            // 
+            this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Font = new System.Drawing.Font("Verdana", 9.25F);
+            this.lblPerfil.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPerfil.Location = new System.Drawing.Point(74, 48);
+            this.lblPerfil.Name = "lblPerfil";
+            this.lblPerfil.Size = new System.Drawing.Size(40, 16);
+            this.lblPerfil.TabIndex = 2;
+            this.lblPerfil.Text = "Perfil";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.lblUsuario.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUsuario.Location = new System.Drawing.Point(97, 18);
+            this.lblUsuario.Location = new System.Drawing.Point(74, 19);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(66, 18);
             this.lblUsuario.TabIndex = 1;
@@ -153,9 +177,9 @@
             // label3
             // 
             this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.Location = new System.Drawing.Point(-3, 0);
+            this.label3.Location = new System.Drawing.Point(-3, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 100);
+            this.label3.Size = new System.Drawing.Size(86, 81);
             this.label3.TabIndex = 0;
             // 
             // panelBarraTitulo
@@ -174,6 +198,18 @@
             this.panelBarraTitulo.TabIndex = 5;
             this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
             this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Bug Tracking System";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRestaurar
             // 
@@ -223,42 +259,6 @@
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(0, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 30);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Categorias";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Bug Tracking System";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPerfil
-            // 
-            this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Font = new System.Drawing.Font("Verdana", 9.25F);
-            this.lblPerfil.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPerfil.Location = new System.Drawing.Point(97, 57);
-            this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Size = new System.Drawing.Size(40, 16);
-            this.lblPerfil.TabIndex = 2;
-            this.lblPerfil.Text = "Perfil";
             // 
             // FrmPrincipal
             // 

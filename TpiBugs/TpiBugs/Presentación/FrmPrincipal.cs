@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpiBugs.Negocio.Entidades;
 using TpiBugs.Negocio.Servicios;
@@ -25,19 +19,19 @@ namespace TpiBugs.Presentación
             oUsuarioService = new UsuarioService();
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
-            
+
         }
 
-        
+
 
         private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-       
 
-        
+
+
         //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------
         private int tolerance = 12;
         private const int WM_NCHITTEST = 132;
@@ -135,10 +129,10 @@ namespace TpiBugs.Presentación
 
         }
 
-     
 
 
-        
+
+
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
@@ -174,7 +168,7 @@ namespace TpiBugs.Presentación
                         break;
                     }
             }
-        }  
+        }
 
         public enum FormMode
         {
@@ -195,5 +189,5 @@ namespace TpiBugs.Presentación
 
     }
 
-    
+
 }

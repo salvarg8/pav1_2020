@@ -26,35 +26,35 @@ namespace TpiBugs.Presentación
         private void btnBuscar_Click(System.Object sender, System.EventArgs e)
         {
             dgvObjetivos.Rows.Clear();
-
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            
             var filters = new Dictionary<string, object>();
             if (chbBuscarTodos.Checked)
             {
-                IList<Objetivos> lst = servicio.GetObjetivos();
+                IList<Objetivos> lst = servicio.GetObjetivosConBorrado(txtNombreCorto.Text, txtNombreLargo.Text);
 
                 foreach (Objetivos obj in lst)
                 {
-                    dgvObjetivos.Rows.Add(new object[] { obj.ID_objetivos, obj.Nombre_corto, obj.Nombre_largo });
+                    dgvObjetivos.Rows.Add(new object[] { obj.ID_objetivos, obj.Nombre_corto, obj.Nombre_largo, obj.Borrado});
+                    if (obj.Borrado == true)
+                    {
+                        dgvObjetivos.Rows[dgvObjetivos.RowCount-1].DefaultCellStyle.ForeColor = Color.Red;
+                        dgvObjetivos.Rows[dgvObjetivos.RowCount - 1].DefaultCellStyle.SelectionForeColor = Color.Red;
+                    }
+
                 }
             }
-            if (chbBuscarTodos.Checked == false && txtNombreLargo.Text != "")
+            else 
             {
-                IList<Objetivos> lst = servicio.GetObjetivosNomLargo(txtNombreLargo.Text);
+                IList<Objetivos> lst = servicio.GetObjetivosSinBorrado(txtNombreCorto.Text, txtNombreLargo.Text);
+
                 foreach (Objetivos obj in lst)
                 {
-                    dgvObjetivos.Rows.Add(new object[] { obj.ID_objetivos, obj.Nombre_corto, obj.Nombre_largo });
+                    dgvObjetivos.Rows.Add(new object[] { obj.ID_objetivos, obj.Nombre_corto, obj.Nombre_largo, obj.Borrado });
                 }
-
             }
-            if (chbBuscarTodos.Checked == false && txtNombreCorto.Text != "")
-            {
-                IList<Objetivos> lst = servicio.GetObjetivosNomCorto(txtNombreCorto.Text);
-                foreach (Objetivos obj in lst)
-                {
-                    dgvObjetivos.Rows.Add(new object[] { obj.ID_objetivos, obj.Nombre_corto, obj.Nombre_largo });
-                }
 
-            }
         }
 
 
@@ -68,6 +68,9 @@ namespace TpiBugs.Presentación
             frm.Show();
         }
 
+
+        
+
         private void FrmObjetivos_Load(object sender, EventArgs e)
         {
             
@@ -75,45 +78,9 @@ namespace TpiBugs.Presentación
             btnEliminar.Enabled = false;
         }
 
-        private void txtNombreCorto_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNombreCorto.Text != "")
+        
 
-                txtNombreLargo.Enabled = false;
-
-            if (txtNombreCorto.Text == "")
-
-                txtNombreLargo.Enabled = true;
-        }
-
-        private void txtNombreLargo_TextChanged(object sender, EventArgs e)
-        {
-
-            if (txtNombreLargo.Text != "")
-                txtNombreCorto.Enabled = false;
-
-            if (txtNombreLargo.Text == "")
-                txtNombreCorto.Enabled = true;
-
-        }
-
-        private void chbBuscarTodos_CheckedChanged(object sender, EventArgs e)
-        {
-            txtNombreCorto.Clear();
-            txtNombreLargo.Clear();
-            if (chbBuscarTodos.Checked == true)
-            {
-                txtNombreLargo.Enabled = false;
-                txtNombreCorto.Enabled = false;
-            }
-            if (chbBuscarTodos.Checked == false)
-            {
-
-                txtNombreLargo.Enabled = true;
-                txtNombreCorto.Enabled = true;
-            }
-
-        }
+       
 
         private void dgvObjetivos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -136,7 +103,8 @@ namespace TpiBugs.Presentación
             int id = Convert.ToInt32(dgvObjetivos.CurrentRow.Cells["Id_Objetivos"].Value);
             string nombre_corto = Convert.ToString(dgvObjetivos.CurrentRow.Cells["nom_corto"].Value);
             string nombre_largo = Convert.ToString(dgvObjetivos.CurrentRow.Cells["nom_largo"].Value);
-            Objetivos objetivo = new Objetivos(id, nombre_corto, nombre_largo);
+            bool borrado = Convert.ToBoolean(dgvObjetivos.CurrentRow.Cells["borrado"].Value);
+            Objetivos objetivo = new Objetivos(id, nombre_corto, nombre_largo,borrado);
             frmAbmcObjetivos frm = new frmAbmcObjetivos();
             frm.IniciarFormulario(frmAbmcObjetivos.FormMode.actualizar, objetivo);
             frm.ShowDialog();
@@ -164,5 +132,17 @@ namespace TpiBugs.Presentación
             }
             btnBuscar_Click(sender, e);
         }
+
+        private void dgvObjetivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvObjetivos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEditar_Click(sender, e);
+        }
+
+        
     }
 }

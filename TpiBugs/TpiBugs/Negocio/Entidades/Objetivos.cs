@@ -14,15 +14,15 @@ namespace TpiBugs.Negocio.Entidades
         public int ID_objetivos { get; set; }
         public string Nombre_corto { get; set; }
         public string Nombre_largo { get; set; }
-        public int Borrado { get; set; }
+        public bool Borrado { get; set; }
 
-        public Objetivos(int iD_objetivos, string nombre_corto, string nombre_largo)
+        public Objetivos(int iD_objetivos, string nombre_corto, string nombre_largo,bool borrado)
         {
            
             ID_objetivos = iD_objetivos;
             Nombre_corto = nombre_corto;
             Nombre_largo = nombre_largo;
-            
+            Borrado = borrado;
            
             
         }
