@@ -54,7 +54,8 @@ namespace TpiBugs.Presentación
                     dgvObjetivos.Rows.Add(new object[] { obj.ID_objetivos, obj.Nombre_corto, obj.Nombre_largo, obj.Borrado });
                 }
             }
-
+            lblCantEncontrado.Visible = true;
+            lblCantEncontrado.Text = "Objetivos encontrados = " + dgvObjetivos.Rows.Count;
         }
 
 
@@ -104,11 +105,17 @@ namespace TpiBugs.Presentación
             string nombre_corto = Convert.ToString(dgvObjetivos.CurrentRow.Cells["nom_corto"].Value);
             string nombre_largo = Convert.ToString(dgvObjetivos.CurrentRow.Cells["nom_largo"].Value);
             bool borrado = Convert.ToBoolean(dgvObjetivos.CurrentRow.Cells["borrado"].Value);
-            Objetivos objetivo = new Objetivos(id, nombre_corto, nombre_largo,borrado);
-            frmAbmcObjetivos frm = new frmAbmcObjetivos();
-            frm.IniciarFormulario(frmAbmcObjetivos.FormMode.actualizar, objetivo);
-            frm.ShowDialog();
-            btnBuscar_Click(sender, e);
+            if (!borrado)
+            {
+                Objetivos objetivo = new Objetivos(id, nombre_corto, nombre_largo, borrado);
+                frmAbmcObjetivos frm = new frmAbmcObjetivos();
+                frm.IniciarFormulario(frmAbmcObjetivos.FormMode.actualizar, objetivo);
+                frm.ShowDialog();
+                btnBuscar_Click(sender, e);
+            }
+            else
+                MessageBox.Show("No se puede editar el Objetivo Seleccionado", "Error");
+            
         }
 
 
@@ -118,17 +125,23 @@ namespace TpiBugs.Presentación
         {
             if (dgvObjetivos.Rows.Count > 0)
             {
-                if (MessageBox.Show("¿Seguro que desea Eliminar el Objetivo seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                var a = Convert.ToBoolean(dgvObjetivos.CurrentRow.Cells["borrado"].Value); 
+                if (!a)
                 {
-                    int id = Convert.ToInt32(dgvObjetivos.CurrentRow.Cells["Id_Objetivos"].Value);
-                    if (servicio.borrarObjetivo(id))
+                    if (MessageBox.Show("¿Seguro que desea Eliminar el Objetivo seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                     {
-                        dgvObjetivos.Rows.RemoveAt(dgvObjetivos.CurrentRow.Index);
-                        MessageBox.Show("Objetivo Eliminado", "Aviso");
+                        int id = Convert.ToInt32(dgvObjetivos.CurrentRow.Cells["Id_Objetivos"].Value);
+                        if (servicio.borrarObjetivo(id))
+                        {
+                            dgvObjetivos.Rows.RemoveAt(dgvObjetivos.CurrentRow.Index);
+                            MessageBox.Show("Objetivo Eliminado", "Aviso");
+                        }
                     }
+                    else
+                        MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
                 }
                 else
-                    MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
+                    MessageBox.Show("No se puede Eliminar el Objetivo Seleccionado", "Error");
             }
             btnBuscar_Click(sender, e);
         }

@@ -24,10 +24,7 @@ namespace TpiBugs.Presentación
 
 
 
-        private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
 
 
@@ -71,10 +68,7 @@ namespace TpiBugs.Presentación
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
         int lx, ly;
         int sw, sh;
@@ -162,12 +156,33 @@ namespace TpiBugs.Presentación
             {
                 case FormMode.Logear:
                     {
-                        lblUsuario.Text = oUsuarioLogeado.NombreUsuario;
-                        lblPerfil.Text = oUsuarioLogeado.Perfil.Nombre;
-                        lblUsuario.Visible = true;
+                        string a = oUsuarioLogeado.NombreUsuario;
+                        string b = oUsuarioLogeado.Perfil.Nombre;
+                        lblUsuario.Text = a;
+                        lblPerfil.Text = b;
                         break;
                     }
             }
+        }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea Salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                this.Dispose();
+
+            else
+                e.Cancel = true;
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         public enum FormMode

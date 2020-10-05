@@ -90,5 +90,14 @@ namespace TpiBugs
         {
 
         }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea Salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                this.Dispose();
+
+            else
+                e.Cancel = true;
+        }
     }
 }
