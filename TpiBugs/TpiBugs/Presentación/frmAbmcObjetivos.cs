@@ -33,20 +33,63 @@ namespace TpiBugs.Presentación
 
 
 
-        private bool validarCampos()
+        private bool validarCampos2()
         {
-            if (txtCorto.Text == null)
+            if (txtCorto.Text == "")
             {
+                msgError("Por favor Ingrese un Nombre Corto");
+                txtCorto.Focus();
                 return false;
             }
-            if (txtLargo.Text == null)
+            if (txtLargo.Text == "")
             {
+                msgError("Por favor Ingrese un Nombre Largo");
+                txtLargo.Focus();
+                return false;
+            }
+            if (oObjetivoService.existeNombre(txtCorto.Text,"nombre_corto",oObjetivoSelected.ID_objetivos))
+            {
+                msgError("El Nombre Corto Ingresado ya existe");
+                txtCorto.Focus();
+                return false;
+            }
+            if (oObjetivoService.existeNombre(txtLargo.Text, "nombre_largo", oObjetivoSelected.ID_objetivos))
+            {
+                msgError("El Nombre Largo Ingresado ya existe");
+                txtLargo.Focus();
+                return false;
+            }
+            return true;
+        }
+        private bool validarCampos()
+        {
+            if (txtCorto.Text == "")
+            {
+                msgError("Por favor Ingrese un Nombre Corto");
+                txtCorto.Focus();
+                return false;
+            }
+            if (txtLargo.Text == "")
+            {
+                msgError("Por favor Ingrese un Nombre Largo");
+                txtLargo.Focus();
+                return false;
+            }
+            if (oObjetivoService.existeNombre(txtCorto.Text, "nombre_corto", -1))
+            {
+                msgError("El Nombre Corto Ingresado ya existe");
+                txtCorto.Focus();
+                return false;
+            }
+            if (oObjetivoService.existeNombre(txtLargo.Text, "nombre_largo", -1))
+            {
+                msgError("El Nombre Largo Ingresado ya existe");
+                txtLargo.Focus();
                 return false;
             }
             return true;
         }
 
-        
 
         internal void IniciarFormulario(FormMode actualizar, Objetivos objetivo)
         {
@@ -92,7 +135,10 @@ namespace TpiBugs.Presentación
 
         private void btnCerrar2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("¿Seguro que desea Salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
 
         private void panelBarraTitulo2_Paint(object sender, PaintEventArgs e)
@@ -107,7 +153,7 @@ namespace TpiBugs.Presentación
             {
                 case FormMode.nuevo:
                     {
-                        if (txtCorto.Text != null && txtLargo.Text != null)
+                        if (validarCampos())
                         {
                             oObjetivoService.cargaObjetivos(txtCorto.Text, txtLargo.Text);
                             MessageBox.Show("Carga realizada Exitosamente");
@@ -120,7 +166,7 @@ namespace TpiBugs.Presentación
                 case FormMode.actualizar:
                     {
 
-                        if (validarCampos())
+                        if (validarCampos2())
                         {
                             oObjetivoSelected.Nombre_corto = txtCorto.Text;
                             oObjetivoSelected.Nombre_largo = txtLargo.Text;
@@ -139,7 +185,10 @@ namespace TpiBugs.Presentación
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("¿Seguro que desea Salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
         
         private void panelBarraTitulo_MouseMove(object sender, MouseEventArgs e)
@@ -148,16 +197,11 @@ namespace TpiBugs.Presentación
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void frmAbmcObjetivos_FormClosing(object sender, FormClosingEventArgs e)
+        private void msgError(string mensaje)
         {
-            if (MessageBox.Show("¿Seguro que desea Salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
-                this.Dispose();
-            }
-            else
-            {
-                e.Cancel = true;
-            }
+            lblError.Text = "      " + mensaje;
+            lblError.Visible = true;
+
         }
     }
 }

@@ -36,6 +36,12 @@ namespace TpiBugs.Negocio.Servicios
         {
             oObjetivosDao.cargaObjetivo(nombreCorto, nombreLargo);
         }
+
+        internal bool existeNombre(string nombre,string columna,int id)
+        {
+            return oObjetivosDao.getIfExisteNombre(nombre, columna, id);
+        }
+
         internal IList<Objetivos> GetObjetivosNomLargo(string nombreLargo)
         {
             return oObjetivosDao.getPorNombreLargo(nombreLargo);

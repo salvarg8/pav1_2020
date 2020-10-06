@@ -138,5 +138,26 @@ namespace TpiBugs.Datos.Helper
             }
 
         }
+        public object ConsultaSQLScalar(string strSql)
+        {
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                cnn.ConnectionString = string_conexion;
+                cnn.Open();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = strSql;
+                
+                // Establece la instrucción a ejecutar
+                cmd.CommandText = strSql;
+                return cmd.ExecuteScalar();
+            }
+            catch (SqlException ex)
+            {
+                throw (ex);
+            }
+        }
     }
 }

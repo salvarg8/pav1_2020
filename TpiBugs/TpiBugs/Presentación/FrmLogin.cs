@@ -83,7 +83,8 @@ namespace TpiBugs
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("¿Seguro que desea Salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                this.Close();
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -91,13 +92,6 @@ namespace TpiBugs
 
         }
 
-        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("¿Seguro que desea Salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                this.Dispose();
-
-            else
-                e.Cancel = true;
-        }
+        
     }
 }

@@ -46,6 +46,18 @@ namespace TpiBugs.Datos.Dao.Implementacion
             return (DataManager.GetInstance().EjecutarSQL(strSql, parametros) == 1);
         }
 
+        internal bool getIfExisteNombre(string nombre, string columna, int id)
+        {
+            String strSql = "select * from Objetivos where "+columna+" = '"+nombre+"' and id_objetivo <> "+id;
+            if (Convert.ToInt32(DBHelper.getDBHelper().ConsultaSQLScalar(strSql)) == 0)
+            {
+                return false;
+            }
+            else
+                return true;
+        }
+        
+
         public bool delete(int id)
         {
             String strSql = "UPDATE objetivos set borrado = 1 WHERE id_objetivo ="+id;

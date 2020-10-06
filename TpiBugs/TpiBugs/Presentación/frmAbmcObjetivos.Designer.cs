@@ -40,6 +40,7 @@
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -59,6 +60,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.lblError);
             this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnAceptar);
             this.panel5.Controls.Add(this.txtLargo);
@@ -168,6 +170,21 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar2_Click);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
+            this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Location = new System.Drawing.Point(115, 96);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(52, 14);
+            this.lblError.TabIndex = 8;
+            this.lblError.Text = "lblError";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Visible = false;
+            // 
             // frmAbmcObjetivos
             // 
             this.ClientSize = new System.Drawing.Size(477, 201);
@@ -175,7 +192,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAbmcObjetivos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAbmcObjetivos_FormClosing);
             this.Load += new System.EventHandler(this.frmAbmcObjetivos_Load);
             this.panel.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -201,5 +217,6 @@
         private System.Windows.Forms.TextBox txtLargo;
         private System.Windows.Forms.TextBox txtCorto;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblError;
     }
 }
