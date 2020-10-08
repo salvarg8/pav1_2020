@@ -59,11 +59,41 @@
     <Compile Include="Negocio\Servicios\ObjetivosService.cs" />
     <Compile Include="Negocio\Servicios\UsuarioService.cs" />
     <Compile Include="Negocio\Servicios\PerfilService.cs" />
+    <Compile Include="Presentación\FrmAbmcCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmAbmcCategoria.Designer.cs">
+      <DependentUpon>FrmAbmcCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FrmAbmcCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmAbmcCursos.Designer.cs">
+      <DependentUpon>FrmAbmcCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\frmAbmcObjetivos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentación\frmAbmcObjetivos.Designer.cs">
       <DependentUpon>frmAbmcObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FrmAbmcObjetivosCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmAbmcObjetivosCursos.Designer.cs">
+      <DependentUpon>FrmAbmcObjetivosCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FrmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmCategorias.Designer.cs">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FrmCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmCursos.Designer.cs">
+      <DependentUpon>FrmCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentación\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -77,6 +107,12 @@
     <Compile Include="Presentación\FrmObjetivos.Designer.cs">
       <DependentUpon>FrmObjetivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentación\FrmObjetivosCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmObjetivosCursos.Designer.cs">
+      <DependentUpon>FrmObjetivosCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,14 +121,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentación\FrmAbmcCategoria.resx">
+      <DependentUpon>FrmAbmcCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FrmAbmcCursos.resx">
+      <DependentUpon>FrmAbmcCursos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\frmAbmcObjetivos.resx">
       <DependentUpon>frmAbmcObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FrmAbmcObjetivosCursos.resx">
+      <DependentUpon>FrmAbmcObjetivosCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FrmCategorias.resx">
+      <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FrmCursos.resx">
+      <DependentUpon>FrmCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmObjetivos.resx">
       <DependentUpon>FrmObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FrmObjetivosCursos.resx">
+      <DependentUpon>FrmObjetivosCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

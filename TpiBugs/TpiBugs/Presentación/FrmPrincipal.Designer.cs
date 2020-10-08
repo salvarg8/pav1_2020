@@ -34,8 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnObjetivos = new System.Windows.Forms.Button();
+            this.btnObjetivosCursos = new System.Windows.Forms.Button();
+            this.btnCategorias = new System.Windows.Forms.Button();
+            this.btnGestionarCursos = new System.Windows.Forms.Button();
+            this.btnCursos = new System.Windows.Forms.Button();
+            this.btnGestionarMisCursos = new System.Windows.Forms.Button();
+            this.btnAvances = new System.Windows.Forms.Button();
+            this.btnMisCursos = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblPerfil = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -105,8 +111,14 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btnObjetivos);
+            this.panelMenu.Controls.Add(this.btnObjetivosCursos);
+            this.panelMenu.Controls.Add(this.btnCategorias);
+            this.panelMenu.Controls.Add(this.btnGestionarCursos);
+            this.panelMenu.Controls.Add(this.btnCursos);
+            this.panelMenu.Controls.Add(this.btnGestionarMisCursos);
+            this.panelMenu.Controls.Add(this.btnAvances);
+            this.panelMenu.Controls.Add(this.btnMisCursos);
             this.panelMenu.Controls.Add(this.panel4);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 24);
@@ -114,32 +126,122 @@
             this.panelMenu.Size = new System.Drawing.Size(200, 476);
             this.panelMenu.TabIndex = 7;
             // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(0, 122);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 30);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Categorias";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnObjetivos
             // 
             this.btnObjetivos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnObjetivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObjetivos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObjetivos.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnObjetivos.Location = new System.Drawing.Point(0, 92);
+            this.btnObjetivos.Location = new System.Drawing.Point(0, 302);
             this.btnObjetivos.Name = "btnObjetivos";
             this.btnObjetivos.Size = new System.Drawing.Size(198, 30);
-            this.btnObjetivos.TabIndex = 7;
+            this.btnObjetivos.TabIndex = 18;
             this.btnObjetivos.Text = "Objetivos";
             this.btnObjetivos.UseVisualStyleBackColor = true;
             this.btnObjetivos.Click += new System.EventHandler(this.btnObjetivos_Click);
+            // 
+            // btnObjetivosCursos
+            // 
+            this.btnObjetivosCursos.BackColor = System.Drawing.Color.White;
+            this.btnObjetivosCursos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnObjetivosCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnObjetivosCursos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObjetivosCursos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.btnObjetivosCursos.Location = new System.Drawing.Point(0, 272);
+            this.btnObjetivosCursos.Name = "btnObjetivosCursos";
+            this.btnObjetivosCursos.Size = new System.Drawing.Size(198, 30);
+            this.btnObjetivosCursos.TabIndex = 15;
+            this.btnObjetivosCursos.Text = "Objetivos Cursos";
+            this.btnObjetivosCursos.UseVisualStyleBackColor = false;
+            this.btnObjetivosCursos.Visible = false;
+            // 
+            // btnCategorias
+            // 
+            this.btnCategorias.BackColor = System.Drawing.Color.White;
+            this.btnCategorias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.btnCategorias.Location = new System.Drawing.Point(0, 242);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(198, 30);
+            this.btnCategorias.TabIndex = 14;
+            this.btnCategorias.Text = "Categorias";
+            this.btnCategorias.UseVisualStyleBackColor = false;
+            this.btnCategorias.Visible = false;
+            // 
+            // btnGestionarCursos
+            // 
+            this.btnGestionarCursos.BackColor = System.Drawing.Color.White;
+            this.btnGestionarCursos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarCursos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarCursos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.btnGestionarCursos.Location = new System.Drawing.Point(0, 212);
+            this.btnGestionarCursos.Name = "btnGestionarCursos";
+            this.btnGestionarCursos.Size = new System.Drawing.Size(198, 30);
+            this.btnGestionarCursos.TabIndex = 13;
+            this.btnGestionarCursos.Text = "Gestionar Cursos";
+            this.btnGestionarCursos.UseVisualStyleBackColor = false;
+            this.btnGestionarCursos.Visible = false;
+            // 
+            // btnCursos
+            // 
+            this.btnCursos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCursos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCursos.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCursos.Location = new System.Drawing.Point(0, 182);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(198, 30);
+            this.btnCursos.TabIndex = 12;
+            this.btnCursos.Text = "Cursos";
+            this.btnCursos.UseVisualStyleBackColor = true;
+            this.btnCursos.Click += new System.EventHandler(this.btnCursos_Click);
+            // 
+            // btnGestionarMisCursos
+            // 
+            this.btnGestionarMisCursos.BackColor = System.Drawing.Color.White;
+            this.btnGestionarMisCursos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarMisCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarMisCursos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarMisCursos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.btnGestionarMisCursos.Location = new System.Drawing.Point(0, 152);
+            this.btnGestionarMisCursos.Name = "btnGestionarMisCursos";
+            this.btnGestionarMisCursos.Size = new System.Drawing.Size(198, 30);
+            this.btnGestionarMisCursos.TabIndex = 11;
+            this.btnGestionarMisCursos.Text = "Gestionar Mis Cursos";
+            this.btnGestionarMisCursos.UseVisualStyleBackColor = false;
+            this.btnGestionarMisCursos.Visible = false;
+            // 
+            // btnAvances
+            // 
+            this.btnAvances.BackColor = System.Drawing.Color.White;
+            this.btnAvances.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAvances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvances.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvances.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.btnAvances.Location = new System.Drawing.Point(0, 122);
+            this.btnAvances.Name = "btnAvances";
+            this.btnAvances.Size = new System.Drawing.Size(198, 30);
+            this.btnAvances.TabIndex = 10;
+            this.btnAvances.Text = "Avances";
+            this.btnAvances.UseVisualStyleBackColor = false;
+            this.btnAvances.Visible = false;
+            // 
+            // btnMisCursos
+            // 
+            this.btnMisCursos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMisCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMisCursos.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMisCursos.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnMisCursos.Location = new System.Drawing.Point(0, 92);
+            this.btnMisCursos.Name = "btnMisCursos";
+            this.btnMisCursos.Size = new System.Drawing.Size(198, 30);
+            this.btnMisCursos.TabIndex = 9;
+            this.btnMisCursos.Text = "Mis Cursos";
+            this.btnMisCursos.UseVisualStyleBackColor = true;
+            this.btnMisCursos.Click += new System.EventHandler(this.btnMisCursos_Click);
             // 
             // panel4
             // 
@@ -216,7 +318,7 @@
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(857, 3);
+            this.btnRestaurar.Location = new System.Drawing.Point(857, 2);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(16, 16);
             this.btnRestaurar.TabIndex = 3;
@@ -229,7 +331,7 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(835, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(835, 2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(16, 16);
             this.btnMinimizar.TabIndex = 2;
@@ -241,7 +343,7 @@
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(857, 3);
+            this.btnMaximizar.Location = new System.Drawing.Point(857, 2);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(16, 16);
             this.btnMaximizar.TabIndex = 1;
@@ -253,7 +355,7 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(879, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(879, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(16, 16);
             this.btnCerrar.TabIndex = 0;
@@ -295,7 +397,6 @@
         private System.Windows.Forms.Panel panelContendor;
         private System.Windows.Forms.Panel panelFormularios;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button btnObjetivos;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label3;
@@ -306,8 +407,15 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPerfil;
+        private System.Windows.Forms.Button btnObjetivos;
+        private System.Windows.Forms.Button btnObjetivosCursos;
+        private System.Windows.Forms.Button btnCategorias;
+        private System.Windows.Forms.Button btnGestionarCursos;
+        private System.Windows.Forms.Button btnCursos;
+        private System.Windows.Forms.Button btnGestionarMisCursos;
+        private System.Windows.Forms.Button btnAvances;
+        private System.Windows.Forms.Button btnMisCursos;
     }
 }

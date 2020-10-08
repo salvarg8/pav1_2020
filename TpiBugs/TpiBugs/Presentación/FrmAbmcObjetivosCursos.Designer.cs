@@ -1,6 +1,6 @@
 ﻿namespace TpiBugs.Presentación
 {
-    partial class frmAbmcObjetivos
+    partial class FrmAbmcObjetivosCursos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,50 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbmcObjetivos));
-            this.panel = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmcObjetivosCursos));
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCorto = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtLargo = new System.Windows.Forms.TextBox();
-            this.txtCorto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.panel.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel
-            // 
-            this.panel.Controls.Add(this.panel5);
-            this.panel.Controls.Add(this.panelBarraTitulo);
-            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 0);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(477, 201);
-            this.panel.TabIndex = 0;
-            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.txtCorto);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.lblError);
             this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnAceptar);
-            this.panel5.Controls.Add(this.txtLargo);
-            this.panel5.Controls.Add(this.txtCorto);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 24);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(477, 177);
-            this.panel5.TabIndex = 1;
+            this.panel5.Size = new System.Drawing.Size(491, 254);
+            this.panel5.TabIndex = 3;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.textBox2.Location = new System.Drawing.Point(133, 52);
+            this.textBox2.MaxLength = 50;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(302, 26);
+            this.textBox2.TabIndex = 13;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.textBox1.Location = new System.Drawing.Point(133, 90);
+            this.textBox1.MaxLength = 50;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(302, 26);
+            this.textBox1.TabIndex = 12;
+            // 
+            // txtCorto
+            // 
+            this.txtCorto.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.txtCorto.Location = new System.Drawing.Point(133, 128);
+            this.txtCorto.MaxLength = 50;
+            this.txtCorto.Name = "txtCorto";
+            this.txtCorto.Size = new System.Drawing.Size(302, 26);
+            this.txtCorto.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label5.Location = new System.Drawing.Point(11, 132);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 18);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Puntos";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label1.Location = new System.Drawing.Point(11, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 18);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Nombre Corto";
             // 
             // lblError
             // 
@@ -80,7 +121,7 @@
             this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
             this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(115, 96);
+            this.lblError.Location = new System.Drawing.Point(90, 173);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(52, 14);
             this.lblError.TabIndex = 8;
@@ -91,48 +132,28 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.btnCancelar.Location = new System.Drawing.Point(356, 128);
+            this.btnCancelar.Location = new System.Drawing.Point(344, 203);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(91, 31);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.btnAceptar.Location = new System.Drawing.Point(259, 128);
+            this.btnAceptar.Location = new System.Drawing.Point(236, 203);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(91, 31);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar2_Click);
-            // 
-            // txtLargo
-            // 
-            this.txtLargo.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtLargo.Location = new System.Drawing.Point(145, 56);
-            this.txtLargo.MaxLength = 100;
-            this.txtLargo.Name = "txtLargo";
-            this.txtLargo.Size = new System.Drawing.Size(302, 26);
-            this.txtLargo.TabIndex = 3;
-            // 
-            // txtCorto
-            // 
-            this.txtCorto.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtCorto.Location = new System.Drawing.Point(145, 21);
-            this.txtCorto.MaxLength = 50;
-            this.txtCorto.Name = "txtCorto";
-            this.txtCorto.Size = new System.Drawing.Size(302, 26);
-            this.txtCorto.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label4.Location = new System.Drawing.Point(12, 59);
+            this.label4.Location = new System.Drawing.Point(11, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 18);
             this.label4.TabIndex = 1;
@@ -142,11 +163,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label3.Location = new System.Drawing.Point(12, 24);
+            this.label3.Location = new System.Drawing.Point(11, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 18);
+            this.label3.Size = new System.Drawing.Size(64, 18);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Nombre Corto";
+            this.label3.Text = "Curso: ";
             // 
             // panelBarraTitulo
             // 
@@ -157,10 +178,8 @@
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(477, 24);
-            this.panelBarraTitulo.TabIndex = 0;
-            this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo2_Paint);
-            this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(491, 24);
+            this.panelBarraTitulo.TabIndex = 2;
             // 
             // label2
             // 
@@ -178,22 +197,23 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(456, 4);
+            this.btnCerrar.Location = new System.Drawing.Point(470, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(16, 16);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar2_Click);
             // 
-            // frmAbmcObjetivos
+            // FrmAbmcObjetivosCursos
             // 
-            this.ClientSize = new System.Drawing.Size(477, 201);
-            this.Controls.Add(this.panel);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(491, 278);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panelBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAbmcObjetivos";
+            this.Name = "FrmAbmcObjetivosCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.frmAbmcObjetivos_Load);
-            this.panel.ResumeLayout(false);
+            this.Text = "FrmAbmcObjetivosCursos";
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelBarraTitulo.ResumeLayout(false);
@@ -205,18 +225,19 @@
 
         #endregion
 
-        
-        private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Panel panelBarraTitulo;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox txtLargo;
-        private System.Windows.Forms.TextBox txtCorto;
+        private System.Windows.Forms.Panel panelBarraTitulo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCorto;
     }
 }

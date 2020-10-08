@@ -117,16 +117,7 @@ namespace TpiBugs.Presentación
 
         }
 
-        private void btnObjetivos_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FrmObjetivos>();
-
-        }
-
-
-
-
-
+        
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
@@ -183,6 +174,28 @@ namespace TpiBugs.Presentación
         private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnObjetivos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmObjetivos>();
+        }
+
+        
+
+        private void btnMisCursos_Click(object sender, EventArgs e)
+        {
+            btnGestionarMisCursos.Visible = !btnGestionarMisCursos.Visible;
+            btnAvances.Visible = !btnAvances.Visible;
+
+        }
+
+        private void btnCursos_Click(object sender, EventArgs e)
+        {
+            btnObjetivosCursos.Visible = !btnObjetivosCursos.Visible;
+            btnCategorias.Visible = !btnCategorias.Visible;
+            btnGestionarCursos.Visible = !btnGestionarCursos.Visible;
+
         }
 
         public enum FormMode
