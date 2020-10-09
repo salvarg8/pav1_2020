@@ -23,8 +23,6 @@ namespace TpiBugs.Negocio.Entidades
             Nombre_corto = nombre_corto;
             Nombre_largo = nombre_largo;
             Borrado = borrado;
-           
-            
         }
     }   
     

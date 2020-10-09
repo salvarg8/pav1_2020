@@ -93,10 +93,10 @@ namespace TpiBugs.Presentación
 
         internal void IniciarFormulario(FormMode actualizar, Objetivos objetivo)
         {
-            {
-                formMode = actualizar;
-                oObjetivoSelected = objetivo;
-            }
+            
+            formMode = actualizar;
+            oObjetivoSelected = objetivo;
+            
         }
 
         private void frmAbmcObjetivos_Load(object sender, EventArgs e)
@@ -141,6 +141,9 @@ namespace TpiBugs.Presentación
             }
         }
 
+        
+        
+        
         private void panelBarraTitulo2_Paint(object sender, PaintEventArgs e)
         {
             ReleaseCapture();

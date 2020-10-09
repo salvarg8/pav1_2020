@@ -90,18 +90,20 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(220, 235);
+            this.label1.Font = new System.Drawing.Font("Georgia", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(191, 293);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 25);
+            this.label1.Size = new System.Drawing.Size(317, 31);
             this.label1.TabIndex = 7;
             this.label1.Text = "Bug Tracking System";
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(277, 99);
+            this.pictureBox1.Location = new System.Drawing.Point(283, 157);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 133);
             this.pictureBox1.TabIndex = 0;
@@ -169,6 +171,7 @@
             this.btnCategorias.Text = "Categorias";
             this.btnCategorias.UseVisualStyleBackColor = false;
             this.btnCategorias.Visible = false;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // btnGestionarCursos
             // 
@@ -184,6 +187,7 @@
             this.btnGestionarCursos.Text = "Gestionar Cursos";
             this.btnGestionarCursos.UseVisualStyleBackColor = false;
             this.btnGestionarCursos.Visible = false;
+            this.btnGestionarCursos.Click += new System.EventHandler(this.btnGestionarCursos_Click);
             // 
             // btnCursos
             // 
@@ -279,7 +283,7 @@
             // label3
             // 
             this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.Location = new System.Drawing.Point(-3, 2);
+            this.label3.Location = new System.Drawing.Point(-3, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 81);
             this.label3.TabIndex = 0;
@@ -306,7 +310,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Location = new System.Drawing.Point(3, 2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 18);
             this.label2.TabIndex = 2;

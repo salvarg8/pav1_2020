@@ -198,6 +198,16 @@ namespace TpiBugs.Presentación
 
         }
 
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmCategorias>();
+        }
+
+        private void btnGestionarCursos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmCursos>();
+        }
+
         public enum FormMode
         {
             Logear

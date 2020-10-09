@@ -85,6 +85,7 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -95,12 +96,13 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.txtDescripcion.Location = new System.Drawing.Point(145, 56);
-            this.txtDescripcion.MaxLength = 100;
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(302, 26);
             this.txtDescripcion.TabIndex = 3;
@@ -145,6 +147,7 @@
             this.panelBarraTitulo.Name = "panelBarraTitulo";
             this.panelBarraTitulo.Size = new System.Drawing.Size(470, 24);
             this.panelBarraTitulo.TabIndex = 2;
+            this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             // 
             // label2
             // 
@@ -167,6 +170,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(16, 16);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmAbmcCategoria
             // 
@@ -179,6 +183,7 @@
             this.Name = "FrmAbmcCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAbmcCategoria";
+            this.Load += new System.EventHandler(this.FrmAbmcCategoria_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelBarraTitulo.ResumeLayout(false);

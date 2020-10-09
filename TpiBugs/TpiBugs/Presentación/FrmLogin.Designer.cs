@@ -108,7 +108,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(383, 188);
             this.panel5.TabIndex = 7;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // lblError
             // 
@@ -162,7 +161,7 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(364, 5);
+            this.btnCerrar.Location = new System.Drawing.Point(364, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(16, 16);
             this.btnCerrar.TabIndex = 0;

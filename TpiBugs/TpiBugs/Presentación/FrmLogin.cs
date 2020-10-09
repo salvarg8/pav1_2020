@@ -1,15 +1,5 @@
-﻿using TpiBugs;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-using TpiBugs.Negocio.Entidades;
 using TpiBugs.Negocio.Servicios;
 using TpiBugs.Presentación;
 
@@ -26,13 +16,12 @@ namespace TpiBugs
         {
             InitializeComponent();
             usuarioService = new UsuarioService();
-
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if ((txtUsuario.Text == ""))
-            {   
+            {
                 msgError("Por favor ingresar un Usuario");
                 return;
             }
@@ -50,16 +39,12 @@ namespace TpiBugs
                 // Login OK
                 UsuarioLogueado = usr.NombreUsuario;
                 this.Hide();
-                var nombre = usr.NombreUsuario;
-
                 FrmPrincipal frm = new FrmPrincipal();
                 frm.IniciarFormulario(FrmPrincipal.FormMode.Logear, usr);
                 frm.Show();
-                
             }
             else
             {
-                
                 txtContraseña.Text = "";
                 txtContraseña.Focus();
                 msgError("Usuario y/o Contraseña Incorrecto");
@@ -67,19 +52,14 @@ namespace TpiBugs
         }
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            
             this.CenterToParent();
         }
-
-        
 
         private void msgError(string mensaje)
         {
             lblError.Text = "      " + mensaje;
             lblError.Visible = true;
-
         }
-
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -87,11 +67,5 @@ namespace TpiBugs
                 this.Close();
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
     }
 }

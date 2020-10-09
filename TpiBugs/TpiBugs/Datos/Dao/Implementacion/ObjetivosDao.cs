@@ -66,17 +66,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
 
         internal bool cargaObjetivo(string nombreCorto, string nombreLargo)
         {
-            List<Objetivos> objetivos = new List<Objetivos>();
-            string sql = "SELECT * from dbo.Objetivos";
-            DataTable t = DBHelper.getDBHelper().ConsultaSQL(sql);
-            foreach (DataRow row in t.Rows)
-            {
-                int id = int.Parse(row["id_objetivo"].ToString());
-                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString(), bool.Parse(row["borrado"].ToString()));
-                objetivos.Add(obj);
-            }
-            int a = objetivos.Count + 1;
-            String strSql = "INSERT INTO [dbo].[Objetivos]([id_objetivo],[nombre_corto],[nombre_largo],[borrado])VALUES('"+a+"','"+nombreCorto+"','"+nombreLargo+"',0)";
+            String strSql = "INSERT INTO [dbo].[Objetivos]([nombre_corto],[nombre_largo],[borrado])VALUES('"+nombreCorto+"','"+nombreLargo+"',0)";
             return DBHelper.getDBHelper().ejecutarSQL(strSql) > 0;
         }
 
