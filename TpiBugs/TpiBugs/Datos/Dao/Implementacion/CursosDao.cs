@@ -35,6 +35,12 @@ namespace TpiBugs.Datos.Dao.Implementacion
             return cursos;
         }
 
+        internal bool delete(int id)
+        {
+            string strSql = "UPDATE Cursos set borrado = 1 WHERE id_curso =" + id;
+            return DBHelper.getDBHelper().ejecutarSQL(strSql) != 0;
+        }
+
         private Cursos ObjectMapping(DataRow row)
         {
             Cursos oCursos = new Cursos
@@ -46,7 +52,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
                 Categoria = new Categorias()
                 {
                     Id_Categoria = Convert.ToInt32(row["id_categoria"].ToString()),
-                    Nombre = row["nombre"].ToString(),
+                    //Nombre = row["nombre"].ToString(),
                 },
                 Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };

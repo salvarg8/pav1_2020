@@ -105,13 +105,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvObjetivos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvObjetivos.Location = new System.Drawing.Point(12, 85);
+            this.dgvObjetivos.Location = new System.Drawing.Point(11, 85);
             this.dgvObjetivos.MultiSelect = false;
             this.dgvObjetivos.Name = "dgvObjetivos";
             this.dgvObjetivos.ReadOnly = true;
             this.dgvObjetivos.RowHeadersVisible = false;
             this.dgvObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvObjetivos.Size = new System.Drawing.Size(540, 292);
+            this.dgvObjetivos.Size = new System.Drawing.Size(541, 292);
             this.dgvObjetivos.TabIndex = 41;
             // 
             // Id_Objetivos
@@ -163,7 +163,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(174, 383);
+            this.btnEliminar.Location = new System.Drawing.Point(153, 383);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(65, 60);
             this.btnEliminar.TabIndex = 45;
@@ -175,7 +175,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.Transparent;
             this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.Location = new System.Drawing.Point(93, 383);
+            this.btnEditar.Location = new System.Drawing.Point(82, 383);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(65, 60);
             this.btnEditar.TabIndex = 44;
@@ -187,7 +187,7 @@
             this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
             this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 383);
+            this.btnAgregar.Location = new System.Drawing.Point(11, 383);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(65, 60);
             this.btnAgregar.TabIndex = 43;

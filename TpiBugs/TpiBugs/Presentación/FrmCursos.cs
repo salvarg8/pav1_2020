@@ -15,9 +15,11 @@ namespace TpiBugs.Presentación
     public partial class FrmCursos : Form
     {
         private CursosService servicio;
+        private CategoriasService servicioCat;
         public FrmCursos()
         {
             servicio = new CursosService();
+            servicioCat = new CategoriasService();
             InitializeComponent();
         }
 
@@ -34,7 +36,8 @@ namespace TpiBugs.Presentación
 
                 foreach (Cursos obj in lst)
                 {
-                    dgvCursos.Rows.Add(new object[] { obj.Id_curso, obj.Nombre, obj.Descripcion,obj.Vigencia ,obj.Categoria.Nombre, obj.Borrado});
+                    IList<Categorias> lst2 = servicioCat.getCategoriaId(obj.Categoria.Id_Categoria);
+                    dgvCursos.Rows.Add(new object[] { obj.Id_curso, obj.Nombre, obj.Descripcion,obj.Vigencia ,lst2[0].Nombre, obj.Borrado});
                     if (obj.Borrado == true)
                     {
                         dgvCursos.Rows[dgvCursos.RowCount - 1].DefaultCellStyle.ForeColor = Color.Red;
@@ -49,11 +52,70 @@ namespace TpiBugs.Presentación
 
                 foreach (Cursos obj in lst)
                 {
-                    dgvCursos.Rows.Add(new object[] { obj.Id_curso, obj.Nombre, obj.Descripcion,obj.Vigencia ,obj.Categoria.Nombre, obj.Borrado });
+                    IList<Categorias> lst2 = servicioCat.getCategoriaId(obj.Categoria.Id_Categoria);
+                    dgvCursos.Rows.Add(new object[] { obj.Id_curso, obj.Nombre, obj.Descripcion, obj.Vigencia, lst2[0].Nombre, obj.Borrado });
                 }
             }
             lblCantEncontrado.Visible = true;
             lblCantEncontrado.Text = "Cursos encontrados = " + dgvCursos.Rows.Count;
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FrmAbmcCursos frm = new FrmAbmcCursos();
+            frm.ShowDialog();
+            btnBuscar_Click(sender, e);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            string nombre = Convert.ToString(dgvCursos.CurrentRow.Cells["nombre"].Value);
+            bool borrado = Convert.ToBoolean(dgvCursos.CurrentRow.Cells["borrado"].Value);
+          
+            if (!borrado)
+            {
+                IList<Cursos> lst = servicio.GetCursoSinBorrado(nombre);
+                Cursos curso = new Cursos(lst[0].Id_curso, lst[0].Nombre, lst[0].Descripcion, lst[0].Vigencia, lst[0].Categoria, lst[0].Borrado);
+                FrmAbmcCursos frm = new FrmAbmcCursos();
+                frm.IniciarFormulario(FrmAbmcCursos.FormMode.actualizar, curso);
+                frm.ShowDialog();
+                btnBuscar_Click(sender, e);
+            }
+            else
+                MessageBox.Show("No se puede editar el Curso Seleccionado", "Error");
+
+
+        }
+
+        private void dgvCursos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvCursos.Rows.Count > 0)
+            {
+                var a = Convert.ToBoolean(dgvCursos.CurrentRow.Cells["borrado"].Value);
+                if (!a)
+                {
+                    if (MessageBox.Show("¿Seguro que desea Eliminar el Curso seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        int id = Convert.ToInt32(dgvCursos.CurrentRow.Cells["id_cursos"].Value);
+                        if (servicio.borrarCurso(id))
+                        {
+                            dgvCursos.Rows.RemoveAt(dgvCursos.CurrentRow.Index);
+                            MessageBox.Show("Curso Eliminada", "Aviso");
+                        }
+                    }
+                    else
+                        MessageBox.Show("Ha ocurrido un error al intentar borrar el Curso", "Error");
+                }
+                else
+                    MessageBox.Show("No se puede Eliminar el Curso Seleccionado", "Error");
+            }
+            btnBuscar_Click(sender, e);
         }
     }
 }

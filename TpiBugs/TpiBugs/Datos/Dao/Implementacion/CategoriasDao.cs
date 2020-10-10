@@ -28,12 +28,27 @@ namespace TpiBugs.Datos.Dao.Implementacion
 
         internal bool Actualizar(Categorias oCategoriaSelected)
         {
-            String strSql = "UPDATE Categorias set nombre = @param1, descripcion = @param2 where id_objetivo = @param3";
+            String strSql = "UPDATE Categorias set nombre = @param1, descripcion = @param2 where id_categoria = @param3";
             var parametros = new Dictionary<string, object>();
             parametros.Add("param1", oCategoriaSelected.Nombre);
             parametros.Add("param2", oCategoriaSelected.Descripcion);
             parametros.Add("param3", oCategoriaSelected.Id_Categoria);
             return (DataManager.GetInstance().EjecutarSQL(strSql, parametros) == 1);
+        }
+
+        internal IList<Categorias> getCategoriaID(int id_Categoria)
+        {
+            List<Categorias> categorias = new List<Categorias>();
+            string strSql = "Select * from Categorias where id_categoria = @param1";
+            DataTable data = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new object[] { id_Categoria });
+            foreach (DataRow row in data.Rows)
+            {
+                int id = int.Parse(row["id_categoria"].ToString());
+                Boolean borrado = Boolean.Parse(row["borrado"].ToString());
+                Categorias obj = new Categorias(id, row["nombre"].ToString(), row["descripcion"].ToString(), borrado);
+                categorias.Add(obj);
+            }
+            return categorias;
         }
 
         internal bool delete(int id)

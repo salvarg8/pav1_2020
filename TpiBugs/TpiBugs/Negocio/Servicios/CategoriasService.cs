@@ -42,6 +42,11 @@ namespace TpiBugs.Negocio.Servicios
             oCategoriasDao.cargaCategoria(nombre, descripcion);
         }
 
+        internal IList<Categorias> getCategoriaId(int id_Categoria)
+        {
+            return oCategoriasDao.getCategoriaID(id_Categoria);
+        }
+
         internal bool borrarCategoria(int id)
         {
             return oCategoriasDao.delete(id);

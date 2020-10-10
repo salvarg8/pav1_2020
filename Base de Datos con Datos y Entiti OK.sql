@@ -1,4 +1,4 @@
-USE [BD_Pav]
+USE [BD_extendida]
 GO
 			  
 CREATE TABLE [dbo].[Barrios](

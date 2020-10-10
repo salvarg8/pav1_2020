@@ -56,7 +56,7 @@
             this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
             this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 403);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 423);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(65, 60);
             this.btnAgregar.TabIndex = 1;
@@ -69,7 +69,7 @@
             this.btnEditar.BackColor = System.Drawing.Color.Transparent;
             this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.Location = new System.Drawing.Point(93, 403);
+            this.btnEditar.Location = new System.Drawing.Point(83, 423);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(65, 60);
             this.btnEditar.TabIndex = 2;
@@ -82,7 +82,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(174, 403);
+            this.btnEliminar.Location = new System.Drawing.Point(154, 423);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(65, 60);
             this.btnEliminar.TabIndex = 3;
@@ -121,13 +121,13 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvObjetivos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvObjetivos.Location = new System.Drawing.Point(12, 159);
+            this.dgvObjetivos.Location = new System.Drawing.Point(12, 133);
             this.dgvObjetivos.MultiSelect = false;
             this.dgvObjetivos.Name = "dgvObjetivos";
             this.dgvObjetivos.ReadOnly = true;
             this.dgvObjetivos.RowHeadersVisible = false;
             this.dgvObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvObjetivos.Size = new System.Drawing.Size(520, 220);
+            this.dgvObjetivos.Size = new System.Drawing.Size(553, 284);
             this.dgvObjetivos.TabIndex = 15;
             this.dgvObjetivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellClick);
             this.dgvObjetivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellContentClick);
@@ -168,7 +168,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(467, 93);
+            this.btnBuscar.Location = new System.Drawing.Point(500, 67);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(65, 60);
             this.btnBuscar.TabIndex = 14;
@@ -179,7 +179,7 @@
             // 
             this.chbBuscarTodos.AutoSize = true;
             this.chbBuscarTodos.Font = new System.Drawing.Font("Verdana", 11F);
-            this.chbBuscarTodos.Location = new System.Drawing.Point(180, 131);
+            this.chbBuscarTodos.Location = new System.Drawing.Point(196, 104);
             this.chbBuscarTodos.Name = "chbBuscarTodos";
             this.chbBuscarTodos.Size = new System.Drawing.Size(185, 22);
             this.chbBuscarTodos.TabIndex = 13;
@@ -189,7 +189,7 @@
             // txtNombreLargo
             // 
             this.txtNombreLargo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreLargo.Location = new System.Drawing.Point(156, 93);
+            this.txtNombreLargo.Location = new System.Drawing.Point(172, 67);
             this.txtNombreLargo.Name = "txtNombreLargo";
             this.txtNombreLargo.Size = new System.Drawing.Size(233, 31);
             this.txtNombreLargo.TabIndex = 12;
@@ -197,7 +197,7 @@
             // txtNombreCorto
             // 
             this.txtNombreCorto.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCorto.Location = new System.Drawing.Point(156, 45);
+            this.txtNombreCorto.Location = new System.Drawing.Point(172, 30);
             this.txtNombreCorto.Name = "txtNombreCorto";
             this.txtNombreCorto.Size = new System.Drawing.Size(233, 31);
             this.txtNombreCorto.TabIndex = 11;
@@ -206,7 +206,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label3.Location = new System.Drawing.Point(35, 100);
+            this.label3.Location = new System.Drawing.Point(51, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 18);
             this.label3.TabIndex = 10;
@@ -216,7 +216,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label2.Location = new System.Drawing.Point(34, 52);
+            this.label2.Location = new System.Drawing.Point(50, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 18);
             this.label2.TabIndex = 9;
@@ -234,13 +234,14 @@
             // 
             // lblCantEncontrado
             // 
+            this.lblCantEncontrado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCantEncontrado.AutoSize = true;
             this.lblCantEncontrado.Font = new System.Drawing.Font("Verdana", 11F);
-            this.lblCantEncontrado.Location = new System.Drawing.Point(12, 382);
+            this.lblCantEncontrado.Location = new System.Drawing.Point(341, 423);
             this.lblCantEncontrado.Name = "lblCantEncontrado";
-            this.lblCantEncontrado.Size = new System.Drawing.Size(91, 18);
+            this.lblCantEncontrado.Size = new System.Drawing.Size(224, 18);
             this.lblCantEncontrado.TabIndex = 16;
-            this.lblCantEncontrado.Text = "Objetivos: ";
+            this.lblCantEncontrado.Text = "Objetivos encontrados:  100";
             this.lblCantEncontrado.Visible = false;
             // 
             // FrmObjetivos
@@ -248,7 +249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(544, 475);
+            this.ClientSize = new System.Drawing.Size(577, 495);
             this.Controls.Add(this.lblCantEncontrado);
             this.Controls.Add(this.dgvObjetivos);
             this.Controls.Add(this.btnBuscar);

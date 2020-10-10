@@ -25,5 +25,10 @@ namespace TpiBugs.Negocio.Servicios
         {
             return oCursosDao.getCursoSinBorrado(nombre);
         }
+
+        internal bool borrarCurso(int id)
+        {
+            return oCursosDao.delete(id);
+        }
     }
 }

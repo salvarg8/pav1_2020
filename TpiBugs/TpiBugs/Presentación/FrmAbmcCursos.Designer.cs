@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmcCursos));
             this.panel5 = new System.Windows.Forms.Panel();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.dtpVigencia = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtLargo = new System.Windows.Forms.TextBox();
-            this.txtCorto = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel5.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -52,15 +52,15 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.comboBox1);
-            this.panel5.Controls.Add(this.dateTimePicker1);
+            this.panel5.Controls.Add(this.cmbCategoria);
+            this.panel5.Controls.Add(this.dtpVigencia);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.lblError);
             this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnAceptar);
-            this.panel5.Controls.Add(this.txtLargo);
-            this.panel5.Controls.Add(this.txtCorto);
+            this.panel5.Controls.Add(this.txtDescripcion);
+            this.panel5.Controls.Add(this.txtNombre);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -68,6 +68,44 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(490, 255);
             this.panel5.TabIndex = 3;
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(145, 131);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(302, 26);
+            this.cmbCategoria.TabIndex = 12;
+            // 
+            // dtpVigencia
+            // 
+            this.dtpVigencia.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.dtpVigencia.Location = new System.Drawing.Point(145, 94);
+            this.dtpVigencia.Name = "dtpVigencia";
+            this.dtpVigencia.Size = new System.Drawing.Size(302, 26);
+            this.dtpVigencia.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label5.Location = new System.Drawing.Point(11, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 18);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Categoria";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label1.Location = new System.Drawing.Point(12, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 18);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Fecha Vigencia";
             // 
             // lblError
             // 
@@ -93,6 +131,7 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -104,23 +143,23 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // txtLargo
+            // txtDescripcion
             // 
-            this.txtLargo.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtLargo.Location = new System.Drawing.Point(145, 57);
-            this.txtLargo.MaxLength = 100;
-            this.txtLargo.Name = "txtLargo";
-            this.txtLargo.Size = new System.Drawing.Size(302, 26);
-            this.txtLargo.TabIndex = 3;
+            this.txtDescripcion.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.txtDescripcion.Location = new System.Drawing.Point(145, 57);
+            this.txtDescripcion.MaxLength = 100;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(302, 26);
+            this.txtDescripcion.TabIndex = 3;
             // 
-            // txtCorto
+            // txtNombre
             // 
-            this.txtCorto.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtCorto.Location = new System.Drawing.Point(145, 20);
-            this.txtCorto.MaxLength = 50;
-            this.txtCorto.Name = "txtCorto";
-            this.txtCorto.Size = new System.Drawing.Size(302, 26);
-            this.txtCorto.TabIndex = 2;
+            this.txtNombre.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.txtNombre.Location = new System.Drawing.Point(145, 20);
+            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(302, 26);
+            this.txtNombre.TabIndex = 2;
             // 
             // label4
             // 
@@ -153,6 +192,7 @@
             this.panelBarraTitulo.Name = "panelBarraTitulo";
             this.panelBarraTitulo.Size = new System.Drawing.Size(490, 24);
             this.panelBarraTitulo.TabIndex = 2;
+            this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             // 
             // label2
             // 
@@ -175,44 +215,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(16, 16);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label1.Location = new System.Drawing.Point(12, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 18);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Fecha Vigencia";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label5.Location = new System.Drawing.Point(11, 135);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 18);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Categoria";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(145, 94);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(302, 26);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(145, 131);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(302, 26);
-            this.comboBox1.TabIndex = 12;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmAbmcCursos
             // 
@@ -224,6 +227,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAbmcCursos";
             this.Text = "FrmAbmcCursos";
+            this.Load += new System.EventHandler(this.FrmAbmcCursos_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelBarraTitulo.ResumeLayout(false);
@@ -239,15 +243,15 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox txtLargo;
-        private System.Windows.Forms.TextBox txtCorto;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panelBarraTitulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cmbCategoria;
+        private System.Windows.Forms.DateTimePicker dtpVigencia;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
     }
