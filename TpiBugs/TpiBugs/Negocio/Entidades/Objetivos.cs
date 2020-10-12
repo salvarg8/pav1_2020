@@ -24,6 +24,10 @@ namespace TpiBugs.Negocio.Entidades
             Nombre_largo = nombre_largo;
             Borrado = borrado;
         }
+
+        public Objetivos()
+        {
+        }
     }   
     
 }

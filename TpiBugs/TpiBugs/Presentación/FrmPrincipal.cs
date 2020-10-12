@@ -208,6 +208,11 @@ namespace TpiBugs.Presentación
             AbrirFormulario<FrmCursos>();
         }
 
+        private void btnObjetivosCursos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmObjetivosCursos>();
+        }
+
         public enum FormMode
         {
             Logear

@@ -56,7 +56,21 @@ namespace TpiBugs.Datos.Dao.Implementacion
             else
                 return true;
         }
-        
+
+        internal IList<Objetivos> GetObjetivosByid(int id_objetivos)
+        {
+            List<Objetivos> objetivos = new List<Objetivos>();
+
+            String strSql = "SELECT * FROM dbo.Objetivos where id_objetivo =  @param1  and borrado <> 1";
+            DataTable data = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new object[] { id_objetivos });
+            foreach (DataRow row in data.Rows)
+            {
+                int id = int.Parse(row["id_objetivo"].ToString());
+                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString(), bool.Parse(row["borrado"].ToString()));
+                objetivos.Add(obj);
+            }
+            return objetivos;
+        }
 
         public bool delete(int id)
         {

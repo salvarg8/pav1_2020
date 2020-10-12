@@ -30,16 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmcObjetivosCursos));
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtCorto = new System.Windows.Forms.TextBox();
+            this.txtPuntos = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblCurso = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
@@ -51,54 +49,43 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.textBox2);
-            this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.txtCorto);
+            this.panel5.Controls.Add(this.txtPuntos);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.lblError);
             this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnAceptar);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.lblCurso);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 24);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(491, 254);
+            this.panel5.Size = new System.Drawing.Size(468, 217);
             this.panel5.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.textBox2.Location = new System.Drawing.Point(133, 52);
-            this.textBox2.MaxLength = 50;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(302, 26);
-            this.textBox2.TabIndex = 13;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.textBox1.Location = new System.Drawing.Point(133, 90);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(302, 26);
-            this.textBox1.TabIndex = 12;
             // 
             // txtCorto
             // 
             this.txtCorto.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtCorto.Location = new System.Drawing.Point(133, 128);
+            this.txtCorto.Location = new System.Drawing.Point(133, 52);
             this.txtCorto.MaxLength = 50;
             this.txtCorto.Name = "txtCorto";
             this.txtCorto.Size = new System.Drawing.Size(302, 26);
-            this.txtCorto.TabIndex = 11;
+            this.txtCorto.TabIndex = 13;
+            // 
+            // txtPuntos
+            // 
+            this.txtPuntos.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.txtPuntos.Location = new System.Drawing.Point(133, 84);
+            this.txtPuntos.MaxLength = 50;
+            this.txtPuntos.Name = "txtPuntos";
+            this.txtPuntos.Size = new System.Drawing.Size(302, 26);
+            this.txtPuntos.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label5.Location = new System.Drawing.Point(11, 132);
+            this.label5.Location = new System.Drawing.Point(11, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 18);
             this.label5.TabIndex = 10;
@@ -121,7 +108,7 @@
             this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
             this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(90, 173);
+            this.lblError.Location = new System.Drawing.Point(90, 129);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(52, 14);
             this.lblError.TabIndex = 8;
@@ -132,42 +119,33 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.btnCancelar.Location = new System.Drawing.Point(344, 203);
+            this.btnCancelar.Location = new System.Drawing.Point(344, 159);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(91, 31);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.btnAceptar.Location = new System.Drawing.Point(236, 203);
+            this.btnAceptar.Location = new System.Drawing.Point(236, 159);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(91, 31);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // lblCurso
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label4.Location = new System.Drawing.Point(11, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 18);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Nombre Largo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label3.Location = new System.Drawing.Point(11, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Curso: ";
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.lblCurso.Location = new System.Drawing.Point(11, 14);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(64, 18);
+            this.lblCurso.TabIndex = 0;
+            this.lblCurso.Text = "Curso: ";
             // 
             // panelBarraTitulo
             // 
@@ -178,7 +156,7 @@
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(491, 24);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(468, 24);
             this.panelBarraTitulo.TabIndex = 2;
             // 
             // label2
@@ -197,23 +175,25 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(470, 4);
+            this.btnCerrar.Location = new System.Drawing.Point(447, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(16, 16);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FrmAbmcObjetivosCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 278);
+            this.ClientSize = new System.Drawing.Size(468, 241);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAbmcObjetivosCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAbmcObjetivosCursos";
+            this.Load += new System.EventHandler(this.FrmAbmcObjetivosCursos_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panelBarraTitulo.ResumeLayout(false);
@@ -232,12 +212,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtCorto;
+        private System.Windows.Forms.TextBox txtPuntos;
     }
 }

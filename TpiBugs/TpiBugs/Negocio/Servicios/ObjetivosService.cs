@@ -52,6 +52,11 @@ namespace TpiBugs.Negocio.Servicios
             return oObjetivosDao.Actualizar(oObjetivoSeleccionado); 
         }
 
+        internal IList<Objetivos> GetObjetivosById(int id_objetivos)
+        {
+            return oObjetivosDao.GetObjetivosByid(id_objetivos);
+        }
+
         internal bool borrarObjetivo(int id)
         {
             return oObjetivosDao.delete(id);

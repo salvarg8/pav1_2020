@@ -101,6 +101,7 @@ namespace TpiBugs.Presentación
 
         private void frmAbmcObjetivos_Load(object sender, EventArgs e)
         {
+            
             switch (formMode)
             {
                 case FormMode.nuevo:

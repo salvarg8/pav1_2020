@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmObjetivosCursos));
             this.lblCantEncontrado = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCursos = new System.Windows.Forms.ComboBox();
             this.dgvObjetivos = new System.Windows.Forms.DataGridView();
             this.Id_Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,8 +44,6 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,16 +58,17 @@
             this.lblCantEncontrado.Text = "Objetivos: ";
             this.lblCantEncontrado.Visible = false;
             // 
-            // comboBox1
+            // cmbCursos
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.Font = new System.Drawing.Font("Verdana", 14.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(227, 31);
-            this.comboBox1.TabIndex = 37;
+            this.cmbCursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCursos.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbCursos.Font = new System.Drawing.Font("Verdana", 14.25F);
+            this.cmbCursos.FormattingEnabled = true;
+            this.cmbCursos.Location = new System.Drawing.Point(12, 30);
+            this.cmbCursos.Name = "cmbCursos";
+            this.cmbCursos.Size = new System.Drawing.Size(227, 31);
+            this.cmbCursos.TabIndex = 37;
+            this.cmbCursos.SelectionChangeCommitted += new System.EventHandler(this.cmbCursos_SelectionChangeCommitted);
             // 
             // dgvObjetivos
             // 
@@ -163,9 +162,10 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Location = new System.Drawing.Point(153, 383);
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(143, 383);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(65, 60);
+            this.btnEliminar.Size = new System.Drawing.Size(60, 60);
             this.btnEliminar.TabIndex = 45;
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
@@ -175,9 +175,10 @@
             this.btnEditar.BackColor = System.Drawing.Color.Transparent;
             this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.Location = new System.Drawing.Point(82, 383);
+            this.btnEditar.Enabled = false;
+            this.btnEditar.Location = new System.Drawing.Point(77, 383);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(65, 60);
+            this.btnEditar.Size = new System.Drawing.Size(60, 60);
             this.btnEditar.TabIndex = 44;
             this.btnEditar.UseVisualStyleBackColor = false;
             // 
@@ -187,9 +188,10 @@
             this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
             this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregar.Enabled = false;
             this.btnAgregar.Location = new System.Drawing.Point(11, 383);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(65, 60);
+            this.btnAgregar.Size = new System.Drawing.Size(60, 60);
             this.btnAgregar.TabIndex = 43;
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
@@ -204,46 +206,21 @@
             this.label1.Text = "Curso: ";
             this.label1.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(487, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 60);
-            this.button1.TabIndex = 47;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(416, 383);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 60);
-            this.button2.TabIndex = 48;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // FrmObjetivosCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 455);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblCantEncontrado);
             this.Controls.Add(this.dgvObjetivos);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbCursos);
             this.Name = "FrmObjetivosCursos";
             this.Text = "FrmObjetivosCursos";
+            this.Load += new System.EventHandler(this.FrmObjetivosCursos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -253,7 +230,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblCantEncontrado;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCursos;
         internal System.Windows.Forms.DataGridView dgvObjetivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Objetivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_curso;
@@ -265,7 +242,5 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

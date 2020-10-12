@@ -156,6 +156,7 @@
             this.btnObjetivosCursos.Text = "Objetivos Cursos";
             this.btnObjetivosCursos.UseVisualStyleBackColor = false;
             this.btnObjetivosCursos.Visible = false;
+            this.btnObjetivosCursos.Click += new System.EventHandler(this.btnObjetivosCursos_Click);
             // 
             // btnCategorias
             // 

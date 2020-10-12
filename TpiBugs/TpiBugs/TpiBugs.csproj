@@ -49,6 +49,7 @@
     <Compile Include="Datos\Dao\Implementacion\CategoriasDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\CursosDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\DataManager.cs" />
+    <Compile Include="Datos\Dao\Implementacion\ObjetivosCursosDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\ObjetivosDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\UsuarioDao.cs" />
     <Compile Include="Datos\Dao\Implementacion\PerfillDaoSqlImp.cs" />
@@ -56,12 +57,14 @@
     <Compile Include="Datos\Helper\DBHelper.cs" />
     <Compile Include="Negocio\Entidades\Categorias.cs" />
     <Compile Include="Negocio\Entidades\Cursos.cs" />
+    <Compile Include="Negocio\Entidades\ObjetivosCursos.cs" />
     <Compile Include="Negocio\Entidades\Usuario.cs" />
     <Compile Include="Negocio\Entidades\Objetivos.cs" />
     <Compile Include="Negocio\Entidades\OpcionMenu.cs" />
     <Compile Include="Negocio\Entidades\Perfil.cs" />
     <Compile Include="Negocio\Servicios\CategoriasService.cs" />
     <Compile Include="Negocio\Servicios\CursosService.cs" />
+    <Compile Include="Negocio\Servicios\ObjetivosCursosService.cs" />
     <Compile Include="Negocio\Servicios\ObjetivosService.cs" />
     <Compile Include="Negocio\Servicios\UsuarioService.cs" />
     <Compile Include="Negocio\Servicios\PerfilService.cs" />
@@ -100,6 +103,12 @@
     </Compile>
     <Compile Include="Presentación\FrmCursos.Designer.cs">
       <DependentUpon>FrmCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FrmListaObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmListaObjetivos.Designer.cs">
+      <DependentUpon>FrmListaObjetivos.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentación\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -144,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmCursos.resx">
       <DependentUpon>FrmCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FrmListaObjetivos.resx">
+      <DependentUpon>FrmListaObjetivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
