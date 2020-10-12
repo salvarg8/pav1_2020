@@ -42,18 +42,33 @@ namespace TpiBugs.Presentación
 
         private void cmbCursos_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            btnAgregar.Enabled = true;
             dgvObjetivos.Rows.Clear();
-            IList<ObjetivosCursos> lst = oObjetivosCursosService.GetObjetivosPorCurso(cmbCursos.SelectedIndex);
+            IList<ObjetivosCursos> lst = oObjetivosCursosService.GetObjetivosPorCurso(cmbCursos.SelectedIndex+1);
             int sumavalores = 0;
             foreach (ObjetivosCursos obj in lst)
             {
                 IList<Objetivos> lst2 = oObjetivosService.GetObjetivosById(obj.Objetivo.ID_objetivos);
-                dgvObjetivos.Rows.Add(new object[] {obj.Objetivo.ID_objetivos, obj.Curso.Id_curso,lst2[0].Nombre_corto, lst2[0].Nombre_largo, obj.Puntos,obj.Borrado });
+                
+                dgvObjetivos.Rows.Add(new object[] { obj.Objetivo.ID_objetivos, obj.Curso.Id_curso,lst2[0].Nombre_corto,lst2[0].Nombre_largo, obj.Puntos, obj.Borrado });
+                //dgvObjetivos.Rows.Add(new object[] { obj.Objetivo.ID_objetivos, obj.Curso.Id_curso, lst2[0].Nombre_corto, lst2[0].Nombre_largo, obj.Puntos, obj.Borrado });
+
+                
                 sumavalores = sumavalores + obj.Puntos;
             }
             if (sumavalores == 100)
-                btnAgregar.Enabled = false;
+            { }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            FrmAbmcObjetivosCursos frm = new FrmAbmcObjetivosCursos();
+            frm.IniciarFormulario(FrmAbmcObjetivosCursos.FormMode.actualizar, (Cursos)cmbCursos.SelectedItem);
+            frm.ShowDialog();
         }
     }
 }

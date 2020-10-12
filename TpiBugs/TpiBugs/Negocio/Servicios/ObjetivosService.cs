@@ -61,5 +61,10 @@ namespace TpiBugs.Negocio.Servicios
         {
             return oObjetivosDao.delete(id);
         }
+
+        internal IList<Objetivos> GetObjetivosDisponibles(int id_curso)
+        {
+            return oObjetivosDao.GetObjetivosDisponibles(id_curso);
+        }
     }
 }

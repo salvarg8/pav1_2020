@@ -18,7 +18,9 @@ namespace TpiBugs.Presentación
 
         private readonly ObjetivosService oObjetivoService;
         private readonly ObjetivosCursosService oObjetivoCursoService;
+        private readonly CursosService oCursosService;
         private Objetivos oObjetivoSelected;
+        private Cursos oCursoSelected;
         private ObjetivosCursos oObjetivoCursoSelected;
 
 
@@ -28,6 +30,7 @@ namespace TpiBugs.Presentación
             InitializeComponent();
             oObjetivoCursoService = new ObjetivosCursosService();
             oObjetivoService = new ObjetivosService();
+            oCursosService = new CursosService();
         }
 
         public enum FormMode
@@ -36,17 +39,17 @@ namespace TpiBugs.Presentación
             actualizar,
             eliminar
         }
-        internal void IniciarFormulario(FormMode actualizar, ObjetivosCursos objetivoCurso)
+        internal void IniciarFormulario(FormMode actualizar, Cursos Curso)
         {
 
             formMode = actualizar;
-            oObjetivoCursoSelected = objetivoCurso;
+            oCursoSelected = Curso;
 
         }
 
         private void FrmAbmcObjetivosCursos_Load(object sender, EventArgs e)
         {
-            lblCurso.Text = "Curso: " + oObjetivoCursoSelected.Curso.Nombre;
+            lblNombreCurso.Text = "Curso: " + oCursoSelected.Nombre;
             switch (formMode)
             {
                 case FormMode.nuevo:
@@ -58,7 +61,6 @@ namespace TpiBugs.Presentación
                     {
                         this.Text = "Actualizar Usuario";
                         MostrarDatos();
-                        txtPuntos.Enabled = true;
                         break;
                     }
             }
@@ -66,13 +68,30 @@ namespace TpiBugs.Presentación
 
         private void MostrarDatos()
         {
-         
-            if (oObjetivoCursoSelected != null)
+            LlenardgvObjetivosCurso();
+            LlenarDgvObjetivosDisponibles();
+        }
+
+
+        private void LlenardgvObjetivosCurso()
+        {
+            dgvObjetivosCurso.Rows.Clear();
+            IList<ObjetivosCursos> lst = oObjetivoCursoService.GetObjetivosPorCurso(oCursoSelected.Id_curso);
+            foreach (ObjetivosCursos obj in lst)
             {
-                txtCorto.Text = oObjetivoCursoSelected.Objetivo.Nombre_corto;
-                txtPuntos.Text = oObjetivoCursoSelected.Puntos.ToString();
+                IList<Objetivos> lst2 = oObjetivoService.GetObjetivosById(obj.Objetivo.ID_objetivos);
+                dgvObjetivosCurso.Rows.Add(new object[] { lst2[0].ID_objetivos, lst2[0].Nombre_corto, lst2[0].Nombre_largo, lst2[0].Borrado });
             }
-            
+        }
+
+        private void LlenarDgvObjetivosDisponibles()
+        {
+            dgvObjetivosDisponibles.Rows.Clear();
+            IList<Objetivos> lst = oObjetivoService.GetObjetivosDisponibles(oCursoSelected.Id_curso);
+            foreach (Objetivos obj in lst)
+            {
+                dgvObjetivosDisponibles.Rows.Add(new object[] { obj.ID_objetivos, obj.Nombre_corto, obj.Nombre_largo, obj.Borrado });
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -91,6 +110,37 @@ namespace TpiBugs.Presentación
             }
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAbmcObjetivos frm = new frmAbmcObjetivos();
+            frm.ShowDialog();
+        }
 
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            if (dgvObjetivosCurso.CurrentRow != null && dgvObjetivosCurso.CurrentRow.Index != -1)
+            {
+                DataGridViewRow fila = dgvObjetivosCurso.CurrentRow;
+                dgvObjetivosCurso.Rows.Remove(fila);
+                dgvObjetivosDisponibles.Rows.Add(fila);
+                btnUp.Enabled = true;
+                btnDown.Enabled = dgvObjetivosCurso.Rows.Count > 0;
+
+            }
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            
+            if (dgvObjetivosDisponibles.CurrentRow.Index != -1)
+            {
+                DataGridViewRow fila = dgvObjetivosDisponibles.CurrentRow;
+                dgvObjetivosDisponibles.Rows.Remove(fila);
+                dgvObjetivosCurso.Rows.Add(fila);
+                btnDown.Enabled = true;
+                btnUp.Enabled = dgvObjetivosDisponibles.Rows.Count > 0;
+            }
+            
+        }
     }
 }

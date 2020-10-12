@@ -57,6 +57,20 @@ namespace TpiBugs.Datos.Dao.Implementacion
                 return true;
         }
 
+        internal IList<Objetivos> GetObjetivosDisponibles(int id_curso)
+        {
+            List<Objetivos> objetivos = new List<Objetivos>();
+            String strSql = "select  * from Objetivos O  where id_objetivo not in(select o.id_objetivo from [dbo].[ObjetivosCursos] OC, Objetivos O, Cursos C where OC.id_curso = C.id_curso and OC.id_objetivo = O.id_objetivo and C.id_curso = @param1) and o.borrado = 0";
+            DataTable data = DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new object[] { id_curso });
+            foreach (DataRow row in data.Rows)
+            {
+                int id = int.Parse(row["id_objetivo"].ToString());
+                Objetivos obj = new Objetivos(id, row["nombre_corto"].ToString(), row["nombre_largo"].ToString(), bool.Parse(row["borrado"].ToString()));
+                objetivos.Add(obj);
+            }
+            return objetivos;
+        }
+
         internal IList<Objetivos> GetObjetivosByid(int id_objetivos)
         {
             List<Objetivos> objetivos = new List<Objetivos>();

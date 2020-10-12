@@ -29,123 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmcObjetivosCursos));
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtCorto = new System.Windows.Forms.TextBox();
-            this.txtPuntos = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblError = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.lblCurso = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.panel5.SuspendLayout();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombreCurso = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.dgvObjetivosDisponibles = new System.Windows.Forms.DataGridView();
+            this.dgvObjetivosCurso = new System.Windows.Forms.DataGridView();
+            this.Id_Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_corto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_objetivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivosDisponibles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivosCurso)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.txtCorto);
-            this.panel5.Controls.Add(this.txtPuntos);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.lblError);
-            this.panel5.Controls.Add(this.btnCancelar);
-            this.panel5.Controls.Add(this.btnAceptar);
-            this.panel5.Controls.Add(this.lblCurso);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 24);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(468, 217);
-            this.panel5.TabIndex = 3;
-            // 
-            // txtCorto
-            // 
-            this.txtCorto.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtCorto.Location = new System.Drawing.Point(133, 52);
-            this.txtCorto.MaxLength = 50;
-            this.txtCorto.Name = "txtCorto";
-            this.txtCorto.Size = new System.Drawing.Size(302, 26);
-            this.txtCorto.TabIndex = 13;
-            // 
-            // txtPuntos
-            // 
-            this.txtPuntos.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtPuntos.Location = new System.Drawing.Point(133, 84);
-            this.txtPuntos.MaxLength = 50;
-            this.txtPuntos.Name = "txtPuntos";
-            this.txtPuntos.Size = new System.Drawing.Size(302, 26);
-            this.txtPuntos.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label5.Location = new System.Drawing.Point(11, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 18);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Puntos";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label1.Location = new System.Drawing.Point(11, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 18);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Nombre Corto";
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
-            this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
-            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(90, 129);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(52, 14);
-            this.lblError.TabIndex = 8;
-            this.lblError.Text = "lblError";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Visible = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.btnCancelar.Location = new System.Drawing.Point(344, 159);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(91, 31);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.btnAceptar.Location = new System.Drawing.Point(236, 159);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(91, 31);
-            this.btnAceptar.TabIndex = 4;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // lblCurso
-            // 
-            this.lblCurso.AutoSize = true;
-            this.lblCurso.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.lblCurso.Location = new System.Drawing.Point(11, 14);
-            this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(64, 18);
-            this.lblCurso.TabIndex = 0;
-            this.lblCurso.Text = "Curso: ";
             // 
             // panelBarraTitulo
             // 
@@ -156,7 +71,7 @@
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(468, 24);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(622, 24);
             this.panelBarraTitulo.TabIndex = 2;
             // 
             // label2
@@ -175,18 +90,253 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(447, 4);
+            this.btnCerrar.Location = new System.Drawing.Point(601, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(16, 16);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.btnAgregar);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.lblNombreCurso);
+            this.panel5.Controls.Add(this.btnGuardar);
+            this.panel5.Controls.Add(this.btnCancelar);
+            this.panel5.Controls.Add(this.btnUp);
+            this.panel5.Controls.Add(this.btnDown);
+            this.panel5.Controls.Add(this.dgvObjetivosDisponibles);
+            this.panel5.Controls.Add(this.dgvObjetivosCurso);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 24);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(622, 516);
+            this.panel5.TabIndex = 6;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
+            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregar.Location = new System.Drawing.Point(11, 451);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(60, 60);
+            this.btnAgregar.TabIndex = 27;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label3.Location = new System.Drawing.Point(11, 256);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(166, 18);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Objetivos Disponibles";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label1.Location = new System.Drawing.Point(8, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 18);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Objetivos del Curso";
+            // 
+            // lblNombreCurso
+            // 
+            this.lblNombreCurso.AutoSize = true;
+            this.lblNombreCurso.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCurso.Location = new System.Drawing.Point(249, 2);
+            this.lblNombreCurso.Name = "lblNombreCurso";
+            this.lblNombreCurso.Size = new System.Drawing.Size(123, 18);
+            this.lblNombreCurso.TabIndex = 24;
+            this.lblNombreCurso.Text = "Nombre Curso";
+            this.lblNombreCurso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.Location = new System.Drawing.Point(483, 451);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(60, 60);
+            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.Location = new System.Drawing.Point(549, 451);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(60, 60);
+            this.btnCancelar.TabIndex = 22;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnUp
+            // 
+            this.btnUp.Image = ((System.Drawing.Image)(resources.GetObject("btnUp.Image")));
+            this.btnUp.Location = new System.Drawing.Point(49, 221);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(32, 32);
+            this.btnUp.TabIndex = 21;
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.Image = ((System.Drawing.Image)(resources.GetObject("btnDown.Image")));
+            this.btnDown.Location = new System.Drawing.Point(11, 221);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(32, 32);
+            this.btnDown.TabIndex = 20;
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // dgvObjetivosDisponibles
+            // 
+            this.dgvObjetivosDisponibles.AllowUserToAddRows = false;
+            this.dgvObjetivosDisponibles.AllowUserToDeleteRows = false;
+            this.dgvObjetivosDisponibles.AllowUserToResizeRows = false;
+            this.dgvObjetivosDisponibles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvObjetivosDisponibles.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvObjetivosDisponibles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvObjetivosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObjetivosDisponibles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_objetivo,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(130)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObjetivosDisponibles.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvObjetivosDisponibles.Location = new System.Drawing.Point(11, 279);
+            this.dgvObjetivosDisponibles.MultiSelect = false;
+            this.dgvObjetivosDisponibles.Name = "dgvObjetivosDisponibles";
+            this.dgvObjetivosDisponibles.ReadOnly = true;
+            this.dgvObjetivosDisponibles.RowHeadersVisible = false;
+            this.dgvObjetivosDisponibles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvObjetivosDisponibles.Size = new System.Drawing.Size(598, 166);
+            this.dgvObjetivosDisponibles.TabIndex = 19;
+            // 
+            // dgvObjetivosCurso
+            // 
+            this.dgvObjetivosCurso.AllowUserToAddRows = false;
+            this.dgvObjetivosCurso.AllowUserToDeleteRows = false;
+            this.dgvObjetivosCurso.AllowUserToResizeRows = false;
+            this.dgvObjetivosCurso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvObjetivosCurso.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvObjetivosCurso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvObjetivosCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObjetivosCurso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_Objetivos,
+            this.nom_corto,
+            this.nom_largo,
+            this.borrado});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(130)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObjetivosCurso.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvObjetivosCurso.Location = new System.Drawing.Point(11, 52);
+            this.dgvObjetivosCurso.MultiSelect = false;
+            this.dgvObjetivosCurso.Name = "dgvObjetivosCurso";
+            this.dgvObjetivosCurso.ReadOnly = true;
+            this.dgvObjetivosCurso.RowHeadersVisible = false;
+            this.dgvObjetivosCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvObjetivosCurso.Size = new System.Drawing.Size(598, 163);
+            this.dgvObjetivosCurso.TabIndex = 16;
+            // 
+            // Id_Objetivos
+            // 
+            this.Id_Objetivos.FillWeight = 44.43543F;
+            this.Id_Objetivos.HeaderText = "ID";
+            this.Id_Objetivos.Name = "Id_Objetivos";
+            this.Id_Objetivos.ReadOnly = true;
+            this.Id_Objetivos.Visible = false;
+            // 
+            // nom_corto
+            // 
+            this.nom_corto.FillWeight = 76.14214F;
+            this.nom_corto.HeaderText = "Nombre Corto";
+            this.nom_corto.Name = "nom_corto";
+            this.nom_corto.ReadOnly = true;
+            // 
+            // nom_largo
+            // 
+            this.nom_largo.FillWeight = 179.4224F;
+            this.nom_largo.HeaderText = "Nombre Largo";
+            this.nom_largo.Name = "nom_largo";
+            this.nom_largo.ReadOnly = true;
+            // 
+            // borrado
+            // 
+            this.borrado.HeaderText = "borrado";
+            this.borrado.Name = "borrado";
+            this.borrado.ReadOnly = true;
+            this.borrado.Visible = false;
+            // 
+            // id_objetivo
+            // 
+            this.id_objetivo.FillWeight = 44.43543F;
+            this.id_objetivo.HeaderText = "ID";
+            this.id_objetivo.Name = "id_objetivo";
+            this.id_objetivo.ReadOnly = true;
+            this.id_objetivo.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 76.14214F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre Corto";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 179.4224F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre Largo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "borrado";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
             // FrmAbmcObjetivosCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 241);
+            this.ClientSize = new System.Drawing.Size(622, 540);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panelBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -194,28 +344,39 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAbmcObjetivosCursos";
             this.Load += new System.EventHandler(this.FrmAbmcObjetivosCursos_Load);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panelBarraTitulo.ResumeLayout(false);
             this.panelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivosDisponibles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivosCurso)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Panel panelBarraTitulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.Label lblCurso;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCorto;
-        private System.Windows.Forms.TextBox txtPuntos;
+        private System.Windows.Forms.Label lblNombreCurso;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnDown;
+        internal System.Windows.Forms.DataGridView dgvObjetivosDisponibles;
+        internal System.Windows.Forms.DataGridView dgvObjetivosCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Objetivos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom_corto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom_largo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_objetivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

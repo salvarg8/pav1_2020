@@ -34,16 +34,15 @@
             this.lblCantEncontrado = new System.Windows.Forms.Label();
             this.cmbCursos = new System.Windows.Forms.ComboBox();
             this.dgvObjetivos = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.Id_Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_corto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,8 +93,8 @@
             this.id_curso,
             this.nom_corto,
             this.nom_largo,
-            this.borrado,
-            this.puntos});
+            this.puntos,
+            this.borrado});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F);
@@ -112,6 +111,43 @@
             this.dgvObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvObjetivos.Size = new System.Drawing.Size(541, 292);
             this.dgvObjetivos.TabIndex = 41;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(78, 383);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(60, 60);
+            this.btnEliminar.TabIndex = 45;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.Location = new System.Drawing.Point(12, 383);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(60, 60);
+            this.btnEditar.TabIndex = 44;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 11F);
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Curso: ";
+            this.label1.Visible = false;
             // 
             // Id_Objetivos
             // 
@@ -142,13 +178,6 @@
             this.nom_largo.Name = "nom_largo";
             this.nom_largo.ReadOnly = true;
             // 
-            // borrado
-            // 
-            this.borrado.HeaderText = "borrado";
-            this.borrado.Name = "borrado";
-            this.borrado.ReadOnly = true;
-            this.borrado.Visible = false;
-            // 
             // puntos
             // 
             this.puntos.FillWeight = 40F;
@@ -156,55 +185,12 @@
             this.puntos.Name = "puntos";
             this.puntos.ReadOnly = true;
             // 
-            // btnEliminar
+            // borrado
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
-            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(143, 383);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(60, 60);
-            this.btnEliminar.TabIndex = 45;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
-            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(77, 383);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(60, 60);
-            this.btnEditar.TabIndex = 44;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar.BackgroundImage")));
-            this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregar.Enabled = false;
-            this.btnAgregar.Location = new System.Drawing.Point(11, 383);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(60, 60);
-            this.btnAgregar.TabIndex = 43;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 18);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Curso: ";
-            this.label1.Visible = false;
+            this.borrado.HeaderText = "borrado";
+            this.borrado.Name = "borrado";
+            this.borrado.ReadOnly = true;
+            this.borrado.Visible = false;
             // 
             // FrmObjetivosCursos
             // 
@@ -214,7 +200,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblCantEncontrado);
             this.Controls.Add(this.dgvObjetivos);
             this.Controls.Add(this.cmbCursos);
@@ -232,15 +217,14 @@
         private System.Windows.Forms.Label lblCantEncontrado;
         private System.Windows.Forms.ComboBox cmbCursos;
         internal System.Windows.Forms.DataGridView dgvObjetivos;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Objetivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_curso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_corto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_largo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
         private System.Windows.Forms.DataGridViewTextBoxColumn puntos;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
     }
 }
