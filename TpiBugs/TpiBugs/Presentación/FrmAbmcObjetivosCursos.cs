@@ -92,6 +92,8 @@ namespace TpiBugs.Presentación
             {
                 dgvObjetivosDisponibles.Rows.Add(new object[] { obj.ID_objetivos, obj.Nombre_corto, obj.Nombre_largo, obj.Borrado });
             }
+
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
