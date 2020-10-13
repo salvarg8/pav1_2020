@@ -49,7 +49,7 @@ namespace TpiBugs.Presentación
             {
                 IList<Objetivos> lst2 = oObjetivosService.GetObjetivosById(obj.Objetivo.ID_objetivos);
                 
-                dgvObjetivos.Rows.Add(new object[] { obj.Objetivo.ID_objetivos, obj.Curso.Id_curso,lst2[0].Nombre_corto,lst2[0].Nombre_largo, obj.Puntos, obj.Borrado });
+                dgvObjetivos.Rows.Add(new object[] { obj.Objetivo.ID_objetivos, obj.Curso.Id_curso, lst2[0].Nombre_corto, lst2[0].Nombre_largo, obj.Puntos, obj.Borrado });
                 //dgvObjetivos.Rows.Add(new object[] { obj.Objetivo.ID_objetivos, obj.Curso.Id_curso, lst2[0].Nombre_corto, lst2[0].Nombre_largo, obj.Puntos, obj.Borrado });
 
                 
