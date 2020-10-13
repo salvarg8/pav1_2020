@@ -21,6 +21,11 @@ namespace TpiBugs.Negocio.Servicios
         {
             return (oObjetivosCursosDao.GetObjetivosPorCurso(id_curso));
         }
+
+        internal bool crear(int id_curso, List<Objetivos> objetivos, int porc)
+        {
+            return oObjetivosCursosDao.Create(id_curso, objetivos, porc);
+        }
     }
 }
 

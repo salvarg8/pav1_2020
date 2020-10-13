@@ -12,6 +12,7 @@ namespace TpiBugs.Negocio.Entidades
         public Cursos Curso { get; set; }
         public int Puntos { get; set; }
         public bool Borrado { get; set; }
+        public int Id_curso { get; internal set; }
 
         public ObjetivosCursos(Objetivos objetivo, Cursos curso, int puntos, bool borrado)
         {

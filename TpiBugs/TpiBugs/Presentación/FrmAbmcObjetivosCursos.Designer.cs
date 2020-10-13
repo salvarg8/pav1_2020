@@ -46,15 +46,15 @@
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.dgvObjetivosDisponibles = new System.Windows.Forms.DataGridView();
+            this.id_objetivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvObjetivosCurso = new System.Windows.Forms.DataGridView();
             this.Id_Objetivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_corto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_largo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_objetivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panel5.SuspendLayout();
@@ -167,6 +167,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(60, 60);
             this.btnGuardar.TabIndex = 23;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -236,6 +237,35 @@
             this.dgvObjetivosDisponibles.Size = new System.Drawing.Size(598, 166);
             this.dgvObjetivosDisponibles.TabIndex = 19;
             // 
+            // id_objetivo
+            // 
+            this.id_objetivo.FillWeight = 44.43543F;
+            this.id_objetivo.HeaderText = "ID";
+            this.id_objetivo.Name = "id_objetivo";
+            this.id_objetivo.ReadOnly = true;
+            this.id_objetivo.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 76.14214F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre Corto";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.FillWeight = 179.4224F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre Largo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "borrado";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
             // dgvObjetivosCurso
             // 
             this.dgvObjetivosCurso.AllowUserToAddRows = false;
@@ -302,35 +332,6 @@
             this.borrado.Name = "borrado";
             this.borrado.ReadOnly = true;
             this.borrado.Visible = false;
-            // 
-            // id_objetivo
-            // 
-            this.id_objetivo.FillWeight = 44.43543F;
-            this.id_objetivo.HeaderText = "ID";
-            this.id_objetivo.Name = "id_objetivo";
-            this.id_objetivo.ReadOnly = true;
-            this.id_objetivo.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 76.14214F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre Corto";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 179.4224F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre Largo";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "borrado";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // FrmAbmcObjetivosCursos
             // 

@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 public class DataManager : System.IDisposable
 {
     private SqlConnection dbConnection;
+    private SqlTransaction dbTransaction;
+
 
 
     private static DataManager instance;
@@ -40,6 +42,24 @@ public class DataManager : System.IDisposable
     {
         if (dbConnection.State != ConnectionState.Closed)
             dbConnection.Close();
+    }
+
+    internal void BeginTransaction()
+    {
+        if (dbConnection.State == ConnectionState.Open)
+            dbTransaction = dbConnection.BeginTransaction();
+    }
+
+    internal void Commit()
+    {
+        if (dbTransaction != null)
+            dbTransaction.Commit();
+    }
+
+    internal void Rollback()
+    {
+        if (dbTransaction != null)
+            dbTransaction.Rollback();
     }
 
 

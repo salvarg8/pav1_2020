@@ -116,6 +116,7 @@ namespace TpiBugs.Presentación
         {
             frmAbmcObjetivos frm = new frmAbmcObjetivos();
             frm.ShowDialog();
+            LlenarDgvObjetivosDisponibles();
         }
 
         private void btnDown_Click(object sender, EventArgs e)
@@ -141,6 +142,39 @@ namespace TpiBugs.Presentación
                 dgvObjetivosCurso.Rows.Add(fila);
                 btnDown.Enabled = true;
                 btnUp.Enabled = dgvObjetivosDisponibles.Rows.Count > 0;
+            }
+            
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if(dgvObjetivosCurso.Rows.Count > 0)
+            {
+                int porc = 100 / dgvObjetivosCurso.Rows.Count;
+                int id_curso = oCursoSelected.Id_curso;
+                //empezar la cosa que no sabemos
+                try
+                {
+                    List<Objetivos> objetivos = new List<Objetivos>();
+
+                    foreach (DataGridViewRow row in dgvObjetivosCurso.Rows)
+                    {
+                        int id = Convert.ToInt32(dgvObjetivosCurso.CurrentRow.Cells["Id_Objetivos"].Value);
+                        string nombre_corto = Convert.ToString(dgvObjetivosCurso.CurrentRow.Cells["nom_corto"].Value);
+                        string nombre_largo = Convert.ToString(dgvObjetivosCurso.CurrentRow.Cells["nom_largo"].Value);
+                        bool borrado = Convert.ToBoolean(dgvObjetivosCurso.CurrentRow.Cells["borrado"].Value);
+                        Objetivos obj = new Objetivos(id,nombre_corto,nombre_largo,borrado);
+                        objetivos.Add(obj);
+                    }
+                    oObjetivoCursoService.crear(oCursoSelected.Id_curso, objetivos, porc);
+
+
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show("Error al Guardar los Cambios! " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
             }
             
         }

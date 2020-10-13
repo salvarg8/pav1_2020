@@ -23,6 +23,51 @@ namespace TpiBugs.Datos.Dao.Implementacion
             return objetivoCursos;
         }
 
+        internal bool Create(int id_curso, List<Objetivos> objetivos, int porc)
+        {
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+
+                
+                foreach (var obj in objetivos)
+                {
+                    string sql = "(INSERT INTO[dbo].[ObjetivosCursos]([id_objetivo],[id_curso],[puntos],[borrado]) VALUES (@id_objetivo,@id_curso, @puntos ,@borrado)";
+
+                    var paramDetalle = new Dictionary<string, object>();
+
+                    paramDetalle.Add("id_objetivo", obj.ID_objetivos);
+                    paramDetalle.Add("id_curso", id_curso);
+                    paramDetalle.Add("puntos", porc);
+                    paramDetalle.Add("borrado", false);
+
+                    dm.EjecutarSQL(sql, paramDetalle);
+                }
+
+                dm.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                // Cierra la conexión 
+                dm.Close();
+            }
+            return true;
+        }
+
+
+
+
+
+
+
 
         private ObjetivosCursos ObjectMapping(DataRow row)
         {
