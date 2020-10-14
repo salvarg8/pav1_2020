@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,25 +31,30 @@ namespace TpiBugs.Datos.Dao.Implementacion
             {
                 dm.Open();
                 dm.BeginTransaction();
-
                 
+                string strSql = "Delete from ObjetivosCursos where id_curso = @param1";
+                var param = new Dictionary<string, object>();
+                param.Add("param1", id_curso);
+                dm.EjecutarSQL(strSql, param);
+
+
+
                 foreach (var obj in objetivos)
                 {
-                    string sql = "(INSERT INTO[dbo].[ObjetivosCursos]([id_objetivo],[id_curso],[puntos],[borrado]) VALUES (@id_objetivo,@id_curso, @puntos ,@borrado)";
+                    string sql = "INSERT INTO ObjetivosCursos (id_objetivo,id_curso,puntos,borrado) VALUES (@param1, @param2, @param3, @param4)";
 
-                    var paramDetalle = new Dictionary<string, object>();
-
-                    paramDetalle.Add("id_objetivo", obj.ID_objetivos);
-                    paramDetalle.Add("id_curso", id_curso);
-                    paramDetalle.Add("puntos", porc);
-                    paramDetalle.Add("borrado", false);
-
-                    dm.EjecutarSQL(sql, paramDetalle);
+                    var parametros = new Dictionary<string, object>();
+                    parametros.Add("param1", obj.ID_objetivos);
+                    parametros.Add("param2", id_curso);
+                    parametros.Add("param3", porc);
+                    parametros.Add("param4", false);
+                    
+                    dm.EjecutarSQL(sql, parametros);
                 }
 
                 dm.Commit();
 
-            }
+            }       
             catch (Exception ex)
             {
                 dm.Rollback();
@@ -62,12 +68,16 @@ namespace TpiBugs.Datos.Dao.Implementacion
             return true;
         }
 
-
-
-
-
-
-
+        internal bool objetivoUsado(int id)
+        {
+            string sql = "select * from ObjetivosCursos where id_objetivo =" + id;
+            var a = Convert.ToInt32(DBHelper.getDBHelper().ConsultaSQLScalar(sql));
+            if (a > 0)
+            {
+                return true;
+            }
+            return false;
+        }
 
         private ObjetivosCursos ObjectMapping(DataRow row)
         {

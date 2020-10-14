@@ -19,9 +19,7 @@ namespace TpiBugs.Presentación
         private readonly ObjetivosService oObjetivoService;
         private readonly ObjetivosCursosService oObjetivoCursoService;
         private readonly CursosService oCursosService;
-        private Objetivos oObjetivoSelected;
         private Cursos oCursoSelected;
-        private ObjetivosCursos oObjetivoCursoSelected;
 
 
 
@@ -44,6 +42,8 @@ namespace TpiBugs.Presentación
 
             formMode = actualizar;
             oCursoSelected = Curso;
+            
+
 
         }
 
@@ -63,6 +63,15 @@ namespace TpiBugs.Presentación
                         MostrarDatos();
                         break;
                     }
+            }
+            if (dgvObjetivosCurso.Rows.Count == 0)
+            {
+                btnDown.Enabled = false;
+            }
+
+            if (dgvObjetivosDisponibles.Rows.Count == 0)
+            {
+                btnUp.Enabled = false;
             }
         }
 
@@ -150,6 +159,7 @@ namespace TpiBugs.Presentación
         {
             if(dgvObjetivosCurso.Rows.Count > 0)
             {
+                int cont = 0;
                 int porc = 100 / dgvObjetivosCurso.Rows.Count;
                 int id_curso = oCursoSelected.Id_curso;
                 //empezar la cosa que no sabemos
@@ -159,7 +169,8 @@ namespace TpiBugs.Presentación
 
                     foreach (DataGridViewRow row in dgvObjetivosCurso.Rows)
                     {
-                        int id = Convert.ToInt32(dgvObjetivosCurso.CurrentRow.Cells["Id_Objetivos"].Value);
+                        cont += 1;
+                        int id = Convert.ToInt32(row.Cells["Id_Objetivos"].Value);
                         string nombre_corto = Convert.ToString(dgvObjetivosCurso.CurrentRow.Cells["nom_corto"].Value);
                         string nombre_largo = Convert.ToString(dgvObjetivosCurso.CurrentRow.Cells["nom_largo"].Value);
                         bool borrado = Convert.ToBoolean(dgvObjetivosCurso.CurrentRow.Cells["borrado"].Value);
@@ -167,7 +178,8 @@ namespace TpiBugs.Presentación
                         objetivos.Add(obj);
                     }
                     oObjetivoCursoService.crear(oCursoSelected.Id_curso, objetivos, porc);
-
+                    MessageBox.Show("Objetivos Actualizados!");
+                    this.Close();
 
                 }
                 catch (System.Exception ex)

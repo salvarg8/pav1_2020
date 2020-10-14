@@ -16,10 +16,12 @@ namespace TpiBugs.Presentación
 {
     public partial class FrmObjetivos : Form
     {
+        private ObjetivosCursosService oObjetivosCursoService;
         private ObjetivosService servicio;
         public FrmObjetivos()
         {
             servicio = new ObjetivosService();
+            oObjetivosCursoService = new ObjetivosCursosService();
             InitializeComponent();
         }
 
@@ -125,23 +127,30 @@ namespace TpiBugs.Presentación
         {
             if (dgvObjetivos.Rows.Count > 0)
             {
-                var a = Convert.ToBoolean(dgvObjetivos.CurrentRow.Cells["borrado"].Value); 
-                if (!a)
+                var a = Convert.ToBoolean(dgvObjetivos.CurrentRow.Cells["borrado"].Value);
+                var b = Convert.ToInt32(dgvObjetivos.CurrentRow.Cells["Id_Objetivos"].Value);
+                if (!oObjetivosCursoService.objetivoUsado(b))
                 {
-                    if (MessageBox.Show("¿Seguro que desea Eliminar el Objetivo seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                    if (!a)
                     {
-                        int id = Convert.ToInt32(dgvObjetivos.CurrentRow.Cells["Id_Objetivos"].Value);
-                        if (servicio.borrarObjetivo(id))
+                        if (MessageBox.Show("¿Seguro que desea Eliminar el Objetivo seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                         {
-                            dgvObjetivos.Rows.RemoveAt(dgvObjetivos.CurrentRow.Index);
-                            MessageBox.Show("Objetivo Eliminado", "Aviso");
+                            int id = Convert.ToInt32(dgvObjetivos.CurrentRow.Cells["Id_Objetivos"].Value);
+                            if (servicio.borrarObjetivo(id))
+                            {
+                                dgvObjetivos.Rows.RemoveAt(dgvObjetivos.CurrentRow.Index);
+                                MessageBox.Show("Objetivo Eliminado", "Aviso");
+                            }
                         }
+                        else
+                            MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
                     }
                     else
-                        MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
+                        MessageBox.Show("No se puede Eliminar el Objetivo Seleccionado", "Error");
                 }
                 else
-                    MessageBox.Show("No se puede Eliminar el Objetivo Seleccionado", "Error");
+                    MessageBox.Show("Objetivo Seleccionado en uso, No se puede Eliminar", "Error");
+
             }
             btnBuscar_Click(sender, e);
         }

@@ -27,7 +27,7 @@ namespace TpiBugs.Presentación
 
         private void FrmObjetivosCursos_Load(object sender, EventArgs e)
         {
-            LlenarCombo(cmbCursos, oCursosServices.GetCursoConBorrado(""), "nombre", "id_curso");
+            LlenarCombo(cmbCursos, oCursosServices.GetCursoSinBorrado(""), "nombre", "id_curso");
 
         }
 
@@ -69,6 +69,7 @@ namespace TpiBugs.Presentación
             FrmAbmcObjetivosCursos frm = new FrmAbmcObjetivosCursos();
             frm.IniciarFormulario(FrmAbmcObjetivosCursos.FormMode.actualizar, (Cursos)cmbCursos.SelectedItem);
             frm.ShowDialog();
+            cmbCursos_SelectionChangeCommitted(sender, e);
         }
     }
 }

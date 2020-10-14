@@ -115,7 +115,7 @@ public class DataManager : System.IDisposable
         // Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
 
         SqlCommand cmd = new SqlCommand();
-
+        cmd.Transaction = GetTransacction();
         int rtdo = 0;
 
         // Try Catch Finally
@@ -147,7 +147,11 @@ public class DataManager : System.IDisposable
         }
         return rtdo;
     }
-
+    //aaaaaaaaaaaaaaaaaaaaa
+    public SqlTransaction GetTransacction()
+    {
+        return dbTransaction;
+    }
 
     /// Resumen:
     ///     Se utiliza para sentencias SQL del tipo “Select”. Recibe por valor una sentencia sql como string
@@ -179,4 +183,6 @@ public class DataManager : System.IDisposable
     {
         this.Close();
     }
+
+    
 }
