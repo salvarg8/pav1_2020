@@ -35,6 +35,32 @@ namespace TpiBugs.Datos.Dao.Implementacion
             return cursos;
         }
 
+        internal bool ActualizarCurso(int id_curso, string nombre, string descripcion, DateTime vigencia, int id_categoria)
+        {
+            string strSql = ("UPDATE Cursos set nombre = @param1, descripcion = @param2, fecha_vigencia = @param3,id_categoria = @param4 WHERE id_curso = @param5");
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("param1", nombre);
+            parametros.Add("param2", descripcion);
+            parametros.Add("param3", vigencia);
+            parametros.Add("param4", id_categoria);
+            parametros.Add("param5", id_curso);
+            return (DataManager.GetInstance().EjecutarSQL(strSql, parametros) == 1);
+
+        }
+
+        internal bool CategoriaEnUso(int id_Categoria)
+        {
+            string strSql = ("Select * from Cursos where id_categoria =" + id_Categoria);
+            return (Convert.ToInt32(DBHelper.getDBHelper().ConsultaSQLScalar(strSql))!= 0);
+        }
+
+        internal void cargaCurso(string nombre, string descripcion, DateTime vigencia, int id_categoria)
+        {
+            string strSql = ("Insert into Cursos (nombre,descripcion,fecha_vigencia,id_categoria,borrado) Values(@param1,@param2,@param3,@param4,@param5)");
+           
+            DBHelper.getDBHelper().ConsultarSQLConParametros(strSql, new object[] { nombre,descripcion,vigencia,id_categoria,0});
+        }
+
         internal bool delete(int id)
         {
             string strSql = "UPDATE Cursos set borrado = 1 WHERE id_curso =" + id;

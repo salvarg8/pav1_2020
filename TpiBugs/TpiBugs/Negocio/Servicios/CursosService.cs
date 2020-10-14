@@ -30,5 +30,20 @@ namespace TpiBugs.Negocio.Servicios
         {
             return oCursosDao.delete(id);
         }
+
+        internal void cargaCurso(string nombre, string descripcion, DateTime vigencia, int id_categoria)
+        {
+            oCursosDao.cargaCurso(nombre, descripcion, vigencia, id_categoria);
+        }
+
+        internal bool ActualizarCurso(int id_curso, string nombre, string descripcion, DateTime vigencia, int id_categoria)
+        {
+            return (oCursosDao.ActualizarCurso(id_curso, nombre, descripcion, vigencia, id_categoria));
+        }
+
+        internal bool CategoriaEnUso(int id_Categoria)
+        {
+            return (oCursosDao.CategoriaEnUso(id_Categoria));
+        }
     }
 }

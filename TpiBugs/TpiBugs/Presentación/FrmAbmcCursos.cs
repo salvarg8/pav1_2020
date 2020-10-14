@@ -45,18 +45,30 @@ namespace TpiBugs.Presentación
                 case FormMode.nuevo:
                     {
                         this.Text = "Nueva Curso";
-                        LlenarCombo(cmbCategoria, oCategoriasServices.GetCategoriasConBorrado(""), "nombre", "id_categoria");
+                        LlenarCombo(cmbCategoria, oCategoriasServices.GetCategoriasSinBorrado(""), "nombre", "id_categoria");
                         break;
                     }
                 case FormMode.actualizar:
                     {
-                        LlenarCombo(cmbCategoria, oCategoriasServices.GetCategoriasConBorrado(""), "nombre", "id_categoria");
+                        LlenarCombo(cmbCategoria, oCategoriasServices.GetCategoriasSinBorrado(""), "nombre", "id_categoria");
                         this.Text = "Actualizar Curso";
                         MostrarDatos();
                         txtNombre.Enabled = true;
                         txtDescripcion.Enabled = true;
                         dtpVigencia.Enabled = true;
                         cmbCategoria.Enabled = true;
+                        break;
+                    }
+                case FormMode.eliminar:
+                    {
+                        LlenarCombo(cmbCategoria, oCategoriasServices.GetCategoriasSinBorrado(""), "nombre", "id_categoria");
+                        this.Text = "Actualizar Curso";
+                        MostrarDatos();
+                        txtNombre.Enabled = false;
+                        txtDescripcion.Enabled = false;
+                        dtpVigencia.Enabled = false;
+                        cmbCategoria.Enabled = false;
+                        btnAceptar.Text = "Eliminar";
                         break;
                     }
             }
@@ -118,6 +130,89 @@ namespace TpiBugs.Presentación
             lblError.Text = "      " + mensaje;
             lblError.Visible = true;
 
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            switch (formMode)
+            {
+                case FormMode.nuevo:
+                    {
+                        if (ValidarCampos())
+                        {
+                            oCursosServices.cargaCurso(txtNombre.Text, txtDescripcion.Text, dtpVigencia.Value, cmbCategoria.SelectedIndex+1);
+                            MessageBox.Show("Carga realizada Exitosamente");
+                            this.Close();
+                        }
+                        break;
+                    }
+                case FormMode.actualizar:
+                    {
+                        if (ValidarCampos())
+                        {
+                            if(oCursosServices.ActualizarCurso(oCursoSelected.Id_curso,txtNombre.Text, txtDescripcion.Text, dtpVigencia.Value, cmbCategoria.SelectedIndex+1));
+                            {
+                                MessageBox.Show("Actualización realizada Exitosamente");
+                                this.Close();
+                            }
+                        }
+                        break;
+                    }
+                case FormMode.eliminar:
+                    {
+                        if (MessageBox.Show("¿Seguro que desea Eliminar el Objetivo seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            if (oCursosServices.borrarCurso(oCursoSelected.Id_curso))
+                            {
+                                MessageBox.Show("Objetivo Eliminado", "Aviso");
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
+                                this.Close();
+                            }
+                            
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
+                            this.Close();
+                        }
+                        break;
+                    }
+                
+            }
+        }
+
+        private bool ValidarCampos()
+        {
+            if (txtNombre.Text == "")
+            {
+                msgError("Por favor Ingrese un Nombre");
+                txtNombre.Focus();
+                return false;
+            }
+            if (txtDescripcion.Text == "")
+            {
+                msgError("Por favor Ingrese una Descripción");
+                txtDescripcion.Focus();
+                return false;
+            }
+            if (dtpVigencia.Value.Date < DateTime.Today.Date)
+            {
+                msgError("Por favor Ingrese una fecha Correcta");
+                dtpVigencia.Focus();
+                return false;
+            }
+            if (cmbCategoria.SelectedIndex < 0)
+            {
+                msgError("Por favor Seleccione una Categoría");
+                cmbCategoria.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }

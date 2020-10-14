@@ -91,20 +91,17 @@ namespace TpiBugs.Presentación
         {
             if (dgvCategorias.Rows.Count > 0)
             {
-                var a = Convert.ToBoolean(dgvCategorias.CurrentRow.Cells["borrado"].Value);
-                if (!a)
+                int id = Convert.ToInt32(dgvCategorias.CurrentRow.Cells["id_categoria"].Value);
+                string nombre = Convert.ToString(dgvCategorias.CurrentRow.Cells["nombre"].Value);
+                string descripcion = Convert.ToString(dgvCategorias.CurrentRow.Cells["descripcion"].Value);
+                bool borrado = Convert.ToBoolean(dgvCategorias.CurrentRow.Cells["borrado"].Value);
+                if (!borrado)
                 {
-                    if (MessageBox.Show("¿Seguro que desea Eliminar la Categoría seleccionada?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        int id = Convert.ToInt32(dgvCategorias.CurrentRow.Cells["id_categorias"].Value);
-                        if (servicio.borrarCategoria(id))
-                        {
-                            dgvCategorias.Rows.RemoveAt(dgvCategorias.CurrentRow.Index);
-                            MessageBox.Show("Categoría Eliminada", "Aviso");
-                        }
-                    }
-                    else
-                        MessageBox.Show("Ha ocurrido un error al intentar borrar la Categoría", "Error");
+                    Categorias categoria = new Categorias(id, nombre, descripcion, borrado);
+                    FrmAbmcCategoria frm = new FrmAbmcCategoria();
+                    frm.IniciarFormulario(FrmAbmcCategoria.FormMode.eliminar, categoria);
+                    frm.ShowDialog();
+                    btnBuscar_Click(sender, e);
                 }
                 else
                     MessageBox.Show("No se puede Eliminar la Categoría Seleccionada", "Error");

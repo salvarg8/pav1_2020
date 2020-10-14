@@ -11,6 +11,7 @@ namespace TpiBugs.Presentación
         private FormMode formMode = FormMode.nuevo;
 
         private readonly ObjetivosService oObjetivoService;
+        private readonly ObjetivosCursosService oObjetivosCursosService;
         private Objetivos oObjetivoSelected;
 
 
@@ -18,6 +19,7 @@ namespace TpiBugs.Presentación
         {
             InitializeComponent();
             oObjetivoService = new ObjetivosService();
+            oObjetivosCursosService = new ObjetivosCursosService();
 
         }
 
@@ -111,10 +113,19 @@ namespace TpiBugs.Presentación
                     }
                 case FormMode.actualizar:
                     {
-                        this.Text = "Actualizar Usuario";
+                        this.Text = "Actualizar Objetivo";
                         MostrarDatos();
                         txtCorto.Enabled = true;
                         txtLargo.Enabled = true;
+                        break;
+                    }
+                case FormMode.eliminar:
+                    {
+                        this.Text = "Eliminar Objetivo";
+                        MostrarDatos();
+                        txtCorto.Enabled = false;
+                        txtLargo.Enabled = false;
+                        btnAceptar.Text = "Eliminar";
                         break;
                     }
             }
@@ -182,10 +193,31 @@ namespace TpiBugs.Presentación
                         }
                     }
                     break;
-
+                case FormMode.eliminar:
+                    {
+                        if (!oObjetivosCursosService.objetivoUsado(oObjetivoSelected.ID_objetivos))
+                        {
+                            if (MessageBox.Show("¿Seguro que desea Eliminar el Objetivo seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                            {
+                                if (oObjetivoService.borrarObjetivo(oObjetivoSelected.ID_objetivos))
+                                {
+                                    MessageBox.Show("Objetivo Eliminado", "Aviso");
+                                }
+                                else
+                                    MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
+                            }
+                            else
+                                MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
+                        }
+                        else
+                            MessageBox.Show("Ha ocurrido un error al intentar borrar el Objetivo", "Error");
+                    }
+                    break;
             }
 
         }
+
+        
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

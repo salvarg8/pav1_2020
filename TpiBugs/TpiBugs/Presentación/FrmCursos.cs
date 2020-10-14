@@ -82,7 +82,7 @@ namespace TpiBugs.Presentación
                 btnBuscar_Click(sender, e);
             }
             else
-                MessageBox.Show("No se puede editar el Curso Seleccionado", "Error");
+                MessageBox.Show("No se puede Editar el Curso Seleccionado", "Error");
 
 
         }
@@ -95,27 +95,20 @@ namespace TpiBugs.Presentación
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvCursos.Rows.Count > 0)
+            string nombre = Convert.ToString(dgvCursos.CurrentRow.Cells["nombre"].Value);
+            bool borrado = Convert.ToBoolean(dgvCursos.CurrentRow.Cells["borrado"].Value);
+
+            if (!borrado)
             {
-                var a = Convert.ToBoolean(dgvCursos.CurrentRow.Cells["borrado"].Value);
-                if (!a)
-                {
-                    if (MessageBox.Show("¿Seguro que desea Eliminar el Curso seleccionado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        int id = Convert.ToInt32(dgvCursos.CurrentRow.Cells["id_cursos"].Value);
-                        if (servicio.borrarCurso(id))
-                        {
-                            dgvCursos.Rows.RemoveAt(dgvCursos.CurrentRow.Index);
-                            MessageBox.Show("Curso Eliminada", "Aviso");
-                        }
-                    }
-                    else
-                        MessageBox.Show("Ha ocurrido un error al intentar borrar el Curso", "Error");
-                }
-                else
-                    MessageBox.Show("No se puede Eliminar el Curso Seleccionado", "Error");
+                IList<Cursos> lst = servicio.GetCursoSinBorrado(nombre);
+                Cursos curso = new Cursos(lst[0].Id_curso, lst[0].Nombre, lst[0].Descripcion, lst[0].Vigencia, lst[0].Categoria, lst[0].Borrado);
+                FrmAbmcCursos frm = new FrmAbmcCursos();
+                frm.IniciarFormulario(FrmAbmcCursos.FormMode.eliminar, curso);
+                frm.ShowDialog();
+                btnBuscar_Click(sender, e);
             }
-            btnBuscar_Click(sender, e);
+            else
+                MessageBox.Show("No se puede Eliminar el Curso Seleccionado", "Error");
         }
     }
 }

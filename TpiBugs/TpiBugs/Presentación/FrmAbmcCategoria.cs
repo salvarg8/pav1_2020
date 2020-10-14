@@ -17,6 +17,7 @@ namespace TpiBugs.Presentación
     {
         private FormMode formMode = FormMode.nuevo;
 
+        private readonly CursosService oCursoService;
         private readonly CategoriasService oCategoriasServices;
         private Categorias oCategoriaSelected;
 
@@ -25,6 +26,7 @@ namespace TpiBugs.Presentación
         {
             InitializeComponent();
             oCategoriasServices = new CategoriasService();
+            oCursoService = new CursosService();
         }
 
         internal void IniciarFormulario(FormMode actualizar, Categorias categoria)
@@ -57,6 +59,15 @@ namespace TpiBugs.Presentación
                         txtDescripcion.Enabled = true;
                         break;
                     }
+                case FormMode.eliminar:
+                    {
+                        this.Text = "Actualizar Usuario";
+                        MostrarDatos();
+                        txtNombre.Enabled = false;
+                        txtDescripcion.Enabled = false;
+                        btnAceptar.Text = "Eliminar";
+                        break;
+                    }
             }
         }
         private void MostrarDatos()
@@ -67,26 +78,6 @@ namespace TpiBugs.Presentación
                 txtDescripcion.Text = oCategoriaSelected.Descripcion;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -137,6 +128,32 @@ namespace TpiBugs.Presentación
                                 this.Dispose();
                             }
                         }
+                    }
+                    break;
+                case FormMode.eliminar:
+                    {
+                        if(!oCursoService.CategoriaEnUso(oCategoriaSelected.Id_Categoria))
+                        {
+                            if (MessageBox.Show("¿Seguro que desea Eliminar la Categoría seleccionada?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                            {
+                                if (oCategoriasServices.borrarCategoria(oCategoriaSelected.Id_Categoria))
+                                {
+                                    MessageBox.Show("Categoría Eliminada", "Aviso");
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ha ocurrido un error al intentar borrar la Categoría", "Error");
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se puede Eliminar la Categoría Seleccionada", "Error");
+                            this.Close();
+                        }
+
                     }
                     break;
             }

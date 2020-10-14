@@ -28,5 +28,7 @@ namespace TpiBugs.Negocio.Entidades
         public Cursos()
         {
         }
+
+        
     }
 }
