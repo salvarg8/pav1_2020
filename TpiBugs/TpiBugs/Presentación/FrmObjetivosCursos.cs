@@ -42,6 +42,7 @@ namespace TpiBugs.Presentación
 
         private void cmbCursos_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            btnEditar.Enabled = true;
             dgvObjetivos.Rows.Clear();
             IList<ObjetivosCursos> lst = oObjetivosCursosService.GetObjetivosPorCurso(cmbCursos.SelectedIndex+1);
             int sumavalores = 0;
