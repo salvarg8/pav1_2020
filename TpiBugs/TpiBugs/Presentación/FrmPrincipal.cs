@@ -263,6 +263,16 @@ namespace TpiBugs.Presentación
 
         }
 
+        private void btnAvances_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmAvances>();
+        }
+
+        private void btnGestionarMisCursos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmGestionCursos>();
+        }
+
         public enum FormMode
         {
             asd,

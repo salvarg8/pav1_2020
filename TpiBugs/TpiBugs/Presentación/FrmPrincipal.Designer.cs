@@ -218,6 +218,7 @@
             this.btnGestionarMisCursos.Text = "Gestionar Mis Cursos";
             this.btnGestionarMisCursos.UseVisualStyleBackColor = false;
             this.btnGestionarMisCursos.Visible = false;
+            this.btnGestionarMisCursos.Click += new System.EventHandler(this.btnGestionarMisCursos_Click);
             // 
             // btnAvances
             // 
@@ -233,6 +234,7 @@
             this.btnAvances.Text = "Avances";
             this.btnAvances.UseVisualStyleBackColor = false;
             this.btnAvances.Visible = false;
+            this.btnAvances.Click += new System.EventHandler(this.btnAvances_Click);
             // 
             // btnMisCursos
             // 

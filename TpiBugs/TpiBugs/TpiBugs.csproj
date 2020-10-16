@@ -68,6 +68,12 @@
     <Compile Include="Negocio\Servicios\ObjetivosService.cs" />
     <Compile Include="Negocio\Servicios\UsuarioService.cs" />
     <Compile Include="Negocio\Servicios\PerfilService.cs" />
+    <Compile Include="Presentación\FrmGestionCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmGestionCursos.Designer.cs">
+      <DependentUpon>FrmGestionCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentación\FrmAbmcCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,12 @@
     </Compile>
     <Compile Include="Presentación\FrmAbmcObjetivosCursos.Designer.cs">
       <DependentUpon>FrmAbmcObjetivosCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentación\FrmAvances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentación\FrmAvances.Designer.cs">
+      <DependentUpon>FrmAvances.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentación\FrmCategorias.cs">
       <SubType>Form</SubType>
@@ -142,11 +154,17 @@
     <EmbeddedResource Include="Presentación\FrmAbmcObjetivosCursos.resx">
       <DependentUpon>FrmAbmcObjetivosCursos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FrmAvances.resx">
+      <DependentUpon>FrmAvances.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmCursos.resx">
       <DependentUpon>FrmCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentación\FrmGestionCursos.resx">
+      <DependentUpon>FrmGestionCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
