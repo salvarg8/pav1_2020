@@ -82,7 +82,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(356, 128);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(91, 31);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -93,7 +93,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(259, 128);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(91, 31);
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -105,7 +105,7 @@
             this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(302, 26);
-            this.txtDescripcion.TabIndex = 3;
+            this.txtDescripcion.TabIndex = 1;
             // 
             // txtNombre
             // 
@@ -114,7 +114,7 @@
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(302, 26);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 0;
             // 
             // label4
             // 
