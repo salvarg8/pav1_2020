@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TpiBugs.Negocio.Entidades;
@@ -142,7 +143,7 @@ namespace TpiBugs.Presentación
                         }
                         else
                         {
-                            MessageBox.Show("No se puede Eliminar la Categoría Seleccionada", "Error");
+                            MessageBox.Show("La Categoría Seleccionada está en uso, No se puede Eliminar", "Error");
                             this.Close();
                         }
 
@@ -210,6 +211,16 @@ namespace TpiBugs.Presentación
             {
                 this.Dispose();
             }
+        }
+
+        private void btnCerrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(8, 62, 94);
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(13, 93, 142);
         }
     }
 }

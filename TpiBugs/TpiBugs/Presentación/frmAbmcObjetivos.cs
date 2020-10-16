@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TpiBugs.Negocio.Entidades;
@@ -238,6 +239,16 @@ namespace TpiBugs.Presentación
             lblError.Text = "      " + mensaje;
             lblError.Visible = true;
 
+        }
+
+        private void btnCerrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(8, 62, 94);
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(13, 93, 142);
         }
     }
 }

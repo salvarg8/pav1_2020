@@ -24,6 +24,7 @@ namespace TpiBugs.Presentación
 
 
 
+
         
 
 
@@ -218,6 +219,48 @@ namespace TpiBugs.Presentación
         private void btnObjetivosCursos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FrmObjetivosCursos>();
+        }
+
+        private void btnCerrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(8, 62, 94);
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(13, 93, 142);
+        }
+
+        private void btnMaximizar_MouseEnter(object sender, EventArgs e)
+        {
+            btnMaximizar.BackColor = Color.FromArgb(8, 62, 94);
+        }
+
+        private void btnMaximizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnMaximizar.BackColor = Color.FromArgb(13, 93, 142);
+        }
+
+        private void btnMinimizar_MouseEnter(object sender, EventArgs e)
+        {
+            btnMinimizar.BackColor = Color.FromArgb(8, 62, 94);
+        }
+
+        private void btnMinimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnMinimizar.BackColor = Color.FromArgb(13, 93, 142);
+
+        }
+
+        private void btnRestaurar_MouseEnter(object sender, EventArgs e)
+        {
+            btnRestaurar.BackColor = Color.FromArgb(8, 62, 94);
+        }
+
+        private void btnRestaurar_MouseLeave(object sender, EventArgs e)
+        {
+            btnRestaurar.BackColor = Color.FromArgb(13, 93, 142);
+
         }
 
         public enum FormMode

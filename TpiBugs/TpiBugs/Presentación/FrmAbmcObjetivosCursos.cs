@@ -196,5 +196,15 @@ namespace TpiBugs.Presentación
                 this.Dispose();
             }
         }
+
+        private void btnCerrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(8, 62, 94);
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(13, 93, 142);
+        }
     }
 }

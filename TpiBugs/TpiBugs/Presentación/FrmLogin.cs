@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using TpiBugs.Negocio.Servicios;
 using TpiBugs.Presentación;
@@ -73,6 +74,16 @@ namespace TpiBugs
             {
                 btnIngresar_Click(sender, e);
             }
+        }
+
+        private void btnCerrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(8, 62, 94);
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.FromArgb(8, 62, 94);
         }
     }
 }
