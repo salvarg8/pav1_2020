@@ -67,5 +67,12 @@ namespace TpiBugs
                 this.Close();
         }
 
+        private void txtContraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnIngresar_Click(sender, e);
+            }
+        }
     }
 }

@@ -64,11 +64,7 @@ namespace TpiBugs.Presentación
 
         private void FrmObjetivos_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // al cerrar el formulario vacío los textbox
-            txtNombreCorto.Text = "";
-            txtNombreLargo.Text = "";
-            FrmPrincipal frm = new FrmPrincipal();
-            frm.Show();
+           
         }
 
 

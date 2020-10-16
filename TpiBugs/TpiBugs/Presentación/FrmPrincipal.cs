@@ -120,9 +120,15 @@ namespace TpiBugs.Presentación
         
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
+
             Form formulario;
-            formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
-                                                                                     //si el formulario/instancia no existe
+            formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();
+                                                                                     
+            Form[] OpenForms = Application.OpenForms.Cast<Form>().ToArray();
+            foreach (Form thisForm in OpenForms)
+            {
+                if (thisForm.Name != "FrmPrincipal" && thisForm.Name != "FrmLogin") thisForm.Close();
+            }
             if (formulario == null)
             {
                 formulario = new MiForm();
@@ -139,6 +145,7 @@ namespace TpiBugs.Presentación
             {
                 formulario.BringToFront();
             }
+
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -215,14 +222,15 @@ namespace TpiBugs.Presentación
 
         public enum FormMode
         {
+            asd,
             Logear
         }
 
 
-        internal void IniciarFormulario(FormMode Logear, Usuario usuario)
+        internal void IniciarFormulario(FormMode Actualizar, Usuario usuario)
         {
             {
-                formMode = Logear;
+                formMode = Actualizar;
                 oUsuarioLogeado = usuario;
             }
         }

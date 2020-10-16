@@ -113,13 +113,7 @@ namespace TpiBugs.Presentación
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Seguro que desea Salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
-            {
-                this.Dispose();
-            }
-        }
+        
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -137,6 +131,7 @@ namespace TpiBugs.Presentación
                 dgvObjetivosDisponibles.Rows.Add(fila);
                 btnUp.Enabled = true;
                 btnDown.Enabled = dgvObjetivosCurso.Rows.Count > 0;
+                btnGuardar.Enabled = dgvObjetivosCurso.Rows.Count > 0;
 
             }
         }
@@ -151,6 +146,7 @@ namespace TpiBugs.Presentación
                 dgvObjetivosCurso.Rows.Add(fila);
                 btnDown.Enabled = true;
                 btnUp.Enabled = dgvObjetivosDisponibles.Rows.Count > 0;
+                btnGuardar.Enabled = true;
             }
             
         }
@@ -189,11 +185,13 @@ namespace TpiBugs.Presentación
                 
             }
             
+            
+
         }
 
-        private void btnCancelar_Click_1(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Seguro que desea Salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro que desea Salir sin Guardar los Cambios?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 this.Dispose();
             }

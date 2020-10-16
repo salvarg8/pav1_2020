@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpiBugs.Negocio.Entidades;
 using TpiBugs.Negocio.Servicios;
@@ -16,7 +9,6 @@ namespace TpiBugs.Presentación
     public partial class FrmAbmcCategoria : Form
     {
         private FormMode formMode = FormMode.nuevo;
-
         private readonly CursosService oCursoService;
         private readonly CategoriasService oCategoriasServices;
         private Categorias oCategoriaSelected;
@@ -132,7 +124,7 @@ namespace TpiBugs.Presentación
                     break;
                 case FormMode.eliminar:
                     {
-                        if(!oCursoService.CategoriaEnUso(oCategoriaSelected.Id_Categoria))
+                        if (!oCursoService.CategoriaEnUso(oCategoriaSelected.Id_Categoria))
                         {
                             if (MessageBox.Show("¿Seguro que desea Eliminar la Categoría seleccionada?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                             {
@@ -159,58 +151,58 @@ namespace TpiBugs.Presentación
             }
         }
 
-            private bool validarCampos()
+        private bool validarCampos()
+        {
+            if (txtNombre.Text == "")
             {
-                if (txtNombre.Text == "")
-                {
-                    msgError("Por favor Ingrese el nombre de la Categoría");
-                    txtNombre.Focus();
-                    return false;
-                }
-                if (txtDescripcion.Text == "")
-                {
-                    msgError("Por favor Ingrese una descripción");
-                    txtDescripcion.Focus();
-                    return false;
-                }
-                if (oCategoriasServices.existeCaracteristica(txtNombre.Text, "nombre", -1))
-                {
-                    msgError("El Nombre Ingresado ya existe");
-                    txtNombre.Focus();
-                    return false;
-                }
-                
-                return true;
+                msgError("Por favor Ingrese el nombre de la Categoría");
+                txtNombre.Focus();
+                return false;
             }
-            private bool validarCampos2()
+            if (txtDescripcion.Text == "")
             {
-                if (txtNombre.Text == "")
-                {
-                    msgError("Por favor Ingrese el nombre de la Categoría");
-                    txtNombre.Focus();
-                    return false;
-                }
-                if (txtDescripcion.Text == "")
-                {
-                    msgError("Por favor Ingrese una descripción");
-                    txtDescripcion.Focus();
-                    return false;
-                }
-                if (oCategoriasServices.existeCaracteristica(txtNombre.Text, "nombre", oCategoriaSelected.Id_Categoria))
-                {
-                    msgError("El Nombre Ingresado ya existe");
-                    txtNombre.Focus();
-                    return false;
-                }
-                return true;
+                msgError("Por favor Ingrese una descripción");
+                txtDescripcion.Focus();
+                return false;
             }
-        
-            private void msgError(string mensaje)
+            if (oCategoriasServices.existeCaracteristica(txtNombre.Text, "nombre", -1))
             {
-                lblError.Text = "      " + mensaje;
-                lblError.Visible = true;
+                msgError("El Nombre Ingresado ya existe");
+                txtNombre.Focus();
+                return false;
+            }
 
+            return true;
+        }
+        private bool validarCampos2()
+        {
+            if (txtNombre.Text == "")
+            {
+                msgError("Por favor Ingrese el nombre de la Categoría");
+                txtNombre.Focus();
+                return false;
             }
+            if (txtDescripcion.Text == "")
+            {
+                msgError("Por favor Ingrese una descripción");
+                txtDescripcion.Focus();
+                return false;
+            }
+            if (oCategoriasServices.existeCaracteristica(txtNombre.Text, "nombre", oCategoriaSelected.Id_Categoria))
+            {
+                msgError("El Nombre Ingresado ya existe");
+                txtNombre.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        private void msgError(string mensaje)
+        {
+            lblError.Text = "      " + mensaje;
+            lblError.Visible = true;
+
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

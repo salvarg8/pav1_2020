@@ -227,6 +227,7 @@
             this.Controls.Add(this.panelBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAbmcCursos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAbmcCursos";
             this.Load += new System.EventHandler(this.FrmAbmcCursos_Load);
             this.panel5.ResumeLayout(false);
