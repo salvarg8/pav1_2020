@@ -41,6 +41,7 @@
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -60,6 +61,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.lblError);
             this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnAceptar);
@@ -80,7 +82,7 @@
             this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
             this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(115, 96);
+            this.lblError.Location = new System.Drawing.Point(115, 110);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(52, 14);
             this.lblError.TabIndex = 8;
@@ -113,7 +115,7 @@
             // txtLargo
             // 
             this.txtLargo.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtLargo.Location = new System.Drawing.Point(145, 56);
+            this.txtLargo.Location = new System.Drawing.Point(145, 71);
             this.txtLargo.MaxLength = 100;
             this.txtLargo.Name = "txtLargo";
             this.txtLargo.Size = new System.Drawing.Size(302, 26);
@@ -122,7 +124,7 @@
             // txtCorto
             // 
             this.txtCorto.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtCorto.Location = new System.Drawing.Point(145, 21);
+            this.txtCorto.Location = new System.Drawing.Point(145, 39);
             this.txtCorto.MaxLength = 50;
             this.txtCorto.Name = "txtCorto";
             this.txtCorto.Size = new System.Drawing.Size(302, 26);
@@ -132,7 +134,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label4.Location = new System.Drawing.Point(12, 59);
+            this.label4.Location = new System.Drawing.Point(12, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 18);
             this.label4.TabIndex = 1;
@@ -142,7 +144,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label3.Location = new System.Drawing.Point(12, 24);
+            this.label3.Location = new System.Drawing.Point(12, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 18);
             this.label3.TabIndex = 0;
@@ -167,7 +169,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Location = new System.Drawing.Point(12, 2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 18);
             this.label2.TabIndex = 3;
@@ -186,6 +188,16 @@
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar2_Click);
             this.btnCerrar.MouseEnter += new System.EventHandler(this.btnCerrar_MouseEnter);
             this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 11.25F);
+            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 18);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Agregar Nuevo Objetivo";
             // 
             // frmAbmcObjetivos
             // 
@@ -220,5 +232,6 @@
         private System.Windows.Forms.TextBox txtCorto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label label1;
     }
 }
