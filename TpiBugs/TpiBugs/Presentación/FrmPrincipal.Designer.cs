@@ -215,7 +215,7 @@
             this.btnGestionarMisCursos.Name = "btnGestionarMisCursos";
             this.btnGestionarMisCursos.Size = new System.Drawing.Size(198, 30);
             this.btnGestionarMisCursos.TabIndex = 11;
-            this.btnGestionarMisCursos.Text = "Gestionar Mis Cursos";
+            this.btnGestionarMisCursos.Text = "Reporte Estadístico";
             this.btnGestionarMisCursos.UseVisualStyleBackColor = false;
             this.btnGestionarMisCursos.Visible = false;
             this.btnGestionarMisCursos.Click += new System.EventHandler(this.btnGestionarMisCursos_Click);
@@ -231,7 +231,7 @@
             this.btnAvances.Name = "btnAvances";
             this.btnAvances.Size = new System.Drawing.Size(198, 30);
             this.btnAvances.TabIndex = 10;
-            this.btnAvances.Text = "Avances";
+            this.btnAvances.Text = "Reporte Cursos";
             this.btnAvances.UseVisualStyleBackColor = false;
             this.btnAvances.Visible = false;
             this.btnAvances.Click += new System.EventHandler(this.btnAvances_Click);
@@ -246,7 +246,7 @@
             this.btnMisCursos.Name = "btnMisCursos";
             this.btnMisCursos.Size = new System.Drawing.Size(198, 30);
             this.btnMisCursos.TabIndex = 9;
-            this.btnMisCursos.Text = "Mis Cursos";
+            this.btnMisCursos.Text = "Reportes";
             this.btnMisCursos.UseVisualStyleBackColor = true;
             this.btnMisCursos.Click += new System.EventHandler(this.btnMisCursos_Click);
             // 

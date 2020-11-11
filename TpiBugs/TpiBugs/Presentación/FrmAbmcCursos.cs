@@ -150,7 +150,7 @@ namespace TpiBugs.Presentación
                     {
                         if (ValidarCampos())
                         {
-                            if(oCursosServices.ActualizarCurso(oCursoSelected.Id_curso,txtNombre.Text, txtDescripcion.Text, dtpVigencia.Value, cmbCategoria.SelectedIndex+1));
+                            if(oCursosServices.ActualizarCurso(oCursoSelected.Id_curso,txtNombre.Text, txtDescripcion.Text, dtpVigencia.Value, cmbCategoria.SelectedIndex+1))
                             {
                                 MessageBox.Show("Actualización realizada Exitosamente");
                                 this.Close();

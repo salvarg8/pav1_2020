@@ -145,6 +145,20 @@ namespace TpiBugs.Presentación
             btnEditar_Click(sender, e);
         }
 
-        
+        private void txtNombreLargo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBuscar_Click(sender, e);
+            }
+        }
+
+        private void txtNombreCorto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBuscar_Click(sender, e);
+            }
+        }
     }
 }

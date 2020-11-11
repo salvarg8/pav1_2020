@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TpiBugs.Negocio.Entidades;
 using TpiBugs.Negocio.Servicios;
+using TpiBugs.Reportes;
 
 namespace TpiBugs.Presentación
 {
@@ -265,12 +266,12 @@ namespace TpiBugs.Presentación
 
         private void btnAvances_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmAvances>();
+            AbrirFormulario<FrmReporteCursos>();
         }
 
         private void btnGestionarMisCursos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmGestionCursos>();
+            AbrirFormulario<FrmReporteEstadistico>();
         }
 
         public enum FormMode

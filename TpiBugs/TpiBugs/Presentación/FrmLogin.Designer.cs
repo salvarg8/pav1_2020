@@ -86,9 +86,9 @@
             // btnIngresar
             // 
             this.btnIngresar.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.btnIngresar.Location = new System.Drawing.Point(98, 148);
+            this.btnIngresar.Location = new System.Drawing.Point(115, 148);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(175, 27);
+            this.btnIngresar.Size = new System.Drawing.Size(151, 27);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -96,6 +96,7 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.lblError);
             this.panel5.Controls.Add(this.label3);
