@@ -41,13 +41,14 @@
             this.chbBuscarTodos = new System.Windows.Forms.CheckBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblCantEncontrado = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvCategorias
@@ -82,13 +83,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCategorias.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCategorias.Location = new System.Drawing.Point(12, 96);
+            this.dgvCategorias.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+            this.dgvCategorias.Location = new System.Drawing.Point(12, 128);
             this.dgvCategorias.MultiSelect = false;
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.RowHeadersVisible = false;
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(553, 321);
+            this.dgvCategorias.Size = new System.Drawing.Size(547, 289);
             this.dgvCategorias.TabIndex = 39;
             this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
             // 
@@ -121,15 +123,25 @@
             // 
             // btnBuscar
             // 
+//<<<<<<< HEAD
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Location = new System.Drawing.Point(505, 30);
+//=======
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnBuscar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(499, 30);
+//>>>>>>> 351f32fd6bdf2aa3690255d654df63e1796f148b
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(60, 60);
             this.btnBuscar.TabIndex = 38;
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.toolTip1.SetToolTip(this.btnBuscar, "Buscar");
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -138,7 +150,7 @@
             // 
             this.chbBuscarTodos.AutoSize = true;
             this.chbBuscarTodos.Font = new System.Drawing.Font("Verdana", 11F);
-            this.chbBuscarTodos.Location = new System.Drawing.Point(196, 67);
+            this.chbBuscarTodos.Location = new System.Drawing.Point(132, 75);
             this.chbBuscarTodos.Name = "chbBuscarTodos";
             this.chbBuscarTodos.Size = new System.Drawing.Size(185, 22);
             this.chbBuscarTodos.TabIndex = 37;
@@ -148,7 +160,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(172, 30);
+            this.txtNombre.Location = new System.Drawing.Point(132, 30);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(233, 31);
             this.txtNombre.TabIndex = 35;
@@ -158,21 +170,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label2.Location = new System.Drawing.Point(80, 37);
+            this.label2.Location = new System.Drawing.Point(40, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 18);
             this.label2.TabIndex = 33;
             this.label2.Text = "Catergoría";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 18);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Filtros";
             // 
             // btnEliminar
             // 
@@ -226,32 +228,49 @@
             this.lblCantEncontrado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCantEncontrado.AutoSize = true;
             this.lblCantEncontrado.Font = new System.Drawing.Font("Verdana", 11F);
-            this.lblCantEncontrado.Location = new System.Drawing.Point(338, 423);
+            this.lblCantEncontrado.Location = new System.Drawing.Point(332, 423);
             this.lblCantEncontrado.Name = "lblCantEncontrado";
             this.lblCantEncontrado.Size = new System.Drawing.Size(227, 18);
             this.lblCantEncontrado.TabIndex = 40;
             this.lblCantEncontrado.Text = "Categorias Encontradas: 100";
             this.lblCantEncontrado.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.chbBuscarTodos);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(571, 116);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscar Categoria con Filtro";
+            // 
             // FrmCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+//<<<</<<< HEAD
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(577, 495);
+//=======
+            this.ClientSize = new System.Drawing.Size(571, 495);
+            this.Controls.Add(this.groupBox1);
+//>>>>>>> 351f32fd6bdf2aa3690255d654df63e1796f148b
             this.Controls.Add(this.lblCantEncontrado);
             this.Controls.Add(this.dgvCategorias);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.chbBuscarTodos);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Name = "FrmCategorias";
             this.Text = "FrmCategorias";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,11 +286,11 @@
         private System.Windows.Forms.CheckBox chbBuscarTodos;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblCantEncontrado;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

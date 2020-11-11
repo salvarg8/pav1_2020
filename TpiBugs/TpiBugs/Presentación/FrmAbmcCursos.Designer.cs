@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmcCursos));
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.dtpVigencia = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.lblNombre);
             this.panel5.Controls.Add(this.cmbCategoria);
             this.panel5.Controls.Add(this.dtpVigencia);
             this.panel5.Controls.Add(this.label5);
@@ -70,12 +72,22 @@
             this.panel5.Size = new System.Drawing.Size(490, 255);
             this.panel5.TabIndex = 3;
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Verdana", 12F);
+            this.lblNombre.Location = new System.Drawing.Point(12, 12);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(54, 18);
+            this.lblNombre.TabIndex = 13;
+            this.lblNombre.Text = "Curso";
+            // 
             // cmbCategoria
             // 
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(145, 131);
+            this.cmbCategoria.Location = new System.Drawing.Point(145, 139);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(302, 26);
             this.cmbCategoria.TabIndex = 12;
@@ -83,7 +95,7 @@
             // dtpVigencia
             // 
             this.dtpVigencia.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.dtpVigencia.Location = new System.Drawing.Point(145, 94);
+            this.dtpVigencia.Location = new System.Drawing.Point(145, 106);
             this.dtpVigencia.Name = "dtpVigencia";
             this.dtpVigencia.Size = new System.Drawing.Size(302, 26);
             this.dtpVigencia.TabIndex = 11;
@@ -92,7 +104,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label5.Location = new System.Drawing.Point(11, 135);
+            this.label5.Location = new System.Drawing.Point(12, 142);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 18);
             this.label5.TabIndex = 10;
@@ -102,7 +114,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label1.Location = new System.Drawing.Point(12, 98);
+            this.label1.Location = new System.Drawing.Point(12, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 18);
             this.label1.TabIndex = 9;
@@ -115,7 +127,7 @@
             this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
             this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(115, 170);
+            this.lblError.Location = new System.Drawing.Point(115, 182);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(52, 14);
             this.lblError.TabIndex = 8;
@@ -148,7 +160,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtDescripcion.Location = new System.Drawing.Point(145, 57);
+            this.txtDescripcion.Location = new System.Drawing.Point(145, 74);
             this.txtDescripcion.MaxLength = 100;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(302, 26);
@@ -157,7 +169,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtNombre.Location = new System.Drawing.Point(145, 20);
+            this.txtNombre.Location = new System.Drawing.Point(145, 41);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(302, 26);
@@ -167,7 +179,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label4.Location = new System.Drawing.Point(12, 61);
+            this.label4.Location = new System.Drawing.Point(12, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 18);
             this.label4.TabIndex = 1;
@@ -177,7 +189,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label3.Location = new System.Drawing.Point(12, 24);
+            this.label3.Location = new System.Drawing.Point(12, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 18);
             this.label3.TabIndex = 0;
@@ -201,7 +213,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Location = new System.Drawing.Point(12, 2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 18);
             this.label2.TabIndex = 3;
@@ -259,5 +271,6 @@
         private System.Windows.Forms.DateTimePicker dtpVigencia;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNombre;
     }
 }

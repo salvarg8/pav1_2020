@@ -46,10 +46,11 @@
             this.txtNombreCorto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblCantEncontrado = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -135,7 +136,7 @@
             this.dgvObjetivos.ReadOnly = true;
             this.dgvObjetivos.RowHeadersVisible = false;
             this.dgvObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvObjetivos.Size = new System.Drawing.Size(553, 284);
+            this.dgvObjetivos.Size = new System.Drawing.Size(547, 284);
             this.dgvObjetivos.TabIndex = 15;
             this.dgvObjetivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellClick);
             this.dgvObjetivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjetivos_CellContentClick);
@@ -176,8 +177,12 @@
             this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscar.BackgroundImage")));
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+//<<<<<<< HEAD
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Location = new System.Drawing.Point(505, 67);
+//=======
+            this.btnBuscar.Location = new System.Drawing.Point(505, 32);
+//>>>>>>> 351f32fd6bdf2aa3690255d654df63e1796f148b
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(60, 60);
             this.btnBuscar.TabIndex = 14;
@@ -189,7 +194,7 @@
             // 
             this.chbBuscarTodos.AutoSize = true;
             this.chbBuscarTodos.Font = new System.Drawing.Font("Verdana", 11F);
-            this.chbBuscarTodos.Location = new System.Drawing.Point(196, 104);
+            this.chbBuscarTodos.Location = new System.Drawing.Point(157, 99);
             this.chbBuscarTodos.Name = "chbBuscarTodos";
             this.chbBuscarTodos.Size = new System.Drawing.Size(185, 22);
             this.chbBuscarTodos.TabIndex = 13;
@@ -199,7 +204,7 @@
             // txtNombreLargo
             // 
             this.txtNombreLargo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreLargo.Location = new System.Drawing.Point(172, 67);
+            this.txtNombreLargo.Location = new System.Drawing.Point(133, 62);
             this.txtNombreLargo.Name = "txtNombreLargo";
             this.txtNombreLargo.Size = new System.Drawing.Size(233, 31);
             this.txtNombreLargo.TabIndex = 12;
@@ -208,7 +213,7 @@
             // txtNombreCorto
             // 
             this.txtNombreCorto.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCorto.Location = new System.Drawing.Point(172, 30);
+            this.txtNombreCorto.Location = new System.Drawing.Point(133, 25);
             this.txtNombreCorto.Name = "txtNombreCorto";
             this.txtNombreCorto.Size = new System.Drawing.Size(233, 31);
             this.txtNombreCorto.TabIndex = 11;
@@ -218,7 +223,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label3.Location = new System.Drawing.Point(51, 74);
+            this.label3.Location = new System.Drawing.Point(12, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 18);
             this.label3.TabIndex = 10;
@@ -228,33 +233,39 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label2.Location = new System.Drawing.Point(50, 37);
+            this.label2.Location = new System.Drawing.Point(11, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "Nombre Corto";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 11F);
-            this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 18);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Filtros";
             // 
             // lblCantEncontrado
             // 
             this.lblCantEncontrado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCantEncontrado.AutoSize = true;
             this.lblCantEncontrado.Font = new System.Drawing.Font("Verdana", 11F);
-            this.lblCantEncontrado.Location = new System.Drawing.Point(341, 423);
+            this.lblCantEncontrado.Location = new System.Drawing.Point(335, 423);
             this.lblCantEncontrado.Name = "lblCantEncontrado";
             this.lblCantEncontrado.Size = new System.Drawing.Size(224, 18);
             this.lblCantEncontrado.TabIndex = 16;
             this.lblCantEncontrado.Text = "Objetivos encontrados:  100";
             this.lblCantEncontrado.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtNombreLargo);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.txtNombreCorto);
+            this.groupBox1.Controls.Add(this.chbBuscarTodos);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(571, 127);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscar Objetivos con Filtro";
             // 
             // FrmObjetivos
             // 
@@ -262,16 +273,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(577, 495);
+            this.ClientSize = new System.Drawing.Size(571, 495);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblCantEncontrado);
             this.Controls.Add(this.dgvObjetivos);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.chbBuscarTodos);
-            this.Controls.Add(this.txtNombreLargo);
-            this.Controls.Add(this.txtNombreCorto);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
@@ -280,6 +285,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmObjetivos_FormClosed);
             this.Load += new System.EventHandler(this.FrmObjetivos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjetivos)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +303,6 @@
         private System.Windows.Forms.TextBox txtNombreCorto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.DataGridView dgvObjetivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Objetivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_corto;
@@ -304,5 +310,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
         private System.Windows.Forms.Label lblCantEncontrado;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

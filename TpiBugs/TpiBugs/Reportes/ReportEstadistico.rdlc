@@ -25,9 +25,13 @@
           <DataField>fecha_vigencia</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="Expr1">
-          <DataField>Expr1</DataField>
+        <Field Name="nombre">
+          <DataField>nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="id_categoria">
+          <DataField>id_categoria</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
@@ -50,32 +54,32 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Expr1.Value</GroupExpression>
+                      <GroupExpression>=Fields!id_categoria.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Expr1.Value</Value>
+                      <Value>=Fields!id_categoria.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Expr1.Value</Label>
+                  <Label>=Fields!id_categoria.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Expr1</Label>
+                  <Label>id categoria</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Expr1">
+                <ChartSeries Name="id_categoria">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Count(Fields!Expr1.Value)</Y>
+                        <Y>=Count(Fields!id_categoria.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />

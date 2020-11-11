@@ -141,9 +141,9 @@
             this.label3.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.label3.Location = new System.Drawing.Point(11, 256);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 18);
+            this.label3.Size = new System.Drawing.Size(263, 18);
             this.label3.TabIndex = 26;
-            this.label3.Text = "Objetivos Disponibles";
+            this.label3.Text = "Objetivos Disponibles para Asignar";
             // 
             // label1
             // 

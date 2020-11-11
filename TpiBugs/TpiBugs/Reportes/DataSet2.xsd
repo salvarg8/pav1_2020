@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="master.dbo.Cursos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        nombre AS Expr1, descripcion, fecha_vigencia
+                    <CommandText>SELECT        nombre, descripcion, fecha_vigencia, id_categoria
 FROM            Cursos</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -22,7 +22,8 @@ FROM            Cursos</CommandText>
             <Mappings>
               <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
               <Mapping SourceColumn="fecha_vigencia" DataSetColumn="fecha_vigencia" />
-              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="id_categoria" DataSetColumn="id_categoria" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -45,13 +46,14 @@ FROM            Cursos</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="fecha_vigencia" msprop:Generator_ColumnVarNameInTable="columnfecha_vigencia" msprop:Generator_ColumnPropNameInRow="fecha_vigencia" msprop:Generator_ColumnPropNameInTable="fecha_vigenciaColumn" msprop:Generator_UserColumnName="fecha_vigencia" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" minOccurs="0">
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="id_categoria" msprop:Generator_ColumnVarNameInTable="columnid_categoria" msprop:Generator_ColumnPropNameInRow="id_categoria" msprop:Generator_ColumnPropNameInTable="id_categoriaColumn" msprop:Generator_UserColumnName="id_categoria" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
