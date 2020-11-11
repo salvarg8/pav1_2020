@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 using TpiBugs.Negocio.Servicios;
+using TpiBugs.Reportes;
 
 namespace TpiBugs.Reportes
 {
@@ -42,7 +44,44 @@ namespace TpiBugs.Reportes
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            
+            string strSql = " select Categorias.id_categoria as Categoria, cursos.nombre as NombreCurso, cursos.descripcion as Descripción, cursos.fecha_vigencia as Vigencia"+
+                            "from cursos, categorias where(cursos.id_categoria = Categorias.id_categoria and cursos.fecha_vigencia >= getdate() and Categorias.id_categoria = @param1)"+
+		                     "group by Categorias.id_categoria, cursos.nombre,  cursos.descripcion, cursos.fecha_vigencia" ;
+
+            Dictionary<string, object> parametros = new Dictionary<string, object>();
+            {
+                parametros.Add("Categoria", cmbCategoria.SelectedItem); // aca no se si es cbmCategoria.Text o .Seleccionado o que 
+
+                // Dictionary: Representa una colección de claves y valores.
+                /*
+                Dictionary & lt; string, object&gt; parametros = new Dictionary& lt; string, object&gt; ();
+                DateTime fechaDesde;
+                DateTime fechaHasta;
+                if (DateTime.TryParse(txtFechaDesde.Text, out fechaDesde) & amp; &amp;
+                DateTime.TryParse(txtFechaHasta.Text, out fechaHasta))
+            {
+                    parametros.Add(&quot; fechaDesde & quot;, txtFechaDesde.Text);
+                    parametros.Add(&quot; fechaHasta & quot;, txtFechaHasta.Text);
+                    rpvBugs.LocalReport.SetParameters(new ReportParameter[] { new ReportParameter(&quot; prFechaDesde & quot;,
+                txtFechaDesde.Text), new ReportParameter(&quot; prFechaHasta & quot;, txtFechaHasta.Text) });
+                */
+                reportViewer1.LocalReport.SetParameters(new ReportParameter[] { new ReportParameter("Categoria", cmbCategoria.Text) }); // aca no se si es cbmCategoria.Text o .Seleccionado o que 
+                //DATASOURCE
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DSReporte",
+                    DataManager.GetInstance().ConsultaSQL(strSql, parametros)));
+
+                reportViewer1.RefreshReport();
+
+            }
+
+            /* Ejemplo del profe
+            rpvBugs.LocalReport.DataSources.Clear();
+            rpvBugs.LocalReport.DataSources.Add(new ReportDataSource(&quot; DSReporte & quot;,
+            DataManager.GetInstance().ConsultaSQL(strSql, parametros)));
+            rpvBugs.RefreshReport();
+            */
         }
     }
 }
+
