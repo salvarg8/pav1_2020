@@ -80,6 +80,7 @@
             // 
             // btnGenerar
             // 
+            this.btnGenerar.Enabled = false;
             this.btnGenerar.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.btnGenerar.Location = new System.Drawing.Point(567, 18);
             this.btnGenerar.Name = "btnGenerar";
@@ -98,6 +99,7 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(302, 26);
             this.cmbCategoria.TabIndex = 14;
+            this.cmbCategoria.SelectedValueChanged += new System.EventHandler(this.cmbCategoria_SelectedValueChanged);
             // 
             // label5
             // 
