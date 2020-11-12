@@ -32,5 +32,15 @@ namespace TpiBugs.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=BD_extendida;Integrated Security=True")]
+        public string BD_extendidaConnectionString {
+            get {
+                return ((string)(this["BD_extendidaConnectionString"]));
+            }
+        }
     }
 }

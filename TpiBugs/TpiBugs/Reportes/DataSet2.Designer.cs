@@ -279,13 +279,11 @@ namespace TpiBugs.Reportes {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
             
-            private global::System.Data.DataColumn columndescripcion;
-            
-            private global::System.Data.DataColumn columnfecha_vigencia;
+            private global::System.Data.DataColumn columnid_categoria;
             
             private global::System.Data.DataColumn columnnombre;
             
-            private global::System.Data.DataColumn columnid_categoria;
+            private global::System.Data.DataColumn columnExpr1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -322,17 +320,9 @@ namespace TpiBugs.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn descripcionColumn {
+            public global::System.Data.DataColumn id_categoriaColumn {
                 get {
-                    return this.columndescripcion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn fecha_vigenciaColumn {
-                get {
-                    return this.columnfecha_vigencia;
+                    return this.columnid_categoria;
                 }
             }
             
@@ -346,9 +336,9 @@ namespace TpiBugs.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn id_categoriaColumn {
+            public global::System.Data.DataColumn Expr1Column {
                 get {
-                    return this.columnid_categoria;
+                    return this.columnExpr1;
                 }
             }
             
@@ -389,16 +379,22 @@ namespace TpiBugs.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string descripcion, System.DateTime fecha_vigencia, string nombre, int id_categoria) {
+            public DataTable1Row AddDataTable1Row(string nombre, int Expr1) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        descripcion,
-                        fecha_vigencia,
+                        null,
                         nombre,
-                        id_categoria};
+                        Expr1};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DataTable1Row FindByid_categoria(int id_categoria) {
+                return ((DataTable1Row)(this.Rows.Find(new object[] {
+                            id_categoria})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -418,24 +414,28 @@ namespace TpiBugs.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columndescripcion = base.Columns["descripcion"];
-                this.columnfecha_vigencia = base.Columns["fecha_vigencia"];
-                this.columnnombre = base.Columns["nombre"];
                 this.columnid_categoria = base.Columns["id_categoria"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnExpr1 = base.Columns["Expr1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescripcion);
-                this.columnfecha_vigencia = new global::System.Data.DataColumn("fecha_vigencia", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfecha_vigencia);
-                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre);
                 this.columnid_categoria = new global::System.Data.DataColumn("id_categoria", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_categoria);
-                this.columndescripcion.MaxLength = 50;
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr1);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid_categoria}, true));
+                this.columnid_categoria.AutoIncrement = true;
+                this.columnid_categoria.AutoIncrementSeed = -1;
+                this.columnid_categoria.AutoIncrementStep = -1;
+                this.columnid_categoria.AllowDBNull = false;
+                this.columnid_categoria.ReadOnly = true;
+                this.columnid_categoria.Unique = true;
                 this.columnnombre.MaxLength = 50;
             }
             
@@ -579,33 +579,12 @@ namespace TpiBugs.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string descripcion {
+            public int id_categoria {
                 get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.descripcionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
+                    return ((int)(this[this.tableDataTable1.id_categoriaColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.descripcionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime fecha_vigencia {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableDataTable1.fecha_vigenciaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_vigencia\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.fecha_vigenciaColumn] = value;
+                    this[this.tableDataTable1.id_categoriaColumn] = value;
                 }
             }
             
@@ -627,42 +606,18 @@ namespace TpiBugs.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int id_categoria {
+            public int Expr1 {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable1.id_categoriaColumn]));
+                        return ((int)(this[this.tableDataTable1.Expr1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_categoria\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr1\' de la tabla \'DataTable1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.id_categoriaColumn] = value;
+                    this[this.tableDataTable1.Expr1Column] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdescripcionNull() {
-                return this.IsNull(this.tableDataTable1.descripcionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdescripcionNull() {
-                this[this.tableDataTable1.descripcionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isfecha_vigenciaNull() {
-                return this.IsNull(this.tableDataTable1.fecha_vigenciaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setfecha_vigenciaNull() {
-                this[this.tableDataTable1.fecha_vigenciaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -679,14 +634,14 @@ namespace TpiBugs.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isid_categoriaNull() {
-                return this.IsNull(this.tableDataTable1.id_categoriaColumn);
+            public bool IsExpr1Null() {
+                return this.IsNull(this.tableDataTable1.Expr1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setid_categoriaNull() {
-                this[this.tableDataTable1.id_categoriaColumn] = global::System.Convert.DBNull;
+            public void SetExpr1Null() {
+                this[this.tableDataTable1.Expr1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -849,10 +804,9 @@ namespace TpiBugs.Reportes.DataSet2TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DataTable1";
-            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
-            tableMapping.ColumnMappings.Add("fecha_vigencia", "fecha_vigencia");
-            tableMapping.ColumnMappings.Add("nombre", "nombre");
             tableMapping.ColumnMappings.Add("id_categoria", "id_categoria");
+            tableMapping.ColumnMappings.Add("nombre", "nombre");
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -860,7 +814,7 @@ namespace TpiBugs.Reportes.DataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TpiBugs.Properties.Settings.Default.ConnectionString;
+            this._connection.ConnectionString = global::TpiBugs.Properties.Settings.Default.BD_extendidaConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -869,8 +823,9 @@ namespace TpiBugs.Reportes.DataSet2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        nombre, descripcion, fecha_vigencia, id_categoria\r\nFROM            " +
-                "Cursos";
+            this._commandCollection[0].CommandText = "SELECT        Categorias.id_categoria, Categorias.nombre, Cursos.id_categoria AS " +
+                "Expr1\r\nFROM            Categorias INNER JOIN\r\n                         Cursos ON" +
+                " Categorias.id_categoria = Cursos.id_categoria";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

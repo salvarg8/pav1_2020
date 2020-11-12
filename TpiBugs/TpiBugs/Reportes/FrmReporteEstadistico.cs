@@ -23,9 +23,13 @@ namespace TpiBugs.Reportes
             this.reportViewer1.RefreshReport();
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
+        
+
+        private void DataTable1BindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }

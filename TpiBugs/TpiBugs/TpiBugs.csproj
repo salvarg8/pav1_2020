@@ -189,7 +189,6 @@
     <Compile Include="Reportes\FrmReporteEstadistico.Designer.cs">
       <DependentUpon>FrmReporteEstadistico.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Presentación\FrmAbmcCategoria.resx">
       <DependentUpon>FrmAbmcCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,21 +280,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
