@@ -172,7 +172,7 @@ namespace TpiBugs.Datos.Dao.Implementacion
                 VALUES
                    ('Reparacion de Celus', 'Curso Intensivo', '2020-10-10 10:10:10', 2, 0)
 
-                a
+                
 
                 INSERT INTO[dbo].[ObjetivosCursos]
                     ([id_objetivo],[id_curso],[puntos],[borrado])

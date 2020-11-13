@@ -29,13 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-//<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-//=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-//>>>>>>> 351f32fd6bdf2aa3690255d654df63e1796f148b
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmObjetivosCursos));
             this.lblCantEncontrado = new System.Windows.Forms.Label();
             this.cmbCursos = new System.Windows.Forms.ComboBox();
@@ -69,10 +64,12 @@
             this.cmbCursos.Font = new System.Drawing.Font("Verdana", 14.25F);
             this.cmbCursos.ForeColor = System.Drawing.Color.Black;
             this.cmbCursos.FormattingEnabled = true;
+            this.cmbCursos.IntegralHeight = false;
             this.cmbCursos.Location = new System.Drawing.Point(12, 33);
+            this.cmbCursos.MaxDropDownItems = 5;
             this.cmbCursos.Name = "cmbCursos";
             this.cmbCursos.Size = new System.Drawing.Size(227, 31);
-            this.cmbCursos.TabIndex = 37;
+            this.cmbCursos.TabIndex = 0;
             this.cmbCursos.SelectionChangeCommitted += new System.EventHandler(this.cmbCursos_SelectionChangeCommitted);
             // 
             // dgvObjetivos
@@ -85,7 +82,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvObjetivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvObjetivos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-//<<<<<<< HEAD
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,16 +90,6 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvObjetivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-//=======
-            //dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            //dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            //dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            //dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            //dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            //dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            //this.dgvObjetivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-//>>>>>>> 351f32fd6bdf2aa3690255d654df63e1796f148b
             this.dgvObjetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvObjetivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Objetivos,
@@ -112,7 +98,6 @@
             this.nom_largo,
             this.puntos,
             this.borrado});
-//<<<<<<< HEAD
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 8.25F);
@@ -121,18 +106,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvObjetivos.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvObjetivos.Location = new System.Drawing.Point(11, 85);
-//=======
-            //dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            //dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            //dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 8.25F);
-            //dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            //dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(130)))), ((int)(((byte)(160)))));
-            //dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            //dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            //this.dgvObjetivos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvObjetivos.Location = new System.Drawing.Point(11, 97);
-//>>>>>>> 351f32fd6bdf2aa3690255d654df63e1796f148b
             this.dgvObjetivos.MultiSelect = false;
             this.dgvObjetivos.Name = "dgvObjetivos";
             this.dgvObjetivos.ReadOnly = true;
@@ -191,15 +165,11 @@
             this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditar.Enabled = false;
-//<<<<<<< HEAD
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(12, 383);
-//=======
             this.btnEditar.Location = new System.Drawing.Point(12, 423);
-//>>>>>>> 351f32fd6bdf2aa3690255d654df63e1796f148b
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(60, 60);
-            this.btnEditar.TabIndex = 44;
+            this.btnEditar.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnEditar, "Editar");
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -218,12 +188,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-//<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(564, 455);
-//=======
             this.ClientSize = new System.Drawing.Size(571, 495);
-//>>>>>>> 351f32fd6bdf2aa3690255d654df63e1796f148b
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.lblCantEncontrado);
