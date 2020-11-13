@@ -40,17 +40,15 @@ namespace TpiBugs.Reportes
             // ValueMember: establece la ruta de acceso de la propiedad que se utilizará como valor real para los elementos de ListControl.
             cbo.ValueMember = value;
             //SelectedIndex: establece el índice que especifica el elemento seleccionado actualmente.
-            cbo.SelectedIndex = -1;
+            cbo.SelectedIndex = 0;
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            string strSql = "select Categorias.id_categoria as Categoria, Cursos.nombre as NombreCurso, Cursos.descripcion as Descripción, Cursos.fecha_vigencia as Vigencia" +
-                            "from Cursos, categorias where(Cursos.id_categoria = Categorias.id_categoria and Cursos.fecha_vigencia >= getdate() and Categorias.id_categoria = @param1)" +
-                            "group by Categorias.id_categoria, Cursos.nombre,  Cursos.descripcion, Cursos.fecha_vigencia";
+            string strSql = "select Categorias.id_categoria as Categoria, Cursos.nombre as NombreCurso, Cursos.descripcion as Descripción, Cursos.fecha_vigencia as Vigencia from Cursos, Categorias where (cursos.id_categoria = Categorias.id_categoria and cursos.fecha_vigencia >= getdate() and Categorias.id_categoria = @Valorcmb and Cursos.borrado = 0) group by Categorias.id_categoria, cursos.nombre, cursos.descripcion, cursos.fecha_vigencia";
 
             Dictionary<string, object> parametros = new Dictionary<string, object>();
-            parametros.Add("Valorcmb", (cmbCategoria.SelectedIndex-1));
+            parametros.Add("Valorcmb", (cmbCategoria.SelectedIndex+1));
             //reportViewer1.LocalReport.SetParameters(new ReportParameter[] { new ReportParameter("Categoria", cmbCategoria.SelectedItem.ToString()) });
 
             reportViewer1.LocalReport.DataSources.Clear();

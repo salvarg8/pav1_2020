@@ -16,9 +16,9 @@ public class DataManager : System.IDisposable
         dbConnection = new SqlConnection();
         
         //conexion bd salva
-        var string_conexion = "Data Source=localhost;Initial Catalog=BD_extendida;Integrated Security=True;";
+        //var string_conexion = "Data Source=localhost;Initial Catalog=BD_extendida;Integrated Security=True;";
         //conexion bd leo
-        //var string_conexion = "Data Source=ACER1\\SQLEXPRESS;Initial Catalog=BD_extendida;Integrated Security=True;";
+        var string_conexion = "Data Source=ACER1\\SQLEXPRESS;Initial Catalog=BD_extendida;Integrated Security=True;";
         dbConnection.ConnectionString = string_conexion;
     }
 

@@ -52,6 +52,7 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelContendor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -113,6 +114,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btnObjetivos);
             this.panelMenu.Controls.Add(this.btnObjetivosCursos);
             this.panelMenu.Controls.Add(this.btnCategorias);
@@ -377,6 +379,16 @@
             this.btnCerrar.MouseEnter += new System.EventHandler(this.btnCerrar_MouseEnter);
             this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 440);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Borrar y Agregar Datos a BD";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,5 +444,6 @@
         private System.Windows.Forms.Button btnGestionarMisCursos;
         private System.Windows.Forms.Button btnAvances;
         private System.Windows.Forms.Button btnMisCursos;
+        private System.Windows.Forms.Button button1;
     }
 }

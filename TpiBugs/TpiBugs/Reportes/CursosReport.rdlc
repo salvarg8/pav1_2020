@@ -106,7 +106,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Vigencia</Value>
+                              <Value>Vigencia Hasta</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -270,7 +270,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Categoria:</Value>
+                <Value>Cursos vigentes al dia de la fecha de la Categoria:</Value>
                 <Style />
               </TextRun>
               <TextRun>
@@ -283,9 +283,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>0.17639cm</Top>
-        <Left>0.28787cm</Left>
+        <Left>0.81406cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.15125cm</Width>
+        <Width>10.86083cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -413,7 +413,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Cursos Pertenecientes a :</Value>
+                  <Value>Cursos Vigentes Pertenecientes a :</Value>
                   <Style />
                 </TextRun>
                 <TextRun>
@@ -527,7 +527,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>G:\Documentos\Universidad\PAV\TPI\pav1_2020\TpiBugs\TpiBugs\Reportes\DataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\FAcu 2020\PAV 1\pav1_2020\TpiBugs\TpiBugs\Reportes\DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>DataTable1</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
