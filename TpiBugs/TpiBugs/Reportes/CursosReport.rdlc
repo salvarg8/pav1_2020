@@ -42,8 +42,7 @@
                       <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <BottomBorder>
                           <Color>Black</Color>
@@ -81,8 +80,7 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <BottomBorder>
                           <Color>Black</Color>
@@ -106,7 +104,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Vigencia</Value>
+                              <Value>Vigencia Hasta</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -120,8 +118,7 @@
                       <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <BottomBorder>
                           <Color>Black</Color>
@@ -160,8 +157,7 @@
                       <rd:DefaultName>NombreCurso</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -190,8 +186,7 @@
                       <rd:DefaultName>Descripción</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -211,7 +206,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Vigencia.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>d</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -220,8 +217,7 @@
                       <rd:DefaultName>Vigencia</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -231,6 +227,54 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cantidad De Cursos Encontrados: </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Count(Fields!NombreCurso.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
               </TablixCells>
             </TablixRow>
           </TablixRows>
@@ -250,12 +294,15 @@
             <TablixMember>
               <Group Name="Detalles" />
             </TablixMember>
+            <TablixMember>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.13453cm</Top>
         <Left>0.81406cm</Left>
-        <Height>1.54396cm</Height>
+        <Height>2.14396cm</Height>
         <Width>14.88186cm</Width>
         <Style>
           <Border>
@@ -270,11 +317,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Categoria:</Value>
+                <Value>Cursos vigentes al dia de la fecha de la Categoria: </Value>
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>=Fields!Categoria.Value</Value>
+                <Value>=Fields!nombre_categ.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -283,9 +330,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
         <Top>0.17639cm</Top>
-        <Left>0.28787cm</Left>
+        <Left>0.81406cm</Left>
         <Height>0.6cm</Height>
-        <Width>6.15125cm</Width>
+        <Width>14.88186cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -298,7 +345,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.55192in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
@@ -413,11 +460,11 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Cursos Pertenecientes a :</Value>
+                  <Value>Cursos Vigentes Pertenecientes a </Value>
                   <Style />
                 </TextRun>
                 <TextRun>
-                  <Value>=Fields!Categoria.Value</Value>
+                  <Value>=Fields!nombre_categ.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -427,10 +474,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>1.94cm</Top>
-          <Left>2.70552cm</Left>
+          <Top>1.25208cm</Top>
           <Height>0.6cm</Height>
-          <Width>11.09896cm</Width>
+          <Width>16.51cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -510,6 +556,10 @@
       <Fields>
         <Field Name="Categoria">
           <DataField>Categoria</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="nombre_categ">
+          <DataField>nombre_categ</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NombreCurso">

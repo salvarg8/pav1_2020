@@ -4,7 +4,11 @@
 
     partial class DataSet2
     {
-        partial class DataTable1DataTable
+        partial class DtEstadísticoDataTable
+        {
+        }
+
+        partial class DtEstadisticoDataTable
         {
         }
     }

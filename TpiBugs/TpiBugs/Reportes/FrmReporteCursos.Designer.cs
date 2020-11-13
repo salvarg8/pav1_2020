@@ -80,7 +80,6 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Enabled = false;
             this.btnGenerar.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.btnGenerar.Location = new System.Drawing.Point(567, 18);
             this.btnGenerar.Name = "btnGenerar";
@@ -92,6 +91,9 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.DataTable1BindingSource, "Categoria", true));
+            this.cmbCategoria.DataSource = this.DataTable1BindingSource;
+            this.cmbCategoria.DisplayMember = "Categoria";
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.cmbCategoria.FormattingEnabled = true;
@@ -99,7 +101,6 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(302, 26);
             this.cmbCategoria.TabIndex = 14;
-            this.cmbCategoria.SelectedValueChanged += new System.EventHandler(this.cmbCategoria_SelectedValueChanged);
             // 
             // label5
             // 

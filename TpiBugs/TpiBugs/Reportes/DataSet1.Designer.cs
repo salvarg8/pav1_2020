@@ -281,6 +281,8 @@ namespace TpiBugs.Reportes {
             
             private global::System.Data.DataColumn columnCategoria;
             
+            private global::System.Data.DataColumn columnnombre_categ;
+            
             private global::System.Data.DataColumn columnNombreCurso;
             
             private global::System.Data.DataColumn columnDescripción;
@@ -325,6 +327,14 @@ namespace TpiBugs.Reportes {
             public global::System.Data.DataColumn CategoriaColumn {
                 get {
                     return this.columnCategoria;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombre_categColumn {
+                get {
+                    return this.columnnombre_categ;
                 }
             }
             
@@ -389,10 +399,11 @@ namespace TpiBugs.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string Categoria, string NombreCurso, string Descripción, System.DateTime Vigencia) {
+            public DataTable1Row AddDataTable1Row(string Categoria, string nombre_categ, string NombreCurso, string Descripción, System.DateTime Vigencia) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Categoria,
+                        nombre_categ,
                         NombreCurso,
                         Descripción,
                         Vigencia};
@@ -419,6 +430,7 @@ namespace TpiBugs.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnCategoria = base.Columns["Categoria"];
+                this.columnnombre_categ = base.Columns["nombre_categ"];
                 this.columnNombreCurso = base.Columns["NombreCurso"];
                 this.columnDescripción = base.Columns["Descripción"];
                 this.columnVigencia = base.Columns["Vigencia"];
@@ -429,6 +441,8 @@ namespace TpiBugs.Reportes {
             private void InitClass() {
                 this.columnCategoria = new global::System.Data.DataColumn("Categoria", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCategoria);
+                this.columnnombre_categ = new global::System.Data.DataColumn("nombre_categ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_categ);
                 this.columnNombreCurso = new global::System.Data.DataColumn("NombreCurso", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreCurso);
                 this.columnDescripción = new global::System.Data.DataColumn("Descripción", typeof(string), null, global::System.Data.MappingType.Element);
@@ -593,6 +607,22 @@ namespace TpiBugs.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string nombre_categ {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.nombre_categColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_categ\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.nombre_categColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string NombreCurso {
                 get {
                     try {
@@ -649,6 +679,18 @@ namespace TpiBugs.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCategoriaNull() {
                 this[this.tableDataTable1.CategoriaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnombre_categNull() {
+                return this.IsNull(this.tableDataTable1.nombre_categColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnombre_categNull() {
+                this[this.tableDataTable1.nombre_categColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -52,6 +52,7 @@
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnAgregarDatosBD = new System.Windows.Forms.Button();
             this.panelContendor.SuspendLayout();
             this.panelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -113,6 +114,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMenu.Controls.Add(this.btnAgregarDatosBD);
             this.panelMenu.Controls.Add(this.btnObjetivos);
             this.panelMenu.Controls.Add(this.btnObjetivosCursos);
             this.panelMenu.Controls.Add(this.btnCategorias);
@@ -377,6 +379,21 @@
             this.btnCerrar.MouseEnter += new System.EventHandler(this.btnCerrar_MouseEnter);
             this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
             // 
+            // btnAgregarDatosBD
+            // 
+            this.btnAgregarDatosBD.BackColor = System.Drawing.Color.White;
+            this.btnAgregarDatosBD.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAgregarDatosBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarDatosBD.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarDatosBD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.btnAgregarDatosBD.Location = new System.Drawing.Point(0, 444);
+            this.btnAgregarDatosBD.Name = "btnAgregarDatosBD";
+            this.btnAgregarDatosBD.Size = new System.Drawing.Size(198, 30);
+            this.btnAgregarDatosBD.TabIndex = 20;
+            this.btnAgregarDatosBD.Text = "Agregar Datos a BD";
+            this.btnAgregarDatosBD.UseVisualStyleBackColor = false;
+            this.btnAgregarDatosBD.Click += new System.EventHandler(this.btnAgregarDatosBD_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,5 +449,6 @@
         private System.Windows.Forms.Button btnGestionarMisCursos;
         private System.Windows.Forms.Button btnAvances;
         private System.Windows.Forms.Button btnMisCursos;
+        private System.Windows.Forms.Button btnAgregarDatosBD;
     }
 }

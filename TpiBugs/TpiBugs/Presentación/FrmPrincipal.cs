@@ -13,11 +13,13 @@ namespace TpiBugs.Presentación
     {
         private FormMode formMode = FormMode.Logear;
         private readonly UsuarioService oUsuarioService;
+        private readonly CargaDatosBdService oCargaDatosBdService;
         private Usuario oUsuarioLogeado;
         public FrmPrincipal()
         {
             InitializeComponent();
             oUsuarioService = new UsuarioService();
+            oCargaDatosBdService = new CargaDatosBdService();
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
 
@@ -26,7 +28,7 @@ namespace TpiBugs.Presentación
 
 
 
-        
+
 
 
 
@@ -70,7 +72,7 @@ namespace TpiBugs.Presentación
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
 
-        
+
 
         int lx, ly;
         int sw, sh;
@@ -119,13 +121,13 @@ namespace TpiBugs.Presentación
 
         }
 
-        
+
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
 
             Form formulario;
             formulario = panelFormularios.Controls.OfType<MiForm>().FirstOrDefault();
-                                                                                     
+
             Form[] OpenForms = Application.OpenForms.Cast<Form>().ToArray();
             foreach (Form thisForm in OpenForms)
             {
@@ -190,7 +192,7 @@ namespace TpiBugs.Presentación
             AbrirFormulario<FrmObjetivos>();
         }
 
-        
+
 
         private void btnMisCursos_Click(object sender, EventArgs e)
         {
@@ -272,6 +274,22 @@ namespace TpiBugs.Presentación
         private void btnGestionarMisCursos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FrmReporteEstadistico>();
+        }
+
+        
+
+        private void btnAgregarDatosBD_Click(object sender, EventArgs e)
+        {
+            if (oCargaDatosBdService.cargarDatos())
+            {
+                MessageBox.Show("Datos Actualizados!");
+
+            }
+            else
+            {
+                MessageBox.Show("Error al Actualizar los Datos");
+
+            }
         }
 
         public enum FormMode
