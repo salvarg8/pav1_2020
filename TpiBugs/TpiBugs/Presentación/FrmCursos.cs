@@ -110,6 +110,14 @@ namespace TpiBugs.Presentación
             else
                 MessageBox.Show("No se puede Eliminar el Curso Seleccionado", "Error");
         }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBuscar_Click(sender, e);
+            }
+        }
     }
 }
 

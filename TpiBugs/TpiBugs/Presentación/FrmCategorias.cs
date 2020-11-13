@@ -108,6 +108,14 @@ namespace TpiBugs.Presentación
             }
             btnBuscar_Click(sender, e);
         }
+
+        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnBuscar_Click(sender, e);
+            }
+        }
     }
     
 }

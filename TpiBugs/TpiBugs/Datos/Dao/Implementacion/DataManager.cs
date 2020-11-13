@@ -73,6 +73,8 @@ public class DataManager : System.IDisposable
     ///          El error de conexión se produce:
     ///              a) durante la apertura de la conexión
     ///              b) durante la ejecución del comando.
+    
+
     public DataTable ConsultaSQL(string strSql, Dictionary<string, object> prs = null)
     {
         SqlCommand cmd = new SqlCommand();

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbmcCategoria));
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -47,7 +48,9 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.lblNombre);
             this.panel5.Controls.Add(this.lblError);
             this.panel5.Controls.Add(this.btnCancelar);
             this.panel5.Controls.Add(this.btnAceptar);
@@ -61,6 +64,16 @@
             this.panel5.Size = new System.Drawing.Size(470, 175);
             this.panel5.TabIndex = 3;
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Verdana", 12F);
+            this.lblNombre.Location = new System.Drawing.Point(14, 8);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(87, 18);
+            this.lblNombre.TabIndex = 9;
+            this.lblNombre.Text = "Categoria";
+            // 
             // lblError
             // 
             this.lblError.AutoSize = true;
@@ -68,7 +81,7 @@
             this.lblError.Font = new System.Drawing.Font("Verdana", 8.5F);
             this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(115, 101);
+            this.lblError.Location = new System.Drawing.Point(115, 116);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(52, 14);
             this.lblError.TabIndex = 8;
@@ -101,7 +114,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtDescripcion.Location = new System.Drawing.Point(145, 56);
+            this.txtDescripcion.Location = new System.Drawing.Point(145, 71);
             this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(302, 26);
@@ -110,7 +123,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.txtNombre.Location = new System.Drawing.Point(145, 21);
+            this.txtNombre.Location = new System.Drawing.Point(145, 36);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(302, 26);
@@ -120,7 +133,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label4.Location = new System.Drawing.Point(12, 59);
+            this.label4.Location = new System.Drawing.Point(12, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 18);
             this.label4.TabIndex = 1;
@@ -130,7 +143,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 11.25F);
-            this.label3.Location = new System.Drawing.Point(12, 24);
+            this.label3.Location = new System.Drawing.Point(12, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 18);
             this.label3.TabIndex = 0;
@@ -154,7 +167,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 11.25F);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Location = new System.Drawing.Point(14, 2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 18);
             this.label2.TabIndex = 3;
@@ -208,5 +221,6 @@
         private System.Windows.Forms.Panel panelBarraTitulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Label lblNombre;
     }
 }
